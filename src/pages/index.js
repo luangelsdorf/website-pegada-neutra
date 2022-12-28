@@ -12,8 +12,8 @@ export default function Home() {
 
       <Header />
 
-      <main>
-        <h1>Homepage</h1>
+      <main style={{paddingTop: '80px'}}>
+        <h1 style={{font: 'var(--display)'}}>Homepage</h1>
       </main>
     </>
   )

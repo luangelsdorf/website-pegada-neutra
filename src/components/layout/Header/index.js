@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import styles from './Header.module.scss';
-import logo from 'public/images/logo-horizontal.svg';
+import Logo from 'public/images/logo-horizontal.svg';
 
 export default function Header({ content }) {
   return (
@@ -19,18 +19,18 @@ export default function Header({ content }) {
             <Link href="#">Nossas Soluções</Link>
           </li>
           <li>
-            <Link href="#">
-              <Image src={logo} />
+            <Link href="#" className="link-image">
+              <Logo />
             </Link>
           </li>
           <li>
-            <Link href="#">Home</Link>
+            <Link href="#">Blog</Link>
           </li>
           <li>
-            <Link href="#">Home</Link>
+            <Link href="#">Nossos Clientes</Link>
           </li>
           <li>
-            <Link href="#">Home</Link>
+            <Link className="btn" href="#">Neutralize Já</Link>
           </li>
         </ul>
       </div>
