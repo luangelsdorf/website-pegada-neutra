@@ -2,6 +2,7 @@
   position: fixed;
   width: 100%;
   height: 80px;
+  z-index: 10000;
 
   ul {
     display: flex;
@@ -9,7 +10,7 @@
     height: 80px;
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
-    background-color: var(--dark-green);
+    background-color: rgb(var(--dark-green));
 
     li {
       display: inline-flex;
@@ -22,7 +23,7 @@
       }
 
       a {
-        color: var(--light-green);
+        color: rgb(var(--light-green));
         font: var(--body-sm);
       }
     }

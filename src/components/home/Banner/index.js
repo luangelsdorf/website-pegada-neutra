@@ -1,10 +1,12 @@
 import React from 'react';
 import styles from './Banner.module.scss';
 import ArrowRight from 'public/images/icons/ArrowRight.svg';
+import Image from 'next/image';
 
 export default function Banner({ content }) {
   return (
     <section className={styles.banner}>
+      <Image fill src="/images/banner-home.webp" alt="" />
       <div className="container">
         <div className={styles.bannerContent}>
           <p>Conheça o Selo Pegada Neutra®</p>

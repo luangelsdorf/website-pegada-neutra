@@ -1,12 +1,27 @@
 .banner {
-  height: 800px;
+  height: 100vh;
+  width: 100vw;
   display: flex;
   align-items: center;
-  background: url("/images/banner-home.png") no-repeat;
+  position: relative;
+  /* background: url("/images/banner-home.webp") no-repeat; */
   background-size: cover;
+  background-position-y: center;
+  background-position-x: 0;
+  background-attachment: fixed;
+
+  & > img {
+    object-fit: cover;
+    object-position: left;
+    z-index: -2;
+    position: fixed !important;
+  }
 
   .bannerContent {
     margin-top: -40px;
+    p {
+      font: var(--body-lg);
+    }
   }
 
   h1 {

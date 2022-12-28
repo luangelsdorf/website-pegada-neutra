@@ -1,32 +1,44 @@
-/* @mixin filled-button {
-  position: relative;
+$colors: (
+  "greenry": #84bd00,
+  "phthalo": #c2e189,
+  "light": #e6eadc,
+  "dark": #18332f,
+);
 
-  &:hover {
-    &::after {
-      transition: inherit;
-      transform: scale(1.1);
-    }
-  }
-  &:not(:hover) {
-    &::after {
-      transition: all 350ms;
-      transform: scale(1);
-    }
-  }
+@mixin filled-button {
+  position: relative;
+  z-index: 1;
 
   &::after {
     content: "";
-    background-color: var(--greenery);
+    background-color: rgb(var(--greenery));
     position: absolute;
     z-index: -1;
     height: 100%;
     width: 100%;
     border-radius: 56px;
+    transition: transform 600ms;
   }
-} */
+
+  &:hover {
+    &::after {
+      transform: scale(1.1);
+    }
+  }
+}
+
+@mixin outline-button {
+  position: relative;
+
+  &:hover {
+    background-color: rgb(var(--phthalo-green));
+  }
+}
 
 .btn {
-  /* @include filled-button; */
+  &:not(.outline) {
+    @include filled-button;
+  }
 
   font: var(--body-default);
   font-weight: 700;
@@ -35,8 +47,8 @@
   align-items: center;
   height: 48px;
   padding: 0 20px;
-  background-color: var(--greenery);
-  color: var(--light-green);
+  background-color: rgb(var(--greenery));
+  color: rgb(var(--light-green));
   border: 0;
   gap: 8px;
   border-radius: 56px;
@@ -59,48 +71,48 @@
   }
 
   &.greenery {
-    background-color: var(--greenery);
-    color: var(--light-green);
+    background-color: rgb(var(--greenery));
+    color: rgb(var(--light-green));
     &.outline {
       background-color: transparent;
-      border: 2px solid var(--greenery);
-      color: var(--greenery);
+      border: 2px solid rgb(var(--greenery));
+      color: rgb(var(--greenery));
     }
   }
 
   &.phthalo {
-    background-color: var(--phthalo-green);
-    color: var(--dark-green);
+    background-color: rgb(var(--phthalo-green));
+    color: rgb(var(--dark-green));
     &.outline {
       background-color: transparent;
-      border: 2px solid var(--phthalo-green);
-      color: var(--phthalo-green);
+      border: 2px solid rgb(var(--phthalo-green));
+      color: rgb(var(--phthalo-green));
     }
   }
 
   &.light-green {
-    background-color: var(--light-green);
-    color: var(--dark-green);
+    background-color: rgb(var(--light-green));
+    color: rgb(var(--dark-green));
     &.outline {
       background-color: transparent;
-      border: 2px solid var(--light-green);
-      color: var(--light-green);
+      border: 2px solid rgb(var(--light-green));
+      color: rgb(var(--light-green));
     }
   }
 
   &.dark-green {
-    background-color: var(--dark-green);
-    color: var(--light-green);
+    background-color: rgb(var(--dark-green));
+    color: rgb(var(--light-green));
     &.outline {
       background-color: transparent;
-      border: 2px solid var(--dark-green);
-      color: var(--dark-green);
+      border: 2px solid rgb(var(--dark-green));
+      color: rgb(var(--dark-green));
     }
   }
 }
 
 a:not(.btn) {
-  color: var(--phthalo-green);
+  color: rgb(var(--phthalo-green));
   cursor: pointer;
   display: inline-flex;
   align-items: center;

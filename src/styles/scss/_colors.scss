@@ -1,17 +1,17 @@
 :root {
   /* Brand - Primary */
-  --light-green: rgba(230, 234, 220, 1);
-  --phthalo-green: rgba(194, 225, 137, 1);
-  --greenery: rgba(132, 189, 0, 1);
-  --leaf-green: rgba(0, 179, 115, 1);
-  --dark-green: rgba(24, 51, 47, 1);
+  --light-green: 230, 234, 220;
+  --phthalo-green: 194, 225, 137;
+  --greenery: 132, 189, 0;
+  --leaf-green: 0, 179, 115;
+  --dark-green: 24, 51, 47;
 
   /* Brand - Secondary */
-  --deep-blue-sea: rgba(0, 38, 62, 1);
-  --sky-blue: rgba(0, 163, 225, 1);
-  --baltic-sea: rgba(153, 214, 234, 1);
+  --deep-blue-sea: 0, 38, 62;
+  --sky-blue: 0, 163, 225;
+  --baltic-sea: 153, 214, 234;
 
   /* Support */
-  --soft-dark-green: rgba(46, 97, 90, 1);
-  --soft-phthalo-green: rgba(222, 239, 191, 1);
+  --soft-dark-green: 46, 97, 90;
+  --soft-phthalo-green: 222, 239, 191;
 }
