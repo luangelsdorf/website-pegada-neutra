@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import AboutUs from 'src/components/home/AboutUs';
 import Banner from 'src/components/home/Banner';
 import Header from '../components/layout/Header';
 
@@ -15,6 +16,7 @@ export default function Home() {
 
       <main>
         <Banner />
+        <AboutUs />
       </main>
     </>
   )
