@@ -53,3 +53,42 @@ h5 {
 small {
   font: var(--body-sm);
 }
+
+.overline {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  font-weight: 700 !important;
+
+  &.small {
+    font: var(--body-sm);
+  }
+  &.large {
+    font: var(--body-lg);
+  }
+
+  &.light {
+    background-color: rgb(var(--phthalo-green));
+    color: rgb(var(--greenery));
+  }
+  &.dark {
+    background-color: rgb(var(--soft-dark-green));
+    color: rgb(var(--phthalo-green));
+  }
+
+  &.light,
+  &.dark {
+    border-radius: 56px;
+    height: 40px;
+    padding: 0 12px;
+
+    .small {
+      height: 36px;
+      padding: 0 12px;
+    }
+    .large {
+      height: 52px;
+      padding: 0 16px;
+    }
+  }
+}

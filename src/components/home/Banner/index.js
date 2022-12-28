@@ -9,7 +9,7 @@ export default function Banner({ content }) {
       <Image fill src="/images/banner-home.webp" alt="" />
       <div className="container">
         <div className={styles.bannerContent}>
-          <p>Conheça o Selo Pegada Neutra®</p>
+          <p className="overline large">Conheça o Selo Pegada Neutra®</p>
           <h1>{'Neutralize\nsua Pegada'}</h1>
           <a className="btn">
             <span>Neutralize seu Impacto</span> <ArrowRight />

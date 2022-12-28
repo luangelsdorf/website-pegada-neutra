@@ -4,11 +4,6 @@
   display: flex;
   align-items: center;
   position: relative;
-  /* background: url("/images/banner-home.webp") no-repeat; */
-  background-size: cover;
-  background-position-y: center;
-  background-position-x: 0;
-  background-attachment: fixed;
 
   & > img {
     object-fit: cover;
@@ -19,9 +14,6 @@
 
   .bannerContent {
     margin-top: -40px;
-    p {
-      font: var(--body-lg);
-    }
   }
 
   h1 {
