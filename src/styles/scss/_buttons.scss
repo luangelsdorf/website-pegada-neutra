@@ -63,7 +63,7 @@
     color: var(--light-green);
     &.outline {
       background-color: transparent;
-      border: 1px solid var(--greenery);
+      border: 2px solid var(--greenery);
       color: var(--greenery);
     }
   }
@@ -73,7 +73,7 @@
     color: var(--dark-green);
     &.outline {
       background-color: transparent;
-      border: 1px solid var(--phthalo-green);
+      border: 2px solid var(--phthalo-green);
       color: var(--phthalo-green);
     }
   }
@@ -83,7 +83,7 @@
     color: var(--dark-green);
     &.outline {
       background-color: transparent;
-      border: 1px solid var(--light-green);
+      border: 2px solid var(--light-green);
       color: var(--light-green);
     }
   }
@@ -93,7 +93,7 @@
     color: var(--light-green);
     &.outline {
       background-color: transparent;
-      border: 1px solid var(--dark-green);
+      border: 2px solid var(--dark-green);
       color: var(--dark-green);
     }
   }
