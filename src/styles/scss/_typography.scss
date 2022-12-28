@@ -1,0 +1,14 @@
+@use "mixins";
+
+:root {
+  /* Heading Styles */
+  --display: 700 80px/88px;
+  --heading-lg: 700 64px/80px;
+  --heading-md: 700 56px/72px;
+  --heading-sm: 700 48px/64px;
+
+  /* Body Styles */
+  --body-lg: 500 24px/40px;
+  --body-default: 500 20px/32px;
+  --body-sm: 500 16px/28px;
+}
