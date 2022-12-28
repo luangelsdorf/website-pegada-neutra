@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import Banner from 'src/components/home/Banner';
 import Header from '../components/layout/Header';
 
 export default function Home() {
@@ -12,8 +13,8 @@ export default function Home() {
 
       <Header />
 
-      <main style={{paddingTop: '80px'}}>
-        <h1 style={{font: 'var(--display)'}}>Homepage</h1>
+      <main>
+        <Banner />
       </main>
     </>
   )

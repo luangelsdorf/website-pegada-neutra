@@ -1,0 +1,12 @@
+.banner {
+  height: 800px;
+  display: flex;
+  align-items: center;
+  background: url('/images/banner-home.png') no-repeat;
+  background-size: cover;
+
+  h1 {
+    margin-top: 8px;
+    margin-bottom: 40px;
+  }
+}
