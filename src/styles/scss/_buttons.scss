@@ -108,18 +108,20 @@ a:not(.btn) {
   transition: all 350ms;
   text-decoration: none;
 
-  &::after {
-    content: "";
-    background-color: currentColor;
-    display: inline-block;
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    transition: transform 500ms;
-    transform: scaleX(0);
-    transform-origin: right;
+  &:not(.link-image) {
+    &::after {
+      content: "";
+      background-color: currentColor;
+      display: inline-block;
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      transition: transform 500ms;
+      transform: scaleX(0);
+      transform-origin: right;
+    }
   }
 
   &:hover {

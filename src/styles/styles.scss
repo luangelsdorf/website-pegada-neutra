@@ -7,6 +7,46 @@
   scroll-behavior: smooth !important;
 }
 
+body {
+  font: var(--body-default);
+  color: var(--light-green);
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  white-space: break-spaces;
+
+  @include mixins.sm {
+    white-space: normal;
+  }
+}
+
+h1 {
+  font: var(--title-display);
+}
+h2 {
+  font: var(--title-lg);
+}
+h3 {
+  font: var(--title-md);
+}
+h4 {
+  font: var(--title-sm);
+}
+h5 {
+  font: var(--title-xs);
+}
+
+small {
+  font: var(--body-sm);
+}
+
 *,
 *::before,
 *::after {

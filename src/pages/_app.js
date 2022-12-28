@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap-grid.min.css';
 import '../styles/styles.scss';
 import { Manrope } from '@next/font/google';
 
@@ -17,6 +17,7 @@ export default function App({ Component, pageProps }) {
 
       <style jsx global>{`
         html {
+          --ff: ${manrope.style.fontFamily};
           font-family: ${manrope.style.fontFamily};
         }
       `}

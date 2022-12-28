@@ -2,13 +2,14 @@
 
 :root {
   /* Heading Styles */
-  --display: 700 80px/88px;
-  --heading-lg: 700 64px/80px;
-  --heading-md: 700 56px/72px;
-  --heading-sm: 700 48px/64px;
+  --display: 700 80px/88px var(--ff);
+  --heading-lg: 700 64px/80px var(--ff);
+  --heading-md: 700 56px/72px var(--ff);
+  --heading-sm: 700 48px/64px var(--ff);
+  --heading-sm: 700 40px/56px var(--ff);
 
   /* Body Styles */
-  --body-lg: 500 24px/40px;
-  --body-default: 500 20px/32px;
-  --body-sm: 500 16px/28px;
+  --body-lg: 500 24px/40px var(--ff);
+  --body-default: 500 20px/32px var(--ff);
+  --body-sm: 500 16px/28px var(--ff);
 }
