@@ -1,0 +1,68 @@
+.section {
+  padding: 120px 0;
+  background-color: rgb(var(--light-green));
+
+  .sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+
+    p {
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      color: rgb(var(--dark-green));
+    }
+
+    a {
+      align-self: flex-end;
+    }
+  }
+
+  :global(.swiper-slide) {
+    width: 41.66666667%;
+  }
+}
+
+.card {
+  padding: 48px 56px;
+  height: 100%;
+  border-radius: 16px;
+  border: 2px solid rgb(var(--dark-green), 0.2);
+  background-color: rgb(var(--light-green));
+  color: rgb(var(--dark-green));
+
+  &,
+  figure {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+
+    img {
+      &:first-child {
+        width: auto;
+        max-width: 160px;
+        height: 56px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  figure {
+    font: var(--body-sm);
+
+    blockquote {
+    }
+
+    :first-child {
+      font-weight: 700;
+    }
+  }
+}

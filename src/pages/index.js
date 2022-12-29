@@ -7,6 +7,7 @@ import Header from '../components/layout/Header';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import Solutions from 'src/components/home/Solutions';
+import Testimonials from 'src/components/home/Testimonials';
 
 export default function Home() {
   const style = {
@@ -48,11 +49,12 @@ export default function Home() {
           <AboutUs />
         </div>
         <Solutions />
-        <div style={{height: '600px', backgroundColor: 'rgb(var(--light-green))'}}>
-          {/* <Button href="/sobre" className="dark-green">
+        <Testimonials />
+        {/* <div style={{height: '600px', backgroundColor: 'rgb(var(--light-green))'}}>
+          <Button href="/sobre" className="dark-green">
             dsa
-          </Button> */}
-        </div>
+          </Button>
+        </div> */}
       </main>
     </>
   )
