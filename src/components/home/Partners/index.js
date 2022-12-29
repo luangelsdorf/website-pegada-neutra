@@ -54,7 +54,7 @@ export default function Partners({ content }) {
             data.map(client => (
               <div className="col-6 col-lg-3" key={client.id}>
                 <div className={styles.logo}>
-                  <Image src={`/images/partners/${client.logo}.png`} width={160} height={56} alt="" />
+                  <Image src={`/images/partners/${client.logo}.png`} width={150} height={150} alt="" />
                 </div>
               </div>
             ))
