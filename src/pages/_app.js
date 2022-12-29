@@ -1,8 +1,8 @@
 import Head from 'next/head';
+import 'swiper/css';
 import 'bootstrap/dist/css/bootstrap-grid.min.css';
 import '../styles/styles.scss';
 import { Manrope } from '@next/font/google';
-import 'swiper/css';
 
 const manrope = Manrope({
   display: 'swap',

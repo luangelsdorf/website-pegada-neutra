@@ -83,30 +83,30 @@ export default function Testimonials({ content }) {
             </header>
           </div>
         </div>
+        <Swiper
+          slidesPerView="auto"
+          spaceBetween={24}
+          grabCursor
+          centeredSlides
+          loop
+          speed={1500}
+          modules={[Autoplay, FreeMode]}
+          freeMode
+          autoplay={{
+            delay: 200,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+        >
+          {
+            data.map(card => (
+              <SwiperSlide key={card.id} className="col-12 col-lg-5">
+                <TestimonialCard {...card} />
+              </SwiperSlide>
+            ))
+          }
+        </Swiper>
       </div>
-
-      <Swiper
-        slidesPerView="auto"
-        spaceBetween={24}
-        grabCursor
-        loop
-        speed={1500}
-        modules={[Autoplay, FreeMode]}
-        freeMode
-        autoplay={{
-          delay: 200,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: true,
-        }}
-      >
-        {
-          data.map(card => (
-            <SwiperSlide key={card.id} className="col-5">
-              <TestimonialCard {...card} />
-            </SwiperSlide>
-          ))
-        }
-      </Swiper>
     </section>
   )
 }
