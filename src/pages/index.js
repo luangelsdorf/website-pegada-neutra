@@ -6,6 +6,7 @@ import Banner from 'src/components/home/Banner';
 import Header from '../components/layout/Header';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import Solutions from 'src/components/home/Solutions';
 
 export default function Home() {
   const style = {
@@ -45,10 +46,8 @@ export default function Home() {
         <div id="body" style={style}>
           <AboutUs />
         </div>
-        <div style={{ height: '600px' }} />
-        <div style={{ height: '600px' }} />
-        <div style={{ height: '600px' }} />
-        <div style={{ height: '600px' }} />
+        <Solutions />
+        <div style={{height: '600px', backgroundColor: 'rgb(var(--light-green))'}} />
       </main>
     </>
   )
