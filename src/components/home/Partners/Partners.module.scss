@@ -1,0 +1,34 @@
+.section {
+  padding: 96px 0;
+  background-color: rgb(var(--light-green));
+  text-align: center;
+
+  header {
+    margin-bottom: 72px;
+
+    p {
+      margin: 0 auto;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      color: rgb(var(--dark-green));
+    }
+  }
+
+  & > a {
+    margin-top: 72px;
+  }
+}
+
+.logo {
+  padding: 48px 56px;
+  border: 2px solid rgb(var(--dark-green), 0.2);
+  border-radius: 16px;
+
+  img {
+    object-fit: contain;
+    display: block;
+    margin: auto;
+  }
+}
