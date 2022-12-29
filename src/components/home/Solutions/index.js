@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import styles from './Solutions.module.scss';
-import Card from 'public/images/solution-card.svg';
 import Whats from 'public/images/icons/Whatsapp.svg';
+import Image from 'next/image';
+import Link from 'next/link';
+import ArrowRight from 'public/images/icons/ArrowRight.svg';
 
 export default function Solutions({ content }) {
 
@@ -27,33 +29,49 @@ export default function Solutions({ content }) {
     });
   }, []);
 
+  const cards = [
+    {
+      id: 1,
+      icon: 'Recycle',
+      title: 'Créditos de Reciclagem',
+      text: 'Oferecemos a compensação ambiental através dos créditos de reciclagem.',
+    },
+    {
+      id: 2,
+      icon: 'Carbon',
+      title: 'Créditos de Carbono',
+      text: 'Créditos de carbono provenientes de energia renovável e reflorestamento.',
+    },
+    {
+      id: 3,
+      icon: 'World',
+      title: 'Ações Sócio-Ambientais',
+      text: 'Participe a projetos de conscientização e limpeza do meio ambiente.',
+    },
+    {
+      id: 4,
+      icon: 'Environmental',
+      title: 'Soluções Customizadas',
+      text: 'Cada empresa é única, nada mais natural que sua solução seja também.',
+    },
+  ]
+
+  const Card = ({ icon, title, text }) => (
+    <article className={styles.card}>
+      <Image width={80} height={80} src={`/images/icons/brand/${icon}.svg`} alt="" />
+      <h3>{title}</h3>
+      <p>{text}</p>
+      <Link href="#">Saiba Mais <ArrowRight /></Link>
+    </article>
+  )
+
   return (
     <section className={styles.section}>
-      {/* <div className="container">
-        <div className="row">
-          <div className="col-12 col-lg-11 offset-lg-1">
-            <div className={styles.spaceHolder}>
-              <div className={styles.sticky}>
-                <div className={styles.horizontal}>
-                  <section className={styles.cards}>
-                    <article className={styles.sampleCard}></article>
-                    <article className={styles.sampleCard}></article>
-                    <article className={styles.sampleCard}></article>
-                    <article className={styles.sampleCard}></article>
-                    <article className={styles.sampleCard}></article>
-                  </section>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
       <div className="container">
         <div className={styles.spaceHolder}>
           <div className={styles.sticky}>
             <div className={styles.horizontal}>
-              <div className="row" style={{ flexWrap: 'nowrap', height: '100%' }}>
+              <div className="row" style={{ flexWrap: 'nowrap', height: '100%', width: '100vw' }}>
                 <div className="col-12 col-lg-4 offset-lg-1">
                   <div className={styles.firstPart}>
                     <header>
@@ -65,9 +83,9 @@ export default function Solutions({ content }) {
                 </div>
                 <div className="col-1" />
                 {
-                  [0, 1, 2, 3].map(card => (
-                    <div className="col-5" key={card}>
-                      <Card />
+                  cards.map(card => (
+                    <div className="col-5 d-flex align-items-center" key={card.id}>
+                      <Card {...card} />
                     </div>
                   ))
                 }

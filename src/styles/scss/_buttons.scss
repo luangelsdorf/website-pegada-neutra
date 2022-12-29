@@ -117,6 +117,7 @@ a:not(.btn) {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  width: max-content;
   position: relative;
   transition: all 350ms;
   text-decoration: none;
