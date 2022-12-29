@@ -6,7 +6,7 @@ import Image from 'next/image';
 export default function Banner({ content }) {
   return (
     <section className={styles.banner}>
-      <Image fill src="/images/banner-home.webp" alt="" />
+      <Image fill src="/images/banner-home.webp" alt="" quality={100} />
       <div className="container">
         <div className={styles.bannerContent}>
           <p className="overline large">Conheça o Selo Pegada Neutra®</p>
