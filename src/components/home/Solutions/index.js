@@ -56,8 +56,8 @@ export default function Solutions({ content }) {
     },
   ]
 
-  const Card = ({ icon, title, text }) => (
-    <article className={styles.card}>
+  const Card = ({ icon, title, text, className, ...rest }) => (
+    <article className={`${styles.card} ${className ?? ''}`} {...rest}>
       <Image width={80} height={80} src={`/images/icons/brand/${icon}.svg`} alt="" />
       <h3>{title}</h3>
       <p>{text}</p>
@@ -72,7 +72,7 @@ export default function Solutions({ content }) {
           <div className={styles.sticky}>
             <div className={styles.horizontal}>
               <div className="row" style={{ flexWrap: 'nowrap', height: '100%', width: '100vw' }}>
-                <div className="col-12 col-lg-4 offset-lg-1">
+                <div className="col-12 col-lg-4 col-xxl-3 offset-lg-1">
                   <div className={styles.firstPart}>
                     <header>
                       <p className="overline dark">Faça a Diferença</p>
@@ -83,13 +83,13 @@ export default function Solutions({ content }) {
                 </div>
                 <div className="col-1" />
                 {
-                  cards.map(card => (
-                    <div className="col-5 d-flex align-items-center" key={card.id}>
-                      <Card {...card} />
+                  cards.map((card, index) => (
+                    <div className="co-12 col-lg-5 col-xxl-4 d-flex align-items-center" key={card.id}>
+                      <Card {...card} className={`${index === 0 ? styles.first : ''} ${index === cards.length - 1 ? styles.last : ''}`} />
                     </div>
                   ))
                 }
-                <div className="col-12 col-lg-4 offset-lg-1">
+                <div className="col-12 col-lg-5 col-xxl-4">
                   <div className={styles.lastPart}>
                     <header>
                       <p className="overline dark">Se Interessou?</p>

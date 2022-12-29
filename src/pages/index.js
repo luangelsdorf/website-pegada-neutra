@@ -7,6 +7,7 @@ import Header from '../components/layout/Header';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import Solutions from 'src/components/home/Solutions';
+import Button from 'src/components/common/Button';
 
 export default function Home() {
   const style = {
@@ -14,7 +15,8 @@ export default function Home() {
     marginTop: '-120px',
     paddingTop: '120px',
     backgroundColor: 'rgb(var(--light-green))',
-    borderRadius: '16px',
+    borderTopLeftRadius: '16px',
+    borderTopRightRadius: '16px',
     transform: 'scale(0.9)',
   }
 
@@ -47,7 +49,11 @@ export default function Home() {
           <AboutUs />
         </div>
         <Solutions />
-        <div style={{height: '600px', backgroundColor: 'rgb(var(--light-green))'}} />
+        <div style={{height: '600px', backgroundColor: 'rgb(var(--light-green))'}}>
+          {/* <Button href="/sobre" className="dark-green">
+            dsa
+          </Button> */}
+        </div>
       </main>
     </>
   )
