@@ -5,8 +5,6 @@ $colors: (
   "dark": #18332f,
 );
 
-
-
 @mixin filled-button {
   position: relative;
   z-index: 1;
@@ -113,7 +111,8 @@ $colors: (
   }
 }
 
-a:not(.btn) {
+a:not(.btn),
+[role="button"] {
   color: rgb(var(--phthalo-green));
   cursor: pointer;
   display: inline-flex;

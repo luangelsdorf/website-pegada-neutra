@@ -25,7 +25,8 @@ main {
   background-image: linear-gradient(90deg, rgba(8, 37, 23, 0.6) 0%, rgba(8, 37, 23, 0) 39.58%);
 }
 
-figure, blockquote {
+figure,
+blockquote {
   margin: 0;
 }
 
@@ -36,6 +37,11 @@ address {
 img,
 svg {
   vertical-align: middle;
+}
+
+img {
+  object-fit: cover;
+  object-position: center;
 }
 
 ul,
