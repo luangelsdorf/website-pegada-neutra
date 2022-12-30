@@ -146,3 +146,8 @@ a:not(.btn),
     }
   }
 }
+
+button {
+  cursor: pointer;
+  transition: all 350ms;
+}

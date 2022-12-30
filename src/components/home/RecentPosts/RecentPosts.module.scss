@@ -1,0 +1,57 @@
+.section {
+  padding-top: 96px;
+  padding-bottom: 120px;
+  background-color: rgb(var(--dark-green));
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 72px;
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    .controls {
+      align-self: flex-end;
+      display: flex;
+      gap: 4px;
+      padding: 8px;
+      border-radius: 56px;
+      border: 2px solid rgb(var(--light-green));
+
+      button {
+        border: 0;
+        height: 40px;
+        width: 40px;
+        border-radius: 56px;
+
+        &:first-child {
+          color: rgb(var(--light-green));
+          background-color: transparent;
+
+          &:hover {
+            background-color: rgb(var(--soft-dark-green));
+          }
+
+          svg {
+            transform: rotateY(180deg);
+          }
+        }
+
+        &:last-child {
+          color: rgb(var(--dark-green));
+        }
+      }
+    }
+  }
+}
+
+.postList {
+  display: flex;
+  flex-wrap: nowrap;
+
+  .item {
+    width: 448px;
+  }
+}

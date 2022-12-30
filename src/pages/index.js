@@ -9,6 +9,7 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import Solutions from 'src/components/home/Solutions';
 import Testimonials from 'src/components/home/Testimonials';
 import Partners from 'src/components/home/Partners';
+import RecentPosts from 'src/components/home/RecentPosts';
 
 export default function Home() {
   const style = {
@@ -52,6 +53,7 @@ export default function Home() {
         <Solutions />
         <Testimonials />
         <Partners />
+        <RecentPosts />
         {/* <div style={{height: '600px', backgroundColor: 'rgb(var(--light-green))'}}>
           <Button href="/sobre" className="dark-green">
             dsa
