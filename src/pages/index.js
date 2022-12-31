@@ -10,26 +10,33 @@ import Solutions from 'src/components/home/Solutions';
 import Testimonials from 'src/components/home/Testimonials';
 import Partners from 'src/components/home/Partners';
 import RecentPosts from 'src/components/home/RecentPosts';
+import Footer from 'src/components/layout/Footer';
 
 export default function Home() {
   const style = {
     position: 'relative',
-    marginTop: '-120px',
+    marginTop: '-10%',
     paddingTop: '120px',
     backgroundColor: 'rgb(var(--light-green))',
     borderTopLeftRadius: '16px',
     borderTopRightRadius: '16px',
-    transform: 'scale(0.9)',
-  }
+  };
 
   useEffect(() => {
+    const containerWidth = document.querySelector('#body .container').getBoundingClientRect().width - 24;
+    const vw = window.innerWidth;
+    const initialScale = containerWidth / vw;
+    document.getElementById('body').style.transform = `scale(${initialScale})`;
+
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.to('#body', {
       scrollTrigger: {
+        markers: true,
         trigger: '#body',
         scrub: 0.6,
-        end: 'top 20%',
+        start: 'top 85%',
+        end: 'top 15%',
       },
       scale: 1,
       duration: 1,
@@ -54,6 +61,7 @@ export default function Home() {
         <Testimonials />
         <Partners />
         <RecentPosts />
+        <Footer light />
         {/* <div style={{height: '600px', backgroundColor: 'rgb(var(--light-green))'}}>
           <Button href="/sobre" className="dark-green">
             dsa

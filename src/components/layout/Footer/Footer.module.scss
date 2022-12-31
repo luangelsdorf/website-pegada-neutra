@@ -1,0 +1,135 @@
+.section {
+  padding-top: 96px;
+  background-color: rgb(var(--dark-green));
+
+  &.light {
+    background-color: rgb(var(--light-green));
+
+    .about {
+      svg path:not(:last-child) {
+        fill: rgb(var(--dark-green));
+      }
+      p {
+        color: rgb(var(--dark-green));
+      }
+      a {
+        color: rgb(var(--greenery));
+      }
+    }
+
+    .solutions {
+      h2 {
+        color: rgb(var(--greenery));
+      }
+      a {
+        color: rgb(var(--dark-green));
+      }
+    }
+
+    .contact {
+      & > a {
+        color: rgb(var(--greenery));
+        border-color: rgb(var(--greenery));
+      }
+      ul a {
+        color: rgb(var(--dark-green));
+      }
+    }
+
+    .copyright {
+      border-color: rgb(var(--greenery));
+      & > div:first-child {
+        path {
+          fill: rgb(var(--greenery));
+        }
+      }
+      p {
+        color: rgb(var(--soft-dark-green));
+      }
+      & > div:last-child {
+        path {
+          fill: rgb(var(--soft-dark-green));
+        }
+      }
+    }
+  }
+}
+
+.about {
+  svg {
+    width: 240px;
+    height: 96px;
+    margin-bottom: 40px;
+  }
+
+  p {
+    font: var(--body-sm);
+    margin-bottom: 24px;
+  }
+
+  a {
+    font: var(--body-sm);
+  }
+}
+
+.solutions {
+  padding-top: 32px;
+
+  h2 {
+    font: var(--body-lg-bold);
+    margin-bottom: 16px;
+  }
+
+  li {
+    line-height: 48px;
+  }
+}
+
+.contact {
+  padding-top: 32px;
+
+  & > a {
+    margin-bottom: 40px;
+  }
+
+  ul {
+    li {
+      font: var(--body-sm);
+      line-height: 36px;
+
+      a {
+        color: rgb(var(--light-green));
+      }
+    }
+  }
+}
+
+.copyright {
+  height: 96px;
+  margin-top: 120px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgb(var(--soft-dark-green));
+
+  & > div:first-child {
+    display: flex;
+    align-items: center;
+    flex: 1;
+  }
+
+  p {
+    font: var(--body-detail);
+    color: rgb(var(--soft-phthalo-green));
+    margin: auto;
+  }
+
+  & > div:last-child {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    a {
+      display: block;
+      padding: 16px;
+    }
+  }
+}

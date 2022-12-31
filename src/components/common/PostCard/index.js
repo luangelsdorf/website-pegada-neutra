@@ -14,9 +14,9 @@ export default function PostCard({ title, body, cover, negative, small }) {
         <Link className={`link-image ${styles.tag}`} href="#categoria">Categoria</Link>
       </div>
       <div className={styles.cardBody}>
-        <h2>
+        <h3>
           <Link href="#post" className="link-image">{title}</Link>
-        </h2>
+        </h3>
         <p>{body}</p>
         <Link href="#post" className="small">Ler Mais <ArrowRight /></Link>
       </div>

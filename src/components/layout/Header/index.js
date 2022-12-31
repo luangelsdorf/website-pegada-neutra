@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import styles from './Header.module.scss';
-import Logo from 'public/images/logo-horizontal.svg';
+import Logo from 'public/images/logo-line.svg';
 
 export default function Header({ content }) {
   return (
