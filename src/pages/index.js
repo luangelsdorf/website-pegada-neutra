@@ -27,20 +27,26 @@ export default function Home() {
     const vw = window.innerWidth;
     const initialScale = containerWidth / vw;
     document.getElementById('body').style.transform = `scale(${initialScale})`;
-
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.to('#body', {
-      scrollTrigger: {
-        trigger: '#body',
-        scrub: 0.6,
-        start: 'top 85%',
-        end: 'top 15%',
-      },
-      scale: 1,
-      duration: 1,
-    })
   }, []);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const ctx = gsap.context(() => {
+      gsap.to('#body', {
+        scrollTrigger: {
+          markers: true,
+          trigger: '#body',
+          scrub: 0.6,
+          start: 'top 85%',
+          end: 'top 15%',
+        },
+        scale: 1,
+        duration: 1,
+      });
+    });
+
+    return () => ctx.revert();
+  }, [])
 
   return (
     <>
