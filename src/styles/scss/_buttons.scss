@@ -162,7 +162,7 @@ a:not(.btn),
       background-color: rgb(var(--phthalo-green));
       display: inline-block;
       position: absolute;
-      bottom: -8px;
+      bottom: 0;
       left: 0;
       width: 100%;
       height: 2px;
@@ -200,7 +200,7 @@ a:not(.btn),
     font: var(--body-lg);
 
     &::after {
-      bottom: -12px;
+      bottom: -8px;
     }
   }
 }
