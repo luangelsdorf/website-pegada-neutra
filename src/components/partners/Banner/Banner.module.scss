@@ -1,0 +1,22 @@
+.banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(var(--dark-green));
+  padding-bottom: 120px;
+  padding-top: calc(120px + 80px);
+  text-align: center;
+
+  & > p {
+    margin: 40px auto;
+    max-width: 600px;
+  }
+
+  .arrow {
+    position: absolute !important;
+    bottom: -28px;
+    height: 56px;
+    width: 56px;
+  }
+}

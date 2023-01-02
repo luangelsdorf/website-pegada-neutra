@@ -60,18 +60,34 @@ small {
   font: var(--body-sm);
 }
 
+strong {
+  font: var(--body-default-bold);
+}
+
 .overline {
-  display: flex;
+  font: var(--body-default-bold);
+  display: inline-block;
   width: max-content;
-  align-items: center;
   margin-bottom: 24px;
-  font-weight: 700 !important;
+
+  &.light,
+  &.dark {
+    border-radius: 56px;
+    padding: 4px 12px;
+
+    &.small {
+      padding: 4px 12px;
+    }
+    &.large {
+      padding: 6px 16px;
+    }
+  }
 
   &.small {
-    font: var(--body-sm);
+    font: var(--body-sm-bold);
   }
   &.large {
-    font: var(--body-lg);
+    font: var(--body-lg-bold);
   }
 
   &.light {
@@ -81,21 +97,5 @@ small {
   &.dark {
     background-color: rgb(var(--soft-dark-green));
     color: rgb(var(--phthalo-green));
-  }
-
-  &.light,
-  &.dark {
-    border-radius: 56px;
-    height: 40px;
-    padding: 0 12px;
-
-    .small {
-      height: 36px;
-      padding: 0 12px;
-    }
-    .large {
-      height: 52px;
-      padding: 0 16px;
-    }
   }
 }

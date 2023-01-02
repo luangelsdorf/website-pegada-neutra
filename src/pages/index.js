@@ -65,13 +65,8 @@ export default function Home() {
         <Testimonials />
         <Partners />
         <RecentPosts />
-        <Footer light />
-        {/* <div style={{height: '600px', backgroundColor: 'rgb(var(--light-green))'}}>
-          <Button href="/sobre" className="dark-green">
-            dsa
-          </Button>
-        </div> */}
       </main>
+      <Footer light />
     </>
   )
 }
