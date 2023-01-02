@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Banner.module.scss';
 import ArrowRight from 'public/images/icons/ArrowRight.svg';
 import Image from 'next/image';
+import Button from 'src/components/common/Button';
 
 export default function Banner({ content }) {
   return (
@@ -11,9 +12,7 @@ export default function Banner({ content }) {
         <div className={styles.bannerContent}>
           <p className="overline large">Conheça o Selo Pegada Neutra®</p>
           <h1>{'Neutralize\nsua Pegada'}</h1>
-          <a className="btn">
-            <span>Neutralize seu Impacto</span> <ArrowRight />
-          </a>
+          <Button className="large" iconRight={<ArrowRight />}>Neutralize seu Impacto</Button>
         </div>
       </div>
     </section>
