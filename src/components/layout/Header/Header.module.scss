@@ -5,6 +5,7 @@
   z-index: 10000;
 
   ul {
+    font: var(--body-sm);
     display: flex;
     justify-content: space-around;
     height: 80px;
@@ -15,17 +16,21 @@
     li {
       display: inline-flex;
       align-items: center;
+    }
+  }
 
-      &:last-child {
-        a {
-          font-weight: 700;
+  &.light {
+    ul {
+      background-color: rgb(var(--light-green));
+      /* a {
+        &::after {
+          background-color: rgb(var(--greenery));
         }
-      }
+      } */
+    }
 
-      a {
-        color: rgb(var(--light-green));
-        font: var(--body-sm);
-      }
+    svg path:not(:last-child) {
+      fill: rgb(var(--dark-green));
     }
   }
 }
