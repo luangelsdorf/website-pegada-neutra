@@ -22,7 +22,7 @@ export default function Button({
   );
 
   const baseProps = {
-    className: `${!link ? 'btn' : ''} ${className ?? ''}`,
+    className: `${!link ? 'btn' : ''}${className ? ' ' + className : ''}`,
   };
 
   if (btnElement) {

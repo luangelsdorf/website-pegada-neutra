@@ -34,7 +34,6 @@ export default function Home() {
     const ctx = gsap.context(() => {
       gsap.to('#body', {
         scrollTrigger: {
-          markers: true,
           trigger: '#body',
           scrub: 0.6,
           start: 'top 85%',

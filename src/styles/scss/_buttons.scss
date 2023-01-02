@@ -1,8 +1,24 @@
 $colors: (
-  "greenry": #84bd00,
-  "phthalo": #c2e189,
-  "light": #e6eadc,
-  "dark": #18332f,
+  "greenery": (
+    "bg": #84bd00,
+    "text": #e6eadc,
+    "line": #c2e189,
+  ),
+  "phthalo": (
+    "bg": #c2e189,
+    "text": #18332f,
+    "line": #84bd00,
+  ),
+  "light": (
+    "bg": #e6eadc,
+    "text": #18332f,
+    "line": #84bd00,
+  ),
+  "dark": (
+    "bg": #18332f,
+    "text": #e6eadc,
+    "line": #c2e189,
+  ),
 );
 
 @mixin filled-button {
@@ -55,10 +71,7 @@ $colors: (
   text-decoration: none;
   transition: all 350ms;
 
-  &:hover {
-    cursor: pointer;
-  }
-
+  // Sizes
   &.small {
     font: var(--body-sm);
     font-weight: 700;
@@ -70,51 +83,38 @@ $colors: (
     height: 56px;
   }
 
-  &.greenery {
-    background-color: rgb(var(--greenery));
-    color: rgb(var(--light-green));
-    &.outline {
-      background-color: transparent;
-      border: 2px solid rgb(var(--greenery));
-      color: rgb(var(--greenery));
-    }
-  }
+  // Colors
+  @each $name, $color in $colors {
+    &.#{$name} {
+      background-color: #{map-get($color, "bg")};
+      color: #{map-get($color, "text")};
 
-  &.phthalo {
-    background-color: rgb(var(--phthalo-green));
-    color: rgb(var(--dark-green));
-    &.outline {
-      background-color: transparent;
-      border: 2px solid rgb(var(--phthalo-green));
-      color: rgb(var(--phthalo-green));
-    }
-  }
+      &::after {
+        background-color: #{map-get($color, "bg")};
+      }
 
-  &.light-green {
-    background-color: rgb(var(--light-green));
-    color: rgb(var(--dark-green));
-    &.outline {
-      background-color: transparent;
-      border: 2px solid rgb(var(--light-green));
-      color: rgb(var(--light-green));
-    }
-  }
+      &.outline {
+        background-color: transparent;
+        border: 2px solid #{map-get($color, "bg")};
+        color: #{map-get($color, "bg")};
 
-  &.dark-green {
-    background-color: rgb(var(--dark-green));
-    color: rgb(var(--light-green));
-    &.outline {
-      background-color: transparent;
-      border: 2px solid rgb(var(--dark-green));
-      color: rgb(var(--dark-green));
+        &:hover {
+          background-color: #{map-get($color, "bg")}1a;
+        }
+
+        &::after {
+          background-color: none;
+        }
+      }
     }
   }
 }
 
 a:not(.btn),
 [role="button"] {
-  color: rgb(var(--phthalo-green));
   cursor: pointer;
+  font: inherit;
+  color: rgb(var(--phthalo-green));
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -126,7 +126,7 @@ a:not(.btn),
   &:not(.link-image) {
     &::after {
       content: "";
-      background-color: currentColor;
+      background-color: rgb(var(--phthalo-green));
       display: inline-block;
       position: absolute;
       bottom: -8px;
@@ -144,6 +144,23 @@ a:not(.btn),
       transform: scaleX(1);
       transform-origin: left;
     }
+  }
+
+  @each $name, $color in $colors {
+    &.#{$name} {
+      color: #{map-get($color, "bg")};
+
+      &::after {
+        background-color: #{map-get($color, "line")};
+      }
+    }
+  }
+
+  &.small {
+    font: var(--body-sm);
+  }
+  &.large {
+    font: var(--body-lg);
   }
 }
 
