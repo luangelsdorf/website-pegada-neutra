@@ -4,6 +4,7 @@ import Whats from 'public/images/icons/Whatsapp.svg';
 import Image from 'next/image';
 import Link from 'next/link';
 import ArrowRight from 'public/images/icons/ArrowRight.svg';
+import Button from 'src/components/common/Button';
 
 export default function Solutions({ content }) {
 
@@ -61,7 +62,7 @@ export default function Solutions({ content }) {
       <Image width={80} height={80} src={`/images/icons/brand/${icon}.svg`} alt="" />
       <h3>{title}</h3>
       <p>{text}</p>
-      <Link href="#">Saiba Mais <ArrowRight /></Link>
+      <Button link className="dark" href="#saiba-mais" RightIcon={ArrowRight}>Saiba Mais</Button>
     </article>
   )
 
@@ -95,9 +96,7 @@ export default function Solutions({ content }) {
                       <p className="overline dark">Se Interessou?</p>
                       <h2>{'Junte-se a essa \ntransformação'}</h2>
                       <p>Vamos lhe ajudar a reduzir seu impacto sobre o meio ambiente.</p>
-                      <a href="#" className="btn">
-                        <Whats /> <span>Fale Conosco</span>
-                      </a>
+                      <Button href="#whatsapp-chat" LeftIcon={Whats}>Fale Conosco</Button>
                     </header>
                   </div>
                 </div>

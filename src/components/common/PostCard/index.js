@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import styles from './PostCard.module.scss';
+import Button from '../Button';
 
 export default function PostCard({ title, body, cover, negative, small }) {
   return (
@@ -11,14 +12,14 @@ export default function PostCard({ title, body, cover, negative, small }) {
         <Link title="Ler Mais" href="#post" className="link-image">
           <Image src={cover} fill alt="" />
         </Link>
-        <Link className={`link-image ${styles.tag}`} href="#categoria">Categoria</Link>
+        <Button tag className={`${styles.tag} ${negative ? 'dark' : 'light'}`} href="#categoria">Categoria</Button>
       </div>
       <div className={styles.cardBody}>
         <h3>
           <Link href="#post" className="link-image">{title}</Link>
         </h3>
         <p>{body}</p>
-        <Link href="#post" className="small">Ler Mais <ArrowRight /></Link>
+        <Button link href="#post" className="light" RightIcon={ArrowRight}>Ler Mais</Button>
       </div>
     </article>
   )

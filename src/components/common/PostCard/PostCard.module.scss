@@ -25,15 +25,10 @@
     }
 
     .tag {
-      font: var(--body-detail);
       position: absolute;
       z-index: 3;
-      padding: 4px 12px;
-      border-radius: 16px;
       top: 24px;
       right: 24px;
-      color: rgb(var(--greenery));
-      background-color: rgb(var(--light-green));
     }
 
     img {
@@ -62,11 +57,6 @@
   }
 
   &.negative {
-    .tag {
-      color: rgb(var(--phthalo-green));
-      background-color: rgb(var(--dark-green));
-    }
-
     .cardBody {
       a {
         color: rgb(var(--dark-green));
@@ -86,6 +76,7 @@
 }
 
 .cardBody {
+  font: var(--body-sm);
   margin: 0 32px;
   margin-top: 32px;
   display: flex;
@@ -93,26 +84,11 @@
   gap: 16px;
   transition: transform 350ms;
 
-  & > a {
-    font: var(--body-sm);
-  }
-
   h3 {
-    font: var(--body-lg);
-    font-weight: 700;
-  }
-
-  a {
-    color: rgb(var(--light-green));
-    display: revert;
-  }
-
-  & > a {
-    font: var(--body-sm);
+    font: var(--body-lg-bold);
   }
 
   p {
-    font: var(--body-sm);
     color: rgb(var(--soft-phthalo-green));
   }
 }

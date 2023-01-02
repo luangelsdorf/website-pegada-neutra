@@ -21,6 +21,21 @@ $colors: (
   ),
 );
 
+$tag-colors: (
+  "leaf": (
+    "bg": #00b373,
+    "text": #e6eadc,
+  ),
+  "dark": (
+    "bg": #18332f,
+    "text": #c2e189,
+  ),
+  "light": (
+    "bg": #e6eadc,
+    "text": #84bd00,
+  ),
+);
+
 @mixin filled-button {
   position: relative;
   z-index: 1;
@@ -52,7 +67,7 @@ $colors: (
 }
 
 .btn {
-  &:not(.outline) {
+  &:not(.outline):not(.tag) {
     @include filled-button;
   }
 
@@ -107,6 +122,25 @@ $colors: (
       }
     }
   }
+
+  // Tags
+  &.tag {
+    font: var(--body-detail-bold);
+    height: auto;
+    padding: 4px 12px;
+
+    @each $name, $color in $tag-colors {
+      &.#{$name} {
+        background-color: #{map-get($color, "bg")};
+        color: #{map-get($color, "text")};
+
+        &:hover {
+          background-color: #{map-get($color, "text")};
+          color: #{map-get($color, "bg")};
+        }
+      }
+    }
+  }
 }
 
 a:not(.btn),
@@ -157,9 +191,17 @@ a:not(.btn),
 
   &.small {
     font: var(--body-sm);
+
+    &::after {
+      bottom: -4px;
+    }
   }
   &.large {
     font: var(--body-lg);
+
+    &::after {
+      bottom: -12px;
+    }
   }
 }
 

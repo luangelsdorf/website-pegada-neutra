@@ -5,24 +5,25 @@ import styles from './Button.module.scss';
 export default function Button({
   children,
   link = false,
+  tag = false,
   btnElement = false,
   nativeLink = false,
   href = '#',
   className,
-  iconRight,
-  iconLeft,
+  LeftIcon,
+  RightIcon,
 }) {
 
   const Children = () => (
     <>
-      {iconLeft}
+      {LeftIcon && <LeftIcon />}
       {children}
-      {iconRight}
+      {RightIcon && <RightIcon />}
     </>
   );
 
   const baseProps = {
-    className: `${!link ? 'btn' : ''}${className ? ' ' + className : ''}`,
+    className: `${link ? '' : 'btn'}${tag ? ' tag' : ''}${className ? ' ' + className : ''}`,
   };
 
   if (btnElement) {

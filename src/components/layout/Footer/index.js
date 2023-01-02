@@ -6,6 +6,9 @@ import Linkedin from 'public/images/icons/Linkedin.svg';
 import Facebook from 'public/images/icons/Facebook.svg';
 import Instagram from 'public/images/icons/Instagram.svg';
 import Link from 'next/link';
+import Button from 'src/components/common/Button';
+import ArrowRight from 'public/images/icons/ArrowRight.svg';
+import TelephoneFill from 'public/images/icons/TelephoneFill.svg';
 
 export default function Footer({ content, light }) {
   return (
@@ -17,7 +20,7 @@ export default function Footer({ content, light }) {
             <div className={styles.about}>
               <LogoHorizontal />
               <p>A Pegada Neutra® foi criada por recicladores e agentes ambientáis que acreditam que a economia e o meio ambiente podem coexistir em harmonia.</p>
-              <Link href="#sobre-nos">Saiba Mais</Link>
+              <Button link href="#sobre-nos" className={`small ${light ? 'greenery' : 'phthalo'}`} RightIcon={ArrowRight}>Saiba Mais</Button>
             </div>
           </div>
 
@@ -26,16 +29,16 @@ export default function Footer({ content, light }) {
               <h2>Nossas Soluções</h2>
               <ul>
                 <li>
-                  <Link href="#">Créditos de Reciclagem</Link>
+                  <Button link className={`${light ? 'dark' : 'phthalo'}`} href="#">Créditos de Reciclagem</Button>
                 </li>
                 <li>
-                  <Link href="#">Créditos de Carbono</Link>
+                  <Button link className={`${light ? 'dark' : 'phthalo'}`} href="#">Créditos de Carbono</Button>
                 </li>
                 <li>
-                  <Link href="#">Ações Sociombientais</Link>
+                  <Button link className={`${light ? 'dark' : 'phthalo'}`} href="#">Ações Sociombientais</Button>
                 </li>
                 <li>
-                  <Link href="#">Soluções Customizadas</Link>
+                  <Button link className={`${light ? 'dark' : 'phthalo'}`} href="#">Soluções Customizadas</Button>
                 </li>
               </ul>
             </div>
@@ -43,19 +46,19 @@ export default function Footer({ content, light }) {
 
           <div className="col-12 col-lg-3 offset-lg-1">
             <div className={styles.contact}>
-              <Link href="#tel" className="btn outline phthalo small">+55 51 3333.3333</Link>
+              <Button href="#tel" className="outline phthalo small" LeftIcon={TelephoneFill}>+55 51 3333.3333</Button>
               <ul>
                 <li>
-                  <Link href="#">Fale Conosco</Link>
+                  <Button className={`small ${light ? 'dark' : 'light'}`} link href="#">Fale Conosco</Button>
                 </li>
                 <li>
-                  <Link href="#">Perguntas Frequentes</Link>
+                  <Button className={`small ${light ? 'dark' : 'light'}`} link href="#">Perguntas Frequentes</Button>
                 </li>
                 <li>
-                  <Link href="#">Termos e Condições</Link>
+                  <Button className={`small ${light ? 'dark' : 'light'}`} link href="#">Termos e Condições</Button>
                 </li>
                 <li>
-                  <Link href="#">Política de Privacidade</Link>
+                  <Button className={`small ${light ? 'dark' : 'light'}`} link href="#">Política de Privacidade</Button>
                 </li>
               </ul>
             </div>
@@ -70,15 +73,9 @@ export default function Footer({ content, light }) {
           </div>
           <p>Todos os Direitos Reservados © 2022</p>
           <div>
-            <a className="link-image" href="linkedin.com">
-              <Linkedin />
-            </a>
-            <a className="link-image" href="facebook.com">
-              <Facebook />
-            </a>
-            <a className="link-image" href="instagram.com">
-              <Instagram />
-            </a>
+            <Button link className="link-image" LeftIcon={Linkedin} href="linkedin.com" />
+            <Button link className="link-image" LeftIcon={Facebook} href="facebook.com" />
+            <Button link className="link-image" LeftIcon={Instagram} href="instagram.com" />
           </div>
         </div>
       </div>

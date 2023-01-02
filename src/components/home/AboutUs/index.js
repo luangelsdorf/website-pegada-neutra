@@ -2,6 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import styles from './AboutUs.module.scss';
 import PlayCircleFill from 'public/images/icons/PlayCircleFill.svg';
+import Button from 'src/components/common/Button';
 
 export default function AboutUs({ content }) {
   return (
@@ -16,9 +17,7 @@ export default function AboutUs({ content }) {
                   <h2>{'Nossa missão é construir \num mundo mais sustentável!'}</h2>
                   <div>
                     <p>A <strong>Pegada Neutra®</strong> foi criada por recicladores e agentes ambientais que acreditam que a economia e o meio ambiente podem coexistir em harmonia, e que através de soluções simples e econômicas podemos atingir este objetivo.</p>
-                    <Link href="#" className="btn phthalo outline">
-                      <span>Assistir Vídeo</span> <PlayCircleFill />
-                    </Link>
+                    <Button href="#video" className="phthalo outline" RightIcon={PlayCircleFill}>Assistir Vídeo</Button>
                   </div>
                 </div>
               </div>

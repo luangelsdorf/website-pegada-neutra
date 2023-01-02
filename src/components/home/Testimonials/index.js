@@ -5,6 +5,7 @@ import ArrowRight from 'public/images/icons/ArrowRight.svg';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, FreeMode } from 'swiper';
+import Button from 'src/components/common/Button';
 
 export default function Testimonials({ content }) {
 
@@ -79,7 +80,7 @@ export default function Testimonials({ content }) {
                 <p className="overline light">O Que Dizem Sobre Nós</p>
                 <h2>Depoimentos</h2>
               </div>
-              <Link href="#" className="btn outline dark-green large">Ver Mais <ArrowRight /></Link>
+              <Button href="#ver-mais" className="outline dark large" RightIcon={ArrowRight}>Ver Mais</Button>
             </header>
           </div>
         </div>

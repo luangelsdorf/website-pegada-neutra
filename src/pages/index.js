@@ -22,14 +22,14 @@ export default function Home() {
     borderTopRightRadius: '16px',
   };
 
-  useEffect(() => {
+  /* useEffect(() => {
     const containerWidth = document.querySelector('#body .container').getBoundingClientRect().width - 24;
     const vw = window.innerWidth;
     const initialScale = containerWidth / vw;
     document.getElementById('body').style.transform = `scale(${initialScale})`;
-  }, []);
+  }, []); */
 
-  useEffect(() => {
+  /* useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const ctx = gsap.context(() => {
       gsap.to('#body', {
@@ -45,7 +45,7 @@ export default function Home() {
     });
 
     return () => ctx.revert();
-  }, [])
+  }, []); */
 
   return (
     <>

@@ -12,7 +12,7 @@ export default function Banner({ content }) {
         <div className={styles.bannerContent}>
           <p className="overline large">Conheça o Selo Pegada Neutra®</p>
           <h1>{'Neutralize\nsua Pegada'}</h1>
-          <Button className="large" iconRight={<ArrowRight />}>Neutralize seu Impacto</Button>
+          <Button className="large" RightIcon={ArrowRight}>Neutralize seu Impacto</Button>
         </div>
       </div>
     </section>

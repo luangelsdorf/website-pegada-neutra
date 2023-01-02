@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import styles from './Partners.module.scss';
+import Button from 'src/components/common/Button';
 
 export default function Partners({ content }) {
   const data = [
@@ -61,9 +62,7 @@ export default function Partners({ content }) {
           }
         </div>
       </div>
-      <Link href="#" className="btn outline dark-green large">
-        Ver Lista Completa <ArrowRight />
-      </Link>
+      <Button href="#lista-completa" className="outline dark large" RightIcon={ArrowRight}>Ver Lista Completa</Button>
     </section>
   )
 }

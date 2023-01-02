@@ -56,19 +56,16 @@
 }
 
 .about {
-  svg {
+  font: var(--body-sm);
+  
+  & > svg {
     width: 240px;
     height: 96px;
     margin-bottom: 40px;
   }
 
   p {
-    font: var(--body-sm);
     margin-bottom: 24px;
-  }
-
-  a {
-    font: var(--body-sm);
   }
 }
 
