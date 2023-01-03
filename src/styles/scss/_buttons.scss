@@ -151,13 +151,14 @@ a:not(.btn),
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 0;
   width: max-content;
   position: relative;
   transition: all 350ms;
   text-decoration: none;
 
   &:not(.link-image) {
+    padding: 8px 0;
+
     &::after {
       content: "";
       background-color: rgb(var(--phthalo-green));

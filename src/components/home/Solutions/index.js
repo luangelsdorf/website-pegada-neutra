@@ -72,8 +72,8 @@ export default function Solutions({ content }) {
         <div className={styles.spaceHolder}>
           <div className={styles.sticky}>
             <div className={styles.horizontal}>
-              <div className="row" style={{ flexWrap: 'nowrap', height: '100%', width: '100vw' }}>
-                <div className="col-12 col-lg-4 col-xxl-3 offset-lg-1">
+              <div className="row container" style={{ flexWrap: 'nowrap', height: '100%' }}>
+                <div className="col-12 col-lg-4 offset-lg-1">
                   <div className={styles.firstPart}>
                     <header>
                       <p className="overline dark">Faça a Diferença</p>
@@ -85,14 +85,14 @@ export default function Solutions({ content }) {
                 <div className="col-1" />
                 {
                   cards.map((card, index) => (
-                    <div className="co-12 col-lg-5 col-xxl-4 d-flex align-items-center" key={card.id}>
+                    <div className="co-12 col-lg-5 d-flex align-items-center" key={card.id}>
                       <Link href="#saiba-mais" className="link-image">
                         <Card {...card} className={`${index === 0 ? styles.first : ''} ${index === cards.length - 1 ? styles.last : ''}`} />
                       </Link>
                     </div>
                   ))
                 }
-                <div className="col-12 col-lg-5 col-xxl-4">
+                <div className="col-12 col-lg-5">
                   <div className={styles.lastPart}>
                     <header>
                       <p className="overline dark">Se Interessou?</p>
