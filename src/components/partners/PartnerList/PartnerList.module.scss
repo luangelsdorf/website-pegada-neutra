@@ -1,0 +1,9 @@
+.section {
+  margin-top: 48px;
+  margin-bottom: 120px;
+  text-align: center;
+
+  & > button {
+    margin-top: 80px;
+  }
+}

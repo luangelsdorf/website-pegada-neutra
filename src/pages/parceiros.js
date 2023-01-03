@@ -3,6 +3,8 @@ import Head from 'next/head';
 import Header from 'src/components/layout/Header';
 import React from 'react';
 import Filter from 'src/components/partners/Filter';
+import PartnerList from 'src/components/partners/PartnerList';
+import Footer from 'src/components/layout/Footer';
 
 export default function Parceiros() {
   return (
@@ -17,7 +19,9 @@ export default function Parceiros() {
       <main>
         <Banner />
         <Filter />
+        <PartnerList />
       </main>
+      <Footer />
     </>
   )
 }
