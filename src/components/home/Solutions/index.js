@@ -4,6 +4,7 @@ import Whats from '@ui-icons/Whatsapp.svg';
 import Image from 'next/image';
 import ArrowRight from '@ui-icons/ArrowRight.svg';
 import Button from 'src/components/common/Button';
+import Link from 'next/link';
 
 export default function Solutions({ content }) {
 
@@ -61,7 +62,7 @@ export default function Solutions({ content }) {
       <Image width={80} height={80} src={`/images/icons/brand/${icon}.svg`} alt="" />
       <h3>{title}</h3>
       <p>{text}</p>
-      <Button link className="dark" href="#saiba-mais" RightIcon={ArrowRight}>Saiba Mais</Button>
+      <Button divElement link className="dark" href="#saiba-mais" RightIcon={ArrowRight}>Saiba Mais</Button>
     </article>
   )
 
@@ -85,7 +86,9 @@ export default function Solutions({ content }) {
                 {
                   cards.map((card, index) => (
                     <div className="co-12 col-lg-5 col-xxl-4 d-flex align-items-center" key={card.id}>
-                      <Card {...card} className={`${index === 0 ? styles.first : ''} ${index === cards.length - 1 ? styles.last : ''}`} />
+                      <Link href="#saiba-mais" className="link-image">
+                        <Card {...card} className={`${index === 0 ? styles.first : ''} ${index === cards.length - 1 ? styles.last : ''}`} />
+                      </Link>
                     </div>
                   ))
                 }

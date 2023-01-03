@@ -57,7 +57,7 @@
 
 .about {
   font: var(--body-sm);
-  
+
   & > svg {
     width: 240px;
     height: 96px;
@@ -76,10 +76,6 @@
     font: var(--body-lg-bold);
     margin-bottom: 16px;
   }
-
-  li {
-    line-height: 48px;
-  }
 }
 
 .contact {
@@ -92,7 +88,6 @@
   ul {
     li {
       font: var(--body-sm);
-      line-height: 36px;
 
       a {
         color: rgb(var(--light-green));

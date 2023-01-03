@@ -7,6 +7,7 @@ export default function Button({
   link = false,
   tag = false,
   btnElement = false,
+  divElement = false,
   nativeLink = false,
   href = '#',
   className,
@@ -31,6 +32,14 @@ export default function Button({
       <button {...baseProps} type="button">
         <Children />
       </button>
+    )
+  }
+
+  else if (divElement) {
+    return (
+      <div {...baseProps} role="link">
+        <Children />
+      </div>
     )
   }
 
