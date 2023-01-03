@@ -42,7 +42,6 @@ $tag-colors: (
 
   &::after {
     content: "";
-    background-color: rgb(var(--greenery));
     position: absolute;
     z-index: -1;
     height: 100%;
@@ -88,7 +87,6 @@ $tag-colors: (
   // Sizes
   &.small {
     font: var(--body-sm-bold);
-    font-weight: 700;
     padding: 0 16px;
     height: 40px;
   }

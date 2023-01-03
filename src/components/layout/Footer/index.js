@@ -71,7 +71,7 @@ export default function Footer({ content, light }) {
               <Abarca />
             </a>
           </div>
-          <p>Todos os Direitos Reservados © 2022</p>
+          <p>Todos os Direitos Reservados © 2023</p>
           <div>
             <Button link className="link-image" LeftIcon={Linkedin} href="linkedin.com" />
             <Button link className="link-image" LeftIcon={Facebook} href="facebook.com" />

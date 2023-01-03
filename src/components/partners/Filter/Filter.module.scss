@@ -1,0 +1,27 @@
+.filter {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 112px;
+
+  label {
+    cursor: pointer;
+  }
+}
+
+.radio {
+  display: flex;
+  gap: 24px;
+
+  input[type="radio"] {
+    appearance: none;
+    margin: 0;
+
+    &:checked + label {
+      background-color: rgb(var(--dark-green)) !important;
+      border-color: transparent;
+      color: rgb(var(--light-green));
+    }
+  }
+}

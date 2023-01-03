@@ -56,7 +56,7 @@ export default function Home() {
 
       <Header />
 
-      <main>
+      <main className="home">
         <Banner />
         <div id="body" style={style}>
           <AboutUs />
