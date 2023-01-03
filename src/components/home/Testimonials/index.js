@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import styles from './Testimonials.module.scss';
-import ArrowRight from 'public/images/icons/ArrowRight.svg';
+import ArrowRight from '@ui-icons/ArrowRight.svg';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, FreeMode } from 'swiper';

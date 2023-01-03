@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from 'src/components/common/Button';
 import styles from './Filter.module.scss';
-import Search from 'public/images/icons/Search.svg';
+import Search from '@ui-icons/Search.svg';
 
 export default function Filter({ content }) {
   return (

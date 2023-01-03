@@ -1,4 +1,4 @@
-import ArrowRight from 'public/images/icons/ArrowRight.svg';
+import ArrowRight from '@ui-icons/ArrowRight.svg';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';

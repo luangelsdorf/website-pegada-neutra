@@ -1,4 +1,4 @@
-import ArrowRight from 'public/images/icons/ArrowRight.svg';
+import ArrowRight from '@ui-icons/ArrowRight.svg';
 import React, { useEffect, useRef } from 'react';
 import PostCard from 'src/components/common/PostCard';
 import { Swiper, SwiperSlide } from 'swiper/react';

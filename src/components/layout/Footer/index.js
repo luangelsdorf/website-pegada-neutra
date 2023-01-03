@@ -1,14 +1,14 @@
 import React from 'react';
 import styles from './Footer.module.scss';
 import LogoHorizontal from 'public/images/logo-horizontal.svg';
-import Abarca from 'public/images/icons/Abarca.svg';
-import Linkedin from 'public/images/icons/Linkedin.svg';
-import Facebook from 'public/images/icons/Facebook.svg';
-import Instagram from 'public/images/icons/Instagram.svg';
+import Abarca from '@ui-icons/Abarca.svg';
+import Linkedin from '@ui-icons/Linkedin.svg';
+import Facebook from '@ui-icons/Facebook.svg';
+import Instagram from '@ui-icons/Instagram.svg';
 import Link from 'next/link';
 import Button from 'src/components/common/Button';
-import ArrowRight from 'public/images/icons/ArrowRight.svg';
-import TelephoneFill from 'public/images/icons/TelephoneFill.svg';
+import ArrowRight from '@ui-icons/ArrowRight.svg';
+import TelephoneFill from '@ui-icons/TelephoneFill.svg';
 
 export default function Footer({ content, light }) {
   return (

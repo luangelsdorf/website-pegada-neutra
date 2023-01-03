@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from 'src/components/common/Button';
 import styles from './Banner.module.scss';
-import ArrowDown from 'public/images/icons/ArrowDown.svg';
+import ArrowDown from '@ui-icons/ArrowDown.svg';
 
 export default function Banner({ content }) {
   return (

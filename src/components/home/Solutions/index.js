@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import styles from './Solutions.module.scss';
-import Whats from 'public/images/icons/Whatsapp.svg';
+import Whats from '@ui-icons/Whatsapp.svg';
 import Image from 'next/image';
-import Link from 'next/link';
-import ArrowRight from 'public/images/icons/ArrowRight.svg';
+import ArrowRight from '@ui-icons/ArrowRight.svg';
 import Button from 'src/components/common/Button';
 
 export default function Solutions({ content }) {

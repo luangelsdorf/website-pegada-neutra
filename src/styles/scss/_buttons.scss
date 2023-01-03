@@ -43,6 +43,7 @@ $tag-colors: (
   &::after {
     content: "";
     position: absolute;
+    background-color: rgb(var(--greenery));
     z-index: -1;
     height: 100%;
     width: 100%;
@@ -102,7 +103,7 @@ $tag-colors: (
       color: #{map-get($color, "text")};
 
       &::after {
-        background-color: #{map-get($color, "bg")};
+        background-color: #{map-get($color, "bg")} !important;
       }
 
       &.outline {

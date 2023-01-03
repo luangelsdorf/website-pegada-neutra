@@ -15,11 +15,12 @@ import Footer from 'src/components/layout/Footer';
 export default function Home() {
   const style = {
     position: 'relative',
-    marginTop: '-10%',
+    marginTop: '-80px',
     paddingTop: '120px',
     backgroundColor: 'rgb(var(--light-green))',
     borderTopLeftRadius: '16px',
     borderTopRightRadius: '16px',
+    transformOrigin: 'top',
   };
 
   useEffect(() => {
@@ -60,11 +61,11 @@ export default function Home() {
         <Banner />
         <div id="body" style={style}>
           <AboutUs />
+          <Solutions />
+          <Testimonials />
+          <Partners />
+          <RecentPosts />
         </div>
-        <Solutions />
-        <Testimonials />
-        <Partners />
-        <RecentPosts />
       </main>
       <Footer light />
     </>

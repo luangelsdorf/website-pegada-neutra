@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 import Button from 'src/components/common/Button';
 import PartnerLogo from 'src/components/common/PartnerLogo';
-import Plus from 'public/images/icons/PlusLg.svg';
+import Plus from '@ui-icons/PlusLg.svg';
 import styles from './PartnerList.module.scss';
 
 export default function PartnerList({ content }) {

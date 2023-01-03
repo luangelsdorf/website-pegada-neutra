@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Banner.module.scss';
-import ArrowRight from 'public/images/icons/ArrowRight.svg';
+import ArrowRight from '@ui-icons/ArrowRight.svg';
 import Image from 'next/image';
 import Button from 'src/components/common/Button';
 

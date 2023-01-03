@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import styles from './AboutUs.module.scss';
-import PlayCircleFill from 'public/images/icons/PlayCircleFill.svg';
+import PlayCircleFill from '@ui-icons/PlayCircleFill.svg';
 import Button from 'src/components/common/Button';
 
 export default function AboutUs({ content }) {
