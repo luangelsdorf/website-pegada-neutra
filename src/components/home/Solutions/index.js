@@ -73,7 +73,7 @@ export default function Solutions({ content }) {
           <div className={styles.sticky}>
             <div className={styles.horizontal}>
               <div className="row container" style={{ flexWrap: 'nowrap', height: '100%' }}>
-                <div className="col-12 col-lg-4 offset-lg-1">
+                <div className="col-12 col-lg-4">
                   <div className={styles.firstPart}>
                     <header>
                       <p className="overline dark">Faça a Diferença</p>
