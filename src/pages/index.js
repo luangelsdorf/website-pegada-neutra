@@ -36,7 +36,7 @@ export default function Home() {
       gsap.to('#body', {
         scrollTrigger: {
           trigger: '#body',
-          scrub: 0.6,
+          scrub: 0.9,
           start: 'top 85%',
           end: 'top 15%',
         },
