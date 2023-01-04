@@ -1,6 +1,7 @@
 import ArrowRight from '@ui-icons/ArrowRight.svg';
 import React, { useEffect, useRef } from 'react';
 import PostCard from 'src/components/common/PostCard';
+import { Autoplay, FreeMode } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styles from './RecentPosts.module.scss';
 
@@ -74,6 +75,16 @@ export default function RecentPosts({ content }) {
           slidesPerView="auto"
           spaceBetween={60}
           grabCursor
+          centeredSlides
+          loop
+          speed={1500}
+          modules={[Autoplay, FreeMode]}
+          freeMode
+          autoplay={{
+            delay: 200,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
         >
           {
             data.map((post, index) => {
@@ -86,6 +97,7 @@ export default function RecentPosts({ content }) {
             })
           }
         </Swiper>
+
       </div>
     </section>
   )
