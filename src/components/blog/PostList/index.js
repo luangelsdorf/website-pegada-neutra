@@ -56,7 +56,7 @@ export default function PostList({ content }) {
         </div>
 
         <div className={styles.more}>
-          <Button btnElement className="dark small" LeftIcon={Repeat}>Carregar Mais Posts</Button>
+          <Button btnElement className="dark small" LeftIcon={Repeat}>Carregando mais Posts</Button>
         </div>
       </div>
     </section>
