@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap-grid.min.css';
 import '../styles/styles.scss';
 import { Manrope } from '@next/font/google';
 import useSmoothScroll from 'src/hooks/useSmoothScroll';
+import Header from 'src/components/layout/Header';
+import Footer from 'src/components/layout/Footer';
 
 const manrope = Manrope({
   display: 'swap',
@@ -12,7 +14,7 @@ const manrope = Manrope({
 
 export default function App({ Component, pageProps }) {
 
-  /* const scroller = useSmoothScroll(); */
+  const scroller = useSmoothScroll();
 
   return (
     <>
@@ -28,11 +30,16 @@ export default function App({ Component, pageProps }) {
       `}
       </style>
 
+      <Header />
+
       <div id="viewport">
         <div id="content">
           <Component {...pageProps} />
+          <div style={{ height: '592px' }} />
         </div>
       </div>
+
+      <Footer light />
     </>
   )
 }

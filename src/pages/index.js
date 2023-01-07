@@ -55,19 +55,16 @@ export default function Home() {
         <meta name="description" content="Website da Pegada Neutra" />
       </Head>
 
-      <Header />
-
       <main className="home">
         <Banner />
         <div id="body" style={style}>
           <AboutUs />
-          <Solutions />
-          <Testimonials />
-          <Partners />
-          <RecentPosts />
         </div>
+        <Solutions />
+        <Testimonials />
+        <Partners />
+        <RecentPosts />
       </main>
-      <Footer light />
     </>
   )
 }

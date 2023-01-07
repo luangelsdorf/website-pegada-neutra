@@ -1,18 +1,47 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './Footer.module.scss';
 import LogoHorizontal from 'public/images/logo-horizontal.svg';
 import Abarca from '@ui-icons/Abarca.svg';
 import Linkedin from '@ui-icons/Linkedin.svg';
 import Facebook from '@ui-icons/Facebook.svg';
 import Instagram from '@ui-icons/Instagram.svg';
-import Link from 'next/link';
 import Button from 'src/components/common/Button';
 import ArrowRight from '@ui-icons/ArrowRight.svg';
 import TelephoneFill from '@ui-icons/TelephoneFill.svg';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 export default function Footer({ content, light }) {
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const ctx = gsap.context(() => {
+      /* gsap.to('footer', {
+        scrollTrigger: {
+          markers: true,
+          trigger: 'footer',
+          start: 'bottom bottom',
+          end: '+=100% bottom',
+          scrub: true,
+        },
+        yPercent: 100,
+      }) */
+      gsap.set('footer', {yPercent: 200})
+      gsap.to('footer', {
+        scrollTrigger: {
+          scrub: true,
+        },
+        yPercent: 0,
+        ease: "none",
+      });
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <footer className={`${styles.section}${light ? ' ' + styles.light : ''}`}>
+    <footer className={`${styles.section}${light ? ' ' + styles.light : ''}`} /* style={{bottom: '-592px'}} */>
       <div className="container">
         <div className="row">
 

@@ -53,7 +53,7 @@ export default function useSmoothScroll() {
 
     return ScrollTrigger.create({
       animation: gsap.fromTo(content, { y: 0 }, {
-        y: () => document.documentElement.clientHeight - height - 24,
+        y: () => document.documentElement.clientHeight - height/*  - 24 */,
         ease: "none",
         onUpdate: ScrollTrigger.update
       }),
@@ -74,7 +74,7 @@ export default function useSmoothScroll() {
   }
 
   function initScroll() {
-    scrollTo(0, 0);
+    /* scrollTo(0, 0); */
     return smoothScroll("#content", undefined, 1.5);
   }
 
@@ -89,5 +89,5 @@ export default function useSmoothScroll() {
       router.events.off('routeChangeComplete', initScroll);
       init.kill();
     }
-  }, []);
+  }, [initScroll, router.events]);
 }

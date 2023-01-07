@@ -7,20 +7,20 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 export default function Banner({ content }) {
-  /* useEffect(() => {
+  useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+
     const ctx = gsap.context(() => {
       gsap.to('#banner-cover', {
         scrollTrigger: {
-          scrub: true,
+          trigger: '#banner-cover',
+          pin: true,
         },
-        y: () => -ScrollTrigger.maxScroll(window) * 0.65,
-        ease: "none",
       });
     });
 
     return () => ctx.revert();
-  }, []); */
+  }, []);
 
   return (
     <section className={styles.banner}>

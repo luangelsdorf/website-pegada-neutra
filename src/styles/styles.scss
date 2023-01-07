@@ -24,6 +24,12 @@ body {
   background-color: rgb(var(--light-green));
 }
 
+main {
+  background-color: rgb(var(--light-green));
+  position: relative;
+  z-index: -1;
+}
+
 figure,
 blockquote {
   margin: 0;
