@@ -64,6 +64,7 @@ export default function Home() {
         <Testimonials />
         <Partners />
         <RecentPosts />
+        <Footer light />
       </main>
     </>
   )

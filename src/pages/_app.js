@@ -6,6 +6,7 @@ import { Manrope } from '@next/font/google';
 import useSmoothScroll from 'src/hooks/useSmoothScroll';
 import Header from 'src/components/layout/Header';
 import Footer from 'src/components/layout/Footer';
+import { useEffect } from 'react';
 
 const manrope = Manrope({
   display: 'swap',
@@ -15,6 +16,22 @@ const manrope = Manrope({
 export default function App({ Component, pageProps }) {
 
   const scroller = useSmoothScroll();
+
+  useEffect(() => {
+    const callback = entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          console.log('intersecting', entry);
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(callback, { rootMargin: '0px 0px -90% 0px' });
+    const target = document.querySelector('#sobre-nos');
+    observer.observe(target);
+
+    return () => observer.unobserve(target);
+  }, []);
 
   return (
     <>
@@ -35,11 +52,8 @@ export default function App({ Component, pageProps }) {
       <div id="viewport">
         <div id="content">
           <Component {...pageProps} />
-          <div style={{ height: '592px' }} />
         </div>
       </div>
-
-      <Footer light />
     </>
   )
 }

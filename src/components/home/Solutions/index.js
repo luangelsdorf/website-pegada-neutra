@@ -22,7 +22,6 @@ export default function Solutions({ content }) {
           end: self => `top ${-(self.trigger.scrollWidth - innerWidth + 250)}`,
           scrub: true,
           pin: true,
-          anticipatePin: true,
           invalidateOnRefresh: true,
         },
       });

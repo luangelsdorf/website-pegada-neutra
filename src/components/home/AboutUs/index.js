@@ -6,7 +6,7 @@ import Button from 'src/components/common/Button';
 
 export default function AboutUs({ content }) {
   return (
-    <section className={styles.section}>
+    <section className={styles.section} id="sobre-nos">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-10" style={{ position: 'relative' }}>
