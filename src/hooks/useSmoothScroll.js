@@ -1,7 +1,7 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useRouter } from 'next/router';
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 
 export default function useSmoothScroll() {
   function smoothScroll(content, viewport, smoothness) {
@@ -73,14 +73,13 @@ export default function useSmoothScroll() {
     });
   }
 
-  function initScroll() {
-    /* scrollTo(0, 0); */
-    return smoothScroll("#content", undefined, 1.5);
-  }
-
   const router = useRouter();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    function initScroll() {
+      return smoothScroll("#content", undefined, 1.5);
+    }
+    
     gsap.registerPlugin(ScrollTrigger);
     let init = initScroll();
     router.events.on('routeChangeComplete', initScroll);
@@ -89,5 +88,5 @@ export default function useSmoothScroll() {
       router.events.off('routeChangeComplete', initScroll);
       init.kill();
     }
-  }, [initScroll, router.events]);
+  }, [router.events]);
 }
