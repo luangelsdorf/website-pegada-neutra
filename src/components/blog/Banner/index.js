@@ -4,7 +4,7 @@ import styles from './Banner.module.scss';
 
 export default function Banner({ content }) {
   return (
-    <section className={styles.banner}>
+    <section className={styles.banner} data-bg="dark">
       <header>
         <p className="overline large dark">Blog Pegada Neutra®</p>
         <h1>Conhecimento que Transforma</h1>

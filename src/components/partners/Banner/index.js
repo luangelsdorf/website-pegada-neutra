@@ -5,7 +5,7 @@ import ArrowDown from '@ui-icons/ArrowDown.svg';
 
 export default function Banner({ content }) {
   return (
-    <section className={styles.banner}>
+    <section className={styles.banner} data-bg="dark">
       <header>
         <p className="overline large dark">Empresas que Neutralizam</p>
         <h1>Marcas Parceiras</h1>

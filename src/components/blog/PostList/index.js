@@ -39,7 +39,7 @@ export default function PostList({ content }) {
   ];
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} data-bg="light">
       <div className="container">
         <div className={styles.list}>
           {
