@@ -67,7 +67,7 @@ export default function Solutions({ content }) {
   )
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} data-bg="dark">
       <div className="container" style={{ height: '100%' }}>
         <div className="horizontal">
           <div className="row container" style={{ flexWrap: 'nowrap', height: '100%' }}>

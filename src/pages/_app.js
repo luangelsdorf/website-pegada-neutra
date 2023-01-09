@@ -21,16 +21,20 @@ export default function App({ Component, pageProps }) {
     const callback = entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          console.log('intersecting', entry);
+          if (entry.target.dataset.bg === 'dark') {
+            document.querySelector('header').classList.add('light');
+          } else {
+            document.querySelector('header').classList.remove('light');
+          }
         }
       })
     }
 
     const observer = new IntersectionObserver(callback, { rootMargin: '0px 0px -90% 0px' });
-    const target = document.querySelector('#sobre-nos');
-    observer.observe(target);
+    const targets = document.querySelectorAll('[data-bg]');
+    targets.forEach(target => observer.observe(target))
 
-    return () => observer.unobserve(target);
+    return () => targets.forEach(target => observer.unobserve(target));
   }, []);
 
   return (

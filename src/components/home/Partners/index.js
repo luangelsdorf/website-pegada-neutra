@@ -42,7 +42,7 @@ export default function Partners({ content }) {
   ]
 
   return (
-    <section className={styles.section}>
+    <section className={styles.section} data-bg="light">
       <div className="container">
         <div className="row gy-4">
           <div className="col-12">

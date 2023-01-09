@@ -20,7 +20,7 @@ export default function Header({ content, light }) {
   }, []); */
 
   return (
-    <header id="header" className={`${styles.header}${light ? ' ' + styles.light : ''}`}>
+    <header id="header" className={`${styles.header}`}>
       <div className="container">
         <ul className={styles.inner}>
           <li>

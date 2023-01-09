@@ -23,7 +23,7 @@ export default function Banner({ content }) {
   }, []);
 
   return (
-    <section className={styles.banner}>
+    <section className={styles.banner} data-bg="light">
       <div className={styles.cover} id="banner-cover">
         <Image fill src="/images/banner-home.webp" alt="" quality={100} />
         <div className={styles.overlay} />

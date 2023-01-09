@@ -12,6 +12,7 @@
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
     background-color: rgb(var(--dark-green));
+    transition: all 350ms;
 
     li {
       display: inline-flex;
@@ -19,14 +20,15 @@
     }
   }
 
-  &.light {
+  &:global(.light) {
     ul {
       background-color: rgb(var(--light-green));
-      /* a {
+      a:not(:global(.btn)) {
+        color: rgb(var(--dark-green));
         &::after {
-          background-color: rgb(var(--greenery));
+          background-color: rgb(var(--phthalo-green));
         }
-      } */
+      }
     }
 
     svg path:not(:last-child) {

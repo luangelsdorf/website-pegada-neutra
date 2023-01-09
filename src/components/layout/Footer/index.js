@@ -23,7 +23,6 @@ export default function Footer({ content, light }) {
       gsap.to(`.${styles.inner}`, {
         scrollTrigger: {
           trigger: `.${styles.inner}`,
-          markers: true,
           start: `${intensity}% bottom`,
           end: `2${intensity}% bottom`,
           /* pin: true, */
@@ -39,7 +38,7 @@ export default function Footer({ content, light }) {
   }, []);
 
   return (
-    <footer className={`${styles.section}${light ? ' ' + styles.light : ''}`}>
+    <footer className={`${styles.section}${light ? ' ' + styles.light : ''}`} data-bg={light ? 'light' : 'dark'}>
       <div className={styles.inner}>
         <div className="container">
           <div className="row">
