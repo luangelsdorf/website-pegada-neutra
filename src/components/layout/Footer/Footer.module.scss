@@ -4,12 +4,11 @@
   width: 100%;
   background-color: rgb(var(--dark-green));
   position: relative;
-  z-index: -1;
+  z-index: -2;
 
   .inner {
     padding-top: 96px;
     position: relative;
-    outline: 1px solid red;
   }
 
   &.light {
