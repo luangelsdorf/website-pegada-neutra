@@ -6,11 +6,26 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
 
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '1337',
+      },
+      {
+        protocol: 'https',
+        hostname: 'pegadaneutra.com.br',
+        port: '',
+      },
+    ],
+  },
+
   webpack(config) {
     config.resolve.alias = {
       ...config.resolve.alias,
       "@ui-icons": path.resolve(__dirname, 'public/images/icons'),
-      "@band-icons": path.resolve(__dirname, 'public/images/icons/brand'),
+      "@brand-icons": path.resolve(__dirname, 'public/images/icons/brand'),
     }
     config.module.rules.push({
       test: /\.svg$/i,

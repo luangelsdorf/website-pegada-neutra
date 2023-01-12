@@ -1,5 +1,6 @@
-export default async function fetchAPI(endpoint = '', queryString = '') {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/${endpoint}?populate=deep${queryString}`);
+export default async function fetchAPI(endpoint = '', queryString = '', populateDeep = true) {
+  const populate = populateDeep ? 'deep' : '*';
+  const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/${endpoint}?populate=${populate}${queryString}`);
   const result = await response.json();
 
   if (result.data.attributes) {

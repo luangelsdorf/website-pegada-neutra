@@ -11,8 +11,9 @@ import Testimonials from 'src/components/home/Testimonials';
 import Partners from 'src/components/home/Partners';
 import RecentPosts from 'src/components/home/RecentPosts';
 import Footer from 'src/components/layout/Footer';
+import fetchAPI from 'src/utils/fetch';
 
-export default function Home() {
+export default function Home({home, footer}) {
   const style = {
     position: 'relative',
     marginTop: '-80px',
@@ -55,17 +56,30 @@ export default function Home() {
         <meta name="description" content="Website da Pegada Neutra" />
       </Head>
 
-      <main className="home">
-        <Banner />
+      <main>
+        <Banner content={home.banner} />
         <div id="body" style={style}>
-          <AboutUs />
+          <AboutUs content={home.about} />
         </div>
-        <Solutions />
-        <Testimonials />
-        <Partners />
+        <Solutions content={home.solutions} />
+        <Testimonials content={home.testimonials} />
+        <Partners content={home.partners} />
         <RecentPosts />
-        <Footer light />
+        <Footer content={footer} light />
       </main>
     </>
   )
+}
+
+export async function getStaticProps() {
+  const home = await fetchAPI('home');
+  const footer = await fetchAPI('footer');
+
+  return {
+    props: {
+      home,
+      footer,
+    },
+    revalidate: 10,
+  }
 }
