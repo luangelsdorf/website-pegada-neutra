@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { apiURL } from 'src/utils/env';
 
-export default function Img({ data: { attributes: props }, fill, sizes }) {
+export default function Img({ data: { attributes: props }, fill, sizes, ...rest }) {
   return (
     <div>
       <Image
@@ -12,6 +12,7 @@ export default function Img({ data: { attributes: props }, fill, sizes }) {
         alt={props.alernativetext ?? ''}
         fill
         sizes={sizes}
+        {...rest}
       />
     </div>
   )
