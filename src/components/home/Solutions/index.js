@@ -59,7 +59,7 @@ export default function Solutions({ content }) {
 
   const Card = ({ icon, title, text, className, ...rest }) => (
     <article className={`${styles.card} ${className ?? ''}`} {...rest}>
-      <Image width={80} height={80} src={`/images/icons/brand/${icon}.svg`} alt="" />
+      <Image width={70} height={70} src={`/images/icons/brand/${icon}.svg`} alt="" />
       <h3>{title}</h3>
       <p>{text}</p>
       <Button divElement link className="dark" href="#saiba-mais" RightIcon={ArrowRight}>Saiba Mais</Button>

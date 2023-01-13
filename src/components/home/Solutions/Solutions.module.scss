@@ -15,6 +15,11 @@
   background-color: rgb(var(--light-green));
   padding: 64px 56px;
 
+  img {
+    height: 80px;
+    width: 80px;
+  }
+
   h3 {
     color: rgb(var(--dark-green));
     margin: 24px 0;
@@ -78,13 +83,4 @@
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: center;
-}
-
-.sampleCard {
-  position: relative;
-  height: 300px;
-  width: 500px;
-  background-color: #111f30;
-  margin-right: 75px;
-  flex-shrink: 0;
 }
