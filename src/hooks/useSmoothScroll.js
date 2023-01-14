@@ -1,7 +1,7 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useRouter } from 'next/router';
-import { useLayoutEffect } from "react";
+import useLayoutEffect from './useIsomorphicEffect';
 
 export default function useSmoothScroll() {
   function smoothScroll(content, viewport, smoothness) {
