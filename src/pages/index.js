@@ -13,7 +13,7 @@ import RecentPosts from 'src/components/home/RecentPosts';
 import Footer from 'src/components/layout/Footer';
 import fetchAPI from 'src/utils/fetch';
 
-export default function Home({home, footer}) {
+export default function Home({ home, footer }) {
   const style = {
     position: 'relative',
     marginTop: '-80px',
@@ -25,10 +25,11 @@ export default function Home({home, footer}) {
   };
 
   useEffect(() => {
-    const containerWidth = document.querySelector('#body .container').getBoundingClientRect().width - 24;
+    const containerWidth = document.querySelector('#body .container')?.getBoundingClientRect().width - 24;
     const vw = window.innerWidth;
     const initialScale = containerWidth / vw;
-    document.getElementById('body').style.transform = `scale(${initialScale})`;
+    const body = document.getElementById('body');
+    if (body) body.style.transform = `scale(${initialScale})`;
   }, []);
 
   useEffect(() => {

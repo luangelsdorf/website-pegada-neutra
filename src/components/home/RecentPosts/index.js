@@ -57,7 +57,7 @@ export default function RecentPosts({ content }) {
                 <p className="overline dark">Blog Pegada Neutra®</p>
                 <h2>Posts Recentes</h2>
               </div>
-              <div className={styles.controls}>
+              <div className={styles.controls} onMouseEnter={() => swiper.current.swiper.autoplay.stop()} onMouseLeave={() => swiper.current.swiper.autoplay.start()}>
                 <button onClick={handleClick} data-action="slidePrev" type="button" title="Navegar posts">
                   <ArrowRight />
                 </button>

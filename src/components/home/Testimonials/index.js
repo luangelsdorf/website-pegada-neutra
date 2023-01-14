@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import React from 'react';
 import styles from './Testimonials.module.scss';
 import ArrowRight from '@ui-icons/ArrowRight.svg';
@@ -12,7 +11,7 @@ export default function Testimonials({ content }) {
   const TestimonialCard = ({ logo, text, author, role }) => (
     <article className={styles.card}>
       <header>
-        <Image src={`/images/partners/${logo}.png`} height={56} width={160} alt="Logo" />
+        <Image src={`/images/partners/${logo}.png`} height={10} width={80} alt="Logo" />
         <Image src="/images/icons/quote.svg" height={32} width={32} alt="" />
       </header>
       <figure>
