@@ -16,6 +16,7 @@ export default function Solutions({ content }) {
     const ctx = gsap.context(() => {
       gsap.to('.horizontal', {
         x: (index, target) => -(target.scrollWidth - innerWidth + 250),
+        ease: 'none',
         scrollTrigger: {
           trigger: '.horizontal',
           start: 'top top',
@@ -83,7 +84,7 @@ export default function Solutions({ content }) {
             <div className="col-1" />
             {
               cards.map((card, index) => (
-                <div className="co-12 col-lg-5 d-flex align-items-center" key={card.id}>
+                <div className="co-12 col-xl-5 d-flex align-items-center" key={card.id}>
                   <Link href="#saiba-mais" className="link-image">
                     <Card {...card} className={`${index === 0 ? styles.first : ''} ${index === cards.length - 1 ? styles.last : ''}`} />
                   </Link>

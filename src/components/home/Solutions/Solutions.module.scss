@@ -1,8 +1,11 @@
+@use "../../../styles/scss/mixins";
+
 .section {
   background-color: rgb(var(--dark-green));
 
   :global(.horizontal) {
     height: 100vh;
+    padding-top: 80px;
   }
 }
 
@@ -15,9 +18,18 @@
   background-color: rgb(var(--light-green));
   padding: 64px 56px;
 
+  @include mixins.xxl {
+    height: 440px;
+  }
+
   img {
     height: 80px;
     width: 80px;
+
+    @include mixins.xxl {
+      height: 64px;
+      width: 64px;
+    }
   }
 
   h3 {
