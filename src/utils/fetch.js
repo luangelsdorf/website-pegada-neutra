@@ -1,26 +1,26 @@
 import { dataSrc } from "./env";
 
 export default async function fetchAPI(endpoint = '', queryString = '', populateDeep = true) {
-  if (dataSrc === 'local') {
-    /* console.log(`../data/${endpoint}.json`); */
-    return require(`../data/${endpoint}.json`);
-    /* console.log(data); */
-  }
+  let result;
 
-  else {
+  if (dataSrc === 'local') {
+    result = require(`src/data/${endpoint}.json`);
+  } else {
     const populate = populateDeep ? 'deep' : '*';
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/${endpoint}?populate=${populate}${queryString}`);
-    const result = await response.json();
+    result = await response.json();
 
-    if (result.data.attributes) {
-      let { data: { attributes: data } } = result;
-      return data;
-    }
+    // update local json data
+    const fs = require('fs');
+    fs.writeFile(`src/data/${endpoint}.json`, JSON.stringify(result), error => error && console.error(error));
+  }
 
-    else {
-      let { data: data } = result;
-      return data;
-    }
+  if (result.data.attributes) {
+    let { data: { attributes: data } } = result;
+    return data;
+  } else {
+    let { data: data } = result;
+    return data;
   }
 }
 
