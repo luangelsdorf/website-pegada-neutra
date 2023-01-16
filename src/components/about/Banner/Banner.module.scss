@@ -1,0 +1,20 @@
+.banner {
+  position: relative;
+  padding-top: calc(80px + 120px);
+  padding-bottom: 120px;
+  backdrop-filter: blur(11.3867px);
+  background: linear-gradient(180deg, rgba(24, 51, 47, 0) 0%, #18332f 100%),
+    linear-gradient(180deg, rgba(24, 51, 47, 0.4) 0%, rgba(24, 51, 47, 0.8) 100%);
+}
+
+.bannerContent {
+  text-align: center;
+
+  header {
+    margin-bottom: 40px;
+  }
+
+  p {
+    margin-bottom: 32px;
+  }
+}
