@@ -48,7 +48,7 @@ export default function RecentPosts({ content }) {
   }
 
   return (
-    <section className={styles.section} data-bg="dark">
+    <div className={styles.section}>
       <div className="container">
         <div className="row">
           <div className="col-12">
@@ -99,6 +99,6 @@ export default function RecentPosts({ content }) {
         </Swiper>
 
       </div>
-    </section>
+    </div>
   )
 }

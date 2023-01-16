@@ -42,7 +42,7 @@ export default function Partners({ content }) {
   ]
 
   return (
-    <section className={styles.section} data-bg="light">
+    <div className={styles.section}>
       <div className="container">
         <div className="row gy-4">
           <div className="col-12">
@@ -63,6 +63,6 @@ export default function Partners({ content }) {
         </div>
       </div>
       <Button href="#lista-completa" className="outline dark large" RightIcon={ArrowRight}>Ver Lista Completa</Button>
-    </section>
+    </div>
   )
 }

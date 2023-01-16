@@ -23,7 +23,7 @@ export default function Banner({ content }) {
   }, []);
 
   return (
-    <section className={styles.banner} data-bg="light">
+    <div className={styles.banner}>
       <div className={styles.cover} id="banner-cover">
         <Image
           fill
@@ -42,6 +42,6 @@ export default function Banner({ content }) {
           <Button className="large" RightIcon={ArrowRight}>Neutralize seu Impacto</Button>
         </div>
       </div>
-    </section>
+    </div>
   )
 }

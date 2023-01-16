@@ -70,7 +70,7 @@ export default function Testimonials({ content }) {
   ]
 
   return (
-    <section className={styles.section} data-bg="light">
+    <div className={styles.section}>
       <div className="container">
         <div className="row">
           <div className="col-12">
@@ -107,6 +107,6 @@ export default function Testimonials({ content }) {
           }
         </Swiper>
       </div>
-    </section>
+    </div>
   )
 }
