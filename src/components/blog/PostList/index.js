@@ -39,7 +39,7 @@ export default function PostList({ content }) {
   ];
 
   return (
-    <section className={styles.section} data-bg="light">
+    <div className={styles.section}>
       <div className="container">
         <div className={styles.list}>
           {
@@ -59,6 +59,6 @@ export default function PostList({ content }) {
           <Button btnElement className="dark small" LeftIcon={Repeat}>Carregando mais Posts</Button>
         </div>
       </div>
-    </section>
+    </div>
   )
 }

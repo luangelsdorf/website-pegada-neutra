@@ -4,7 +4,7 @@ import styles from './Banner.module.scss';
 
 export default function Banner({ content }) {
   return (
-    <section className={styles.banner} data-bg="dark">
+    <div className={styles.banner}>
       <header>
         <p className="overline large dark">Blog Pegada Neutra®</p>
         <h1>Conhecimento que Transforma</h1>
@@ -15,6 +15,6 @@ export default function Banner({ content }) {
         <Button btnElement className="phthalo small outline">Categoria 02</Button>
         <Button btnElement className="phthalo small outline">Categoria 04</Button>
       </div>
-    </section>
+    </div>
   )
 }
