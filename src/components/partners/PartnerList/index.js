@@ -71,7 +71,7 @@ export default function PartnerList({ content }) {
   ];
 
   return (
-    <section className={styles.section} data-bg="light">
+    <div className={styles.section}>
       <div className="container">
         <div className="row gy-4 justify-content-center">
           {
@@ -86,6 +86,6 @@ export default function PartnerList({ content }) {
         </div>
       </div>
       <Button RightIcon={Plus} className="large outline dark" btnElement>Ver Mais</Button>
-    </section>
+    </div>
   )
 }

@@ -3,9 +3,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgb(var(--dark-green));
-  padding-bottom: 120px;
-  padding-top: calc(120px + 80px);
   text-align: center;
 
   & > p {
@@ -19,7 +16,7 @@
 
   .arrow {
     position: absolute !important;
-    bottom: -28px;
+    bottom: calc(-120px - 28px);
     height: 56px;
     width: 56px;
   }

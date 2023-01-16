@@ -5,6 +5,7 @@ import React from 'react';
 import Filter from 'src/components/partners/Filter';
 import PartnerList from 'src/components/partners/PartnerList';
 import Footer from 'src/components/layout/Footer';
+import Section from 'src/components/common/Section';
 
 export default function Parceiros() {
   return (
@@ -17,9 +18,15 @@ export default function Parceiros() {
       <Header light />
 
       <main>
-        <Banner />
+        <Section data-bg="dark" pb="120" pt="200" style={{ background: 'rgb(var(--dark-green))' }}>
+          <Banner />
+        </Section>
+        
         <Filter />
-        <PartnerList />
+
+        <Section data-bg="light" mt="48" pb="120">
+          <PartnerList />
+        </Section>
       </main>
       <Footer />
     </>
