@@ -96,9 +96,9 @@ export default function Footer({ content, light }) {
             </div>
             <p>Todos os Direitos Reservados © 2023</p>
             <div>
-              <Button link className="link-image" LeftIcon={Linkedin} href="linkedin.com" />
-              <Button link className="link-image" LeftIcon={Facebook} href="facebook.com" />
-              <Button link className="link-image" LeftIcon={Instagram} href="instagram.com" />
+              <Button link className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Linkedin} href="linkedin.com" />
+              <Button link className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Facebook} href="facebook.com" />
+              <Button link className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Instagram} href="instagram.com" />
             </div>
           </div>
         </div>

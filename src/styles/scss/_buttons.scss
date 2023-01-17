@@ -156,7 +156,7 @@ a:not(.btn),
   transition: all 350ms;
   text-decoration: none;
 
-  &:not(.link-image) {
+  &:not(.link-image, .social) {
     padding: 8px 0;
 
     &::after {
@@ -199,6 +199,26 @@ a:not(.btn),
   &.large {
     font: var(--body-lg);
     padding: 12px 0;
+  }
+}
+
+.social {
+  display: flex;
+  padding: 16px;
+  border-radius: 56px;
+
+  color: rgb(var(--soft-phthalo-green));
+  &:hover {
+    color: rgb(var(--phthalo-green));
+    background-color: rgb(var(--soft-dark-green));
+  }
+
+  &.negative {
+    color: rgb(var(--soft-dark-green));
+    &:hover {
+      color: rgb(var(--dark-green));
+      background-color: rgb(var(--soft-phthalo-green));
+    }
   }
 }
 
