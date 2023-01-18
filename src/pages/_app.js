@@ -22,15 +22,15 @@ export default function App({ Component, pageProps }) {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           if (entry.target.dataset.bg === 'dark') {
-            document.querySelector('header').classList.add('light');
+            document.querySelector('header')?.classList.add('light');
           } else {
-            document.querySelector('header').classList.remove('light');
+            document.querySelector('header')?.classList.remove('light');
           }
         }
       })
     }
 
-    const observer = new IntersectionObserver(callback, { rootMargin: '0px 0px -90% 0px' });
+    const observer = new IntersectionObserver(callback, { rootMargin: '0px 0px -99.9% 0px' });
     const targets = document.querySelectorAll('[data-bg]');
     targets.forEach(target => observer.observe(target))
 

@@ -55,11 +55,6 @@
       p {
         color: rgb(var(--soft-dark-green));
       }
-      & > div:last-child {
-        path {
-          fill: rgb(var(--soft-dark-green));
-        }
-      }
     }
   }
 }
@@ -128,9 +123,5 @@
     display: flex;
     flex: 1;
     justify-content: flex-end;
-    a {
-      display: block;
-      padding: 16px;
-    }
   }
 }

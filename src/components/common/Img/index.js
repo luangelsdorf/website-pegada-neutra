@@ -10,7 +10,7 @@ export default function Img({ data: { attributes: props }, fill, sizes, ...rest 
         width={fill ? undefined : props.width}
         height={fill ? undefined : props.height}
         alt={props.alernativetext ?? ''}
-        fill
+        fill={fill}
         sizes={sizes}
         {...rest}
       />

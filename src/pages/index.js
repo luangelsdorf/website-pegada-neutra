@@ -60,21 +60,27 @@ export default function Home({ home, footer }) {
         <Section data-bg="light" id="home">
           <Banner content={home.banner} />
         </Section>
+
         <Section data-bg="light" id="sobre-nos" pb="120" style={style}>
           <AboutUs content={home.about} />
         </Section>
-        <Section data-bg="dark">
+
+        <Section data-bg="dark" id="solucoes">
           <Solutions content={home.solutions} />
         </Section>
-        <Section data-bg="light" pb="120" pt="120">
+
+        <Section data-bg="light" id="depoimentos" pb="120" pt="120">
           <Testimonials content={home.testimonials} />
         </Section>
-        <Section data-bg="light" pb="96" pt="96">
+
+        <Section data-bg="light" id="parceiros" pb="96" pt="96">
           <Partners content={home.partners} />
         </Section>
-        <Section data-bg="dark" pt="96" pb="120" style={{ backgroundColor: 'rgb(var(--dark-green))' }}>
+
+        <Section data-bg="dark" id="posts" pt="96" pb="120" style={{ backgroundColor: 'rgb(var(--dark-green))' }}>
           <RecentPosts />
         </Section>
+        
         <Footer content={footer} light />
       </main>
     </>

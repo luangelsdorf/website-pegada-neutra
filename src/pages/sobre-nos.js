@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import React from 'react';
+import AboutUs from 'src/components/about/AboutUs';
 import Banner from 'src/components/about/Banner';
 import Section from 'src/components/common/Section';
 import Footer from 'src/components/layout/Footer';
@@ -13,9 +14,13 @@ export default function SobreNos({ about, footer }) {
         <meta name="description" content="Website da Pegada Neutra" />
       </Head>
 
-      <main>
-        <Section data-bg="dark">
+      <main style={{ background: 'rgb(var(--dark-green))' }}>
+        <Section data-bg="dark" id="home" style={{ position: 'relative' }}>
           <Banner content={about.banner} />
+        </Section>
+
+        <Section data-bg="light" id="sobre">
+          <AboutUs content={about.aboutUs} />
         </Section>
       </main>
       <Footer content={footer} light />
