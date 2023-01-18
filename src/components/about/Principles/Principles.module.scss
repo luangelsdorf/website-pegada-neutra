@@ -1,0 +1,44 @@
+.section {
+  padding-top: 120px;
+  padding-bottom: 160px;
+
+  header {
+    margin-top: 40px;
+    h2 {
+      span {
+        color: rgb(var(--phthalo-green));
+      }
+    }
+  }
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  article {
+    padding: 64px 40px;
+    border-radius: 16px;
+    border: 1px solid;
+    border-color: rgb(var(--soft-dark-green));
+    transition: all 350ms;
+
+    h3 {
+      font: var(--body-lg-bold);
+      margin-bottom: 32px;
+      color: rgb(var(--phthalo-green));
+    }
+
+    &.active {
+      border-color: transparent;
+      background-color: rgb(var(--light-green));
+      h3 {
+        color: rgb(var(--greenery));
+      }
+      p {
+        color: rgb(var(--soft-dark-green));
+      }
+    }
+  }
+}

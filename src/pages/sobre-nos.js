@@ -2,6 +2,7 @@ import Head from 'next/head';
 import React from 'react';
 import AboutUs from 'src/components/about/AboutUs';
 import Banner from 'src/components/about/Banner';
+import Principles from 'src/components/about/Principles';
 import Section from 'src/components/common/Section';
 import Footer from 'src/components/layout/Footer';
 import fetchAPI from 'src/utils/fetch';
@@ -21,6 +22,10 @@ export default function SobreNos({ about, footer }) {
 
         <Section data-bg="light" id="sobre">
           <AboutUs content={about.aboutUs} />
+        </Section>
+
+        <Section data-bg="dark" id="princípios">
+          <Principles content={about.principles} />
         </Section>
       </main>
       <Footer content={footer} light />
