@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import React from 'react';
 import Section from 'src/components/common/Section';
-import Banner from 'src/components/home/Banner';
+import Banner from 'src/components/common/Banner';
 import Footer from 'src/components/layout/Footer';
 import fetchAPI from 'src/utils/fetch';
 
