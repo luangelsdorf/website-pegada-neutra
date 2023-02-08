@@ -1,0 +1,66 @@
+.section {
+}
+
+.about {
+  position: relative;
+  margin-top: 120px;
+  background-image: linear-gradient(180deg, rgba(24, 51, 47, 0) 0%, #18332f 100%);
+
+  img {
+    position: relative;
+    z-index: -1;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+  }
+
+  & > div {
+    position: absolute;
+    bottom: 80px;
+    width: 100%;
+
+    h3 {
+      color: rgb(var(--phthalo-green));
+      font: var(--body-lg);
+    }
+    p {
+      columns: 2;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    background-color: rgb(var(--dark-green), 0.4);
+    filter: blur(24px);
+    z-index: -1;
+  }
+}
+
+.howItWorks {
+  display: flex;
+  align-items: center;
+  gap: 128px;
+  margin-top: 40px;
+  padding: 64px 80px;
+  border: 1px solid rgb(var(--soft-dark-green));
+  border-radius: 16px;
+
+  & > p {
+    font: var(--body-sm);
+    color: rgb(var(--phthalo-green));
+    max-width: 646px;
+  }
+
+  & > div {
+    p {
+      font: var(--body-sm-bold);
+      color: rgb(var(--soft-phthalo-green));
+      text-align: center;
+      margin-top: 16px;
+    }
+  }
+}
