@@ -8,7 +8,7 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 export default function RecyclingCredits({ content }) {
 
-  useEffect(() => {
+  /* useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
     const ctx = gsap.context(() => {
@@ -27,7 +27,7 @@ export default function RecyclingCredits({ content }) {
     });
 
     return () => ctx.revert();
-  }, []);
+  }, []); */
 
   return (
     <div className={styles.section}>

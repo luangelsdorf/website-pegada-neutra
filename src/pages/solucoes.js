@@ -7,6 +7,7 @@ import fetchAPI from 'src/utils/fetch';
 import RecyclingCredits from 'src/components/solutions/RecyclingCredits';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import CarbonCredits from 'src/components/solutions/CarbonCredits';
 
 export default function SobreNos({ services, footer }) {
 
@@ -64,7 +65,7 @@ export default function SobreNos({ services, footer }) {
         </Section>
 
         <Section id="créditos-de-carbono">
-          
+          <CarbonCredits content={services.carbonCredits} />
         </Section>
       </main>
       <Footer content={footer} />

@@ -1,0 +1,44 @@
+.section {
+  border-top-left-radius: 16px;
+}
+
+.videoSection {
+  position: relative;
+  background-color: rgb(var(--dark-green));
+
+  video {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+
+  & > div {
+    position: absolute;
+    bottom: 72px;
+    width: 100%;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    & > div {
+      display: flex;
+      gap: 64px;
+      align-items: center;
+    }
+  }
+}
+
+.textSection {
+  padding-top: 96px;
+  padding-bottom: 120px;
+  color: rgb(var(--dark-green));
+
+  p {
+    columns: 2;
+    column-gap: 80px;
+  }
+}
