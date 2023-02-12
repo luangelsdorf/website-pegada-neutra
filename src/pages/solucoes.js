@@ -9,6 +9,7 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import CarbonCredits from 'src/components/solutions/CarbonCredits';
 import EnvironmentalActions from 'src/components/solutions/EnvironmentalActions';
+import CustomSolutions from 'src/components/solutions/CustomSolutions';
 
 export default function SobreNos({ services, footer }) {
 
@@ -71,6 +72,10 @@ export default function SobreNos({ services, footer }) {
 
         <Section id="ações-socioambientais">
           <EnvironmentalActions content={services.environmentalActions} />
+        </Section>
+
+        <Section id="soluções-customizadas">
+          <CustomSolutions content={services.customSolutions} />
         </Section>
       </main>
       <Footer content={footer} />

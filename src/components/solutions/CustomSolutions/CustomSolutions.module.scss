@@ -1,0 +1,41 @@
+.section {
+  padding-top: 104px;
+  padding-bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 96px;
+
+  header {
+    display: flex;
+    gap: 143px;
+    margin-bottom: 64px;
+
+    h2 {
+      font: var(--heading-md);
+      color: rgb(var(--dark-green));
+    }
+
+    p {
+      color: rgb(var(--dark-green));
+    }
+  }
+}
+
+.card {
+  padding: 32px;
+  border: 2px solid rgb(var(--dark-green), 0.2);
+  border-radius: 16px;
+
+  h3 {
+    display: inline;
+    font: var(--body-sm-bold);
+    color: rgb(var(--greenery));
+  }
+
+  p {
+    display: inline;
+    font: var(--body-sm);
+    color: rgb(var(--soft-dark-green));
+  }
+}
