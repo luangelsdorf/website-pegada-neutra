@@ -1,4 +1,7 @@
 .section {
+  h2 {
+    font: var(--heading-md);
+  }
 }
 
 .about {
@@ -22,6 +25,7 @@
     h3 {
       color: rgb(var(--phthalo-green));
       font: var(--body-lg);
+      margin-bottom: 16px;
     }
     p {
       columns: 2;

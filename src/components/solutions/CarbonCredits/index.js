@@ -48,8 +48,8 @@ export default function CarbonCredits({ content }) {
         </div>
       </div>
 
-      <div className="container">
-        <div className={styles.textSection}>
+      <div className={styles.textSection}>
+        <div className="container">
           <p>{content.about.text}</p>
         </div>
       </div>

@@ -58,23 +58,23 @@ export default function SobreNos({ services, footer }) {
       </Head>
 
       <main>
-        <Section id="home">
+        <Section data-bg="light" id="home">
           <Banner content={services.banner} solutions />
         </Section>
 
-        <Section style={style} id="créditos-de-reciclagem" pb="96">
+        <Section data-bg="dark" style={style} id="créditos-de-reciclagem" pb="96">
           <RecyclingCredits content={services.recyclingCredits} />
         </Section>
 
-        <Section id="créditos-de-carbono">
+        <Section data-bg="light" id="créditos-de-carbono">
           <CarbonCredits content={services.carbonCredits} />
         </Section>
 
-        <Section id="ações-socioambientais">
+        <Section data-bg="dark" id="ações-socioambientais">
           <EnvironmentalActions content={services.environmentalActions} />
         </Section>
 
-        <Section id="soluções-customizadas">
+        <Section data-bg="light" id="soluções-customizadas" style={{ backgroundColor: 'rgb(var(--dark-green))' }}>
           <CustomSolutions content={services.customSolutions} />
         </Section>
       </main>

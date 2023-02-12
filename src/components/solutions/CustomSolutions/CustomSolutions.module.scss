@@ -5,6 +5,9 @@
   flex-direction: column;
   align-items: center;
   gap: 96px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  background-color: rgb(var(--light-green));
 
   header {
     display: flex;
