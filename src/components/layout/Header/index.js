@@ -24,24 +24,24 @@ export default function Header({ content, light }) {
       <div className="container">
         <ul className={styles.inner}>
           <li>
-            <Button link className={light ? 'dark' : 'light'} href="#">Home</Button>
+            <Button link className={light ? 'dark' : 'light'} href="/#">Home</Button>
           </li>
           <li>
-            <Button link className={light ? 'dark' : 'light'} href="#">Sobre Nós</Button>
+            <Button link className={light ? 'dark' : 'light'} href="/sobre-nos">Sobre Nós</Button>
           </li>
           <li>
-            <Button link className={light ? 'dark' : 'light'} href="#">Nossas Soluções</Button>
+            <Button link className={light ? 'dark' : 'light'} href="/solucoes">Nossas Soluções</Button>
           </li>
           <li>
-            <Button link href="#" className="link-image">
+            <Button link href="/" className="link-image">
               <Logo />
             </Button>
           </li>
           <li>
-            <Button link className={light ? 'dark' : 'light'} href="#">Blog</Button>
+            <Button link className={light ? 'dark' : 'light'} href="/blog">Blog</Button>
           </li>
           <li>
-            <Button link className={light ? 'dark' : 'light'} href="#">Nossos Clientes</Button>
+            <Button link className={light ? 'dark' : 'light'} href="/parceiros">Nossos Clientes</Button>
           </li>
           <li>
             <Button className="small" href="#">Neutralize Já</Button>

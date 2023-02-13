@@ -37,33 +37,41 @@ export default function Solutions({ content }) {
       icon: 'Recycle',
       title: 'Créditos de Reciclagem',
       text: 'Oferecemos a compensação ambiental através dos créditos de reciclagem.',
+      href: '/solucoes',
+      /* href: '/solucoes#créditos-de-reciclagem', */
     },
     {
       id: 2,
       icon: 'Carbon',
       title: 'Créditos de Carbono',
       text: 'Créditos de carbono provenientes de energia renovável e reflorestamento.',
+      href: '/solucoes',
+      /* href: '/solucoes#créditos-de-carbono', */
     },
     {
       id: 3,
       icon: 'World',
       title: 'Ações Sócio-Ambientais',
       text: 'Participe a projetos de conscientização e limpeza do meio ambiente.',
+      href: '/solucoes',
+      /* href: '/solucoes#ações-socioambientais', */
     },
     {
       id: 4,
       icon: 'Environmental',
       title: 'Soluções Customizadas',
       text: 'Cada empresa é única, nada mais natural que sua solução seja também.',
+      href: '/solucoes',
+      /* href: '/solucoes#soluções-customizadas', */
     },
   ]
 
-  const Card = ({ icon, title, text, className, ...rest }) => (
+  const Card = ({ icon, title, text, href, className, ...rest }) => (
     <article className={`${styles.card} ${className ?? ''}`} {...rest}>
       <Image width={70} height={70} src={`/images/icons/brand/${icon}.svg`} alt="" />
       <h3>{title}</h3>
       <p>{text}</p>
-      <Button divElement link className="dark" href="#saiba-mais" RightIcon={ArrowRight}>Saiba Mais</Button>
+      <Button divElement link className="dark" href={href} RightIcon={ArrowRight}>Saiba Mais</Button>
     </article>
   )
 
@@ -85,7 +93,7 @@ export default function Solutions({ content }) {
             {
               cards.map((card, index) => (
                 <div className="co-12 col-xl-5 d-flex align-items-center" key={card.id}>
-                  <Link href="#saiba-mais" className="link-image">
+                  <Link href={card.href} className="link-image">
                     <Card {...card} className={`${index === 0 ? styles.first : ''} ${index === cards.length - 1 ? styles.last : ''}`} />
                   </Link>
                 </div>

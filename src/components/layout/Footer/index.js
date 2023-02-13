@@ -54,16 +54,16 @@ export default function Footer({ content, light }) {
                 <h2>Nossas Soluções</h2>
                 <ul>
                   <li>
-                    <Button link className={`${light ? 'dark' : 'phthalo'}`} href="#">Créditos de Reciclagem</Button>
+                    <Button link className={`${light ? 'dark' : 'phthalo'}`} href="/solucoes">Créditos de Reciclagem</Button>
                   </li>
                   <li>
-                    <Button link className={`${light ? 'dark' : 'phthalo'}`} href="#">Créditos de Carbono</Button>
+                    <Button link className={`${light ? 'dark' : 'phthalo'}`} href="/solucoes">Créditos de Carbono</Button>
                   </li>
                   <li>
-                    <Button link className={`${light ? 'dark' : 'phthalo'}`} href="#">Ações Sociombientais</Button>
+                    <Button link className={`${light ? 'dark' : 'phthalo'}`} href="/solucoes">Ações Sociombientais</Button>
                   </li>
                   <li>
-                    <Button link className={`${light ? 'dark' : 'phthalo'}`} href="#">Soluções Customizadas</Button>
+                    <Button link className={`${light ? 'dark' : 'phthalo'}`} href="/solucoes">Soluções Customizadas</Button>
                   </li>
                 </ul>
               </div>
@@ -96,9 +96,9 @@ export default function Footer({ content, light }) {
             </div>
             <p>Todos os Direitos Reservados © 2023</p>
             <div>
-              <Button link className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Linkedin} href="linkedin.com" />
-              <Button link className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Facebook} href="facebook.com" />
-              <Button link className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Instagram} href="instagram.com" />
+              <Button link className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Linkedin} href="#linkedin" />
+              <Button link className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Facebook} href="#facebook" />
+              <Button link className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Instagram} href="#instagram" />
             </div>
           </div>
         </div>
