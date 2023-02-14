@@ -42,7 +42,7 @@ export default function Banner({ content, solutions, height, }) {
         <div className={styles.bannerContent}>
           <p className="overline large">{content.title.overline}</p>
           <h1>{content.title.title}</h1>
-          <Button className="large" RightIcon={ArrowRight}>
+          <Button className="large" RightIcon={ArrowRight} href="/contato">
             {
               solutions ? 'Começar a Neutralizar' : 'Neutralize seu Impacto'
             }

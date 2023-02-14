@@ -57,7 +57,7 @@ export default function RecyclingCredits({ content }) {
           <div className={styles.howItWorks}>
             <p>{content.howItWorks}</p>
             <div>
-              <Button className="phthalo" LeftIcon={PlusLg}>Adquirir seus Créditos</Button>
+              <Button href="/contato" className="phthalo" LeftIcon={PlusLg}>Adquirir seus Créditos</Button>
               <p>{content.callToAction}</p>
             </div>
           </div>

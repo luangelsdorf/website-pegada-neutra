@@ -62,7 +62,7 @@ export default function Partners({ content }) {
           }
         </div>
       </div>
-      <Button href="#lista-completa" className="outline dark large" RightIcon={ArrowRight}>Ver Lista Completa</Button>
+      <Button href="/parceiros" className="outline dark large" RightIcon={ArrowRight}>Ver Lista Completa</Button>
     </div>
   )
 }

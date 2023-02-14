@@ -44,7 +44,7 @@ export default function Header({ content, light }) {
             <Button link className={light ? 'dark' : 'light'} href="/parceiros">Nossos Clientes</Button>
           </li>
           <li>
-            <Button className="small" href="#">Neutralize Já</Button>
+            <Button className="small" href="/contato">Neutralize Já</Button>
           </li>
         </ul>
       </div>

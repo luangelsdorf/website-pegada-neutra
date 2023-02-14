@@ -200,7 +200,7 @@ export default function EnvironmentalActions({ content }) {
                 <h2>{content.about.title}</h2>
               </header>
               <p>{content.about.text}</p>
-              <Button href="#" RightIcon={ArrowRight}>Participar das Ações</Button>
+              <Button href="/contato" RightIcon={ArrowRight}>Participar das Ações</Button>
             </div>
           </div>
         </div>

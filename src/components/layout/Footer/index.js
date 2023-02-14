@@ -73,10 +73,10 @@ export default function Footer({ content, light }) {
                 <Button href="#tel" className="outline phthalo small" LeftIcon={TelephoneFill}>+55 51 3333.3333</Button>
                 <ul>
                   <li>
-                    <Button className={`small ${light ? 'dark' : 'light'}`} link href="#">Fale Conosco</Button>
+                    <Button className={`small ${light ? 'dark' : 'light'}`} link href="/contato">Fale Conosco</Button>
                   </li>
                   <li>
-                    <Button className={`small ${light ? 'dark' : 'light'}`} link href="#">Perguntas Frequentes</Button>
+                    <Button className={`small ${light ? 'dark' : 'light'}`} link href="/contato">Perguntas Frequentes</Button>
                   </li>
                   <li>
                     <Button className={`small ${light ? 'dark' : 'light'}`} link href="#">Termos e Condições</Button>
