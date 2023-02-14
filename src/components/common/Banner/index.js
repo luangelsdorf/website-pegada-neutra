@@ -6,7 +6,7 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import Img from 'src/components/common/Img';
 
-export default function Banner({ content, solutions }) {
+export default function Banner({ content, solutions, height, }) {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -23,15 +23,19 @@ export default function Banner({ content, solutions }) {
   }, []);
 
   return (
-    <div className={`${styles.banner}${solutions ? ' ' + styles.solutions : ''}`}>
+    <div className={`${styles.banner}${solutions ? ' ' + styles.solutions : ''}`} style={height ? { height: height } : undefined}>
       <div className={styles.cover} id="banner-cover">
-        <Img
-          {...content.cover}
-          fill
-          sizes=""
-          quality={100}
-          priority
-        />
+        {
+          content.cover ? (
+            <Img
+              {...content.cover}
+              fill
+              sizes=""
+              quality={100}
+              priority
+            />
+          ) : null
+        }
         <div className={styles.overlay} />
       </div>
       <div className="container">

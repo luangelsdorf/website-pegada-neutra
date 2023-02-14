@@ -1,0 +1,172 @@
+@mixin floatingLabel {
+  transform: translateY(-33%) scale(0.75);
+  color: rgb(var(--phthalo-green));
+}
+
+input,
+textarea,
+select {
+  border: 0;
+  padding: 0;
+
+  font: var(--body-default);
+  background-color: transparent;
+  color: rgb(var(--light-green));
+  width: 100%;
+  border-bottom: 2px solid;
+  border-bottom-color: rgb(var(--soft-dark-green));
+  transition: all 350ms;
+
+  &::placeholder {
+    color: rgb(var(--soft-dark-green));
+  }
+
+  &:focus,
+  &:hover {
+    outline: 0;
+    border-color: rgb(var(--phthalo-green));
+  }
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  all: initial;
+
+  position: relative;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  padding: 4px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  outline: 1px solid rgb(var(--light-green));
+
+  &::before {
+    content: "";
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(var(--phthalo-green));
+    background-image: url('/images/icons/CheckMark.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 2px;
+    opacity: 0;
+    transition: 350ms;
+  }
+
+  &:checked {
+    outline-color: rgb(var(--phthalo-green));
+
+    & + label {
+      color: rgb(var(--phthalo-green));
+    }
+
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  &:hover {
+    input {
+      outline-color: rgb(var(--phthalo-green));
+      background-color: rgb(var(--phthalo-green), 0.1);
+    }
+
+    label {
+      color: rgb(var(--phthalo-green));
+    }
+  }
+
+  input,
+  label {
+    cursor: pointer;
+    user-select: none;
+    transition: 350ms;
+  }
+}
+
+.floating {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  textarea {
+    order: 1;
+    padding-bottom: 12px;
+    height: 1lh;
+    box-sizing: content-box;
+
+    &::placeholder {
+      transition: all 350ms;
+      /* opacity: 0; */
+    }
+
+    & + label {
+      font: var(--body-detail);
+    }
+
+    /* &:focus,
+    &:not(:placeholder-shown) {
+      & + label {
+        @include floatingLabel;
+      }
+
+      &::placeholder {
+        opacity: 1;
+      }
+    } */
+  }
+
+  label {
+    color: rgb(var(--phthalo-green));
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transform: translateY(65%); */
+    transition: all 350ms;
+    margin-bottom: 8px;
+    cursor: text;
+
+    & + span {
+      font: var(--body-sm);
+      color: rgb(226, 101, 101);
+      margin-left: auto;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      transform: translateY(calc(100% + 8px));
+      transition: all 350ms;
+      opacity: 0;
+
+      &:not(:empty) {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.error {
+    input,
+    select {
+      border-bottom-color: rgb(226, 101, 101);
+    }
+  }
+}
+
+form [disabled] {
+  pointer-events: none;
+  opacity: 0.4;
+}

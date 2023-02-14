@@ -9,6 +9,7 @@ export default function Button({
   btnElement = false,
   divElement = false,
   nativeLink = false,
+  type = 'button',
   href = '#',
   className,
   LeftIcon,
@@ -29,7 +30,7 @@ export default function Button({
 
   if (btnElement) {
     return (
-      <button {...baseProps} type="button">
+      <button {...baseProps} type={type}>
         <Children />
       </button>
     )
