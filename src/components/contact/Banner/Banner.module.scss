@@ -1,0 +1,14 @@
+.section {
+  height: 564px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    color: rgb(var(--dark-green));
+  }
+
+  & > div {
+    text-align: center;
+  }
+}
