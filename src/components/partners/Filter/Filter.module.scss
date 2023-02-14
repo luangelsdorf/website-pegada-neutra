@@ -17,6 +17,7 @@
   input[type="radio"] {
     appearance: none;
     margin: 0;
+    display: none;
 
     &:checked + label {
       background-color: rgb(var(--dark-green)) !important;
