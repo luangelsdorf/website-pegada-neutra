@@ -189,8 +189,6 @@ export default function EnvironmentalActions({ content }) {
     }
   ]
 
-  console.log(data[0]);
-
   return (
     <div className={styles.section}>
       <div className="container">
