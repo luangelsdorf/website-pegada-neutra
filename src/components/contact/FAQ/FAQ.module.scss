@@ -35,11 +35,13 @@
     color: rgb(var(--soft-dark-green));
     transition: all 350ms;
 
+    path {
+      transform-origin: center;
+      transition: 350ms;
+    }
+
     &:hover {
       color: rgb(var(--dark-green));
-      path {
-        fill: rgb(var(--soft-dark-green));
-      }
     }
   }
 
@@ -49,23 +51,6 @@
 
     h3 {
       font: var(--body-default-bold);
-    }
-
-    button {
-      all: unset;
-
-      & > span {
-        transition: all 350ms;
-      }
-
-      path {
-        transition: all 350ms;
-      }
-
-      &:hover,
-      &:focus {
-        background-color: transparent !important;
-      }
     }
 
     .answer {
@@ -94,15 +79,11 @@
 }
 
 .active {
-  /* header {
-    color: rgb(var(--greenery));
+  header {
+    color: rgb(var(--greenery)) !important;
+  }
 
-    path {
-      fill: var(--greenery);
-    }
-  } */
-
-  button > span {
+  path {
     transform: rotate(180deg);
   }
 }

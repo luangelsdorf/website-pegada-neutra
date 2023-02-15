@@ -33,11 +33,7 @@ export default function FAQ({ content }) {
     <article className={styles.question} data-bs-toggle="collapse" data-bs-target={`#faq-collapse-${id}`}>
       <header>
         <h3>{title}</h3>
-        <button type="button">
-          <span>
-            <CaretDownFill />
-          </span>
-        </button>
+        <CaretDownFill />
       </header>
       <div className="collapse" id={`faq-collapse-${id}`}>
         <div className={styles.answer}>
