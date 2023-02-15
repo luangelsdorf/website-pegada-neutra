@@ -10,46 +10,9 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import CarbonCredits from 'src/components/solutions/CarbonCredits';
 import EnvironmentalActions from 'src/components/solutions/EnvironmentalActions';
 import CustomSolutions from 'src/components/solutions/CustomSolutions';
+import GrowEffect from 'src/components/common/GrowEffect';
 
 export default function SobreNos({ services, footer }) {
-
-  const style = {
-    position: 'relative',
-    marginTop: '-80px',
-    paddingTop: '120px',
-    backgroundColor: 'rgb(var(--dark-green))',
-    borderTopLeftRadius: '16px',
-    borderTopRightRadius: '16px',
-    transformOrigin: 'top',
-
-  };
-
-  useEffect(() => {
-    const containerWidth = document.querySelector('#créditos-de-reciclagem .container')?.getBoundingClientRect().width - 8;
-    const vw = window.innerWidth;
-    const initialScale = containerWidth / vw;
-    const body = document.getElementById('créditos-de-reciclagem');
-    if (body) body.style.transform = `scale(${initialScale})`;
-  }, []);
-
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const ctx = gsap.context(() => {
-      gsap.to('#créditos-de-reciclagem', {
-        scrollTrigger: {
-          trigger: '#créditos-de-reciclagem',
-          scrub: 0.9,
-          start: 'top 85%',
-          end: 'top 15%',
-        },
-        scale: 1,
-        duration: 1,
-      });
-    });
-
-    return () => ctx.revert();
-  }, []);
-
   return (
     <>
       <Head>
@@ -62,9 +25,11 @@ export default function SobreNos({ services, footer }) {
           <Banner content={services.banner} solutions />
         </Section>
 
-        <Section data-bg="dark" style={style} id="créditos-de-reciclagem" pb="96">
-          <RecyclingCredits content={services.recyclingCredits} />
-        </Section>
+        <GrowEffect style={{ backgroundColor: 'rgb(var(--dark-green))' }}>
+          <Section data-bg="dark" id="créditos-de-reciclagem" pb="96">
+            <RecyclingCredits content={services.recyclingCredits} />
+          </Section>
+        </GrowEffect>
 
         <Section data-bg="light" id="créditos-de-carbono">
           <CarbonCredits content={services.carbonCredits} />

@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import React from 'react';
+import GrowEffect from 'src/components/common/GrowEffect';
 import Section from 'src/components/common/Section';
 import Banner from 'src/components/contact/Banner';
 import Contact from 'src/components/contact/Contact';
@@ -22,9 +23,11 @@ export default function Contato({ contact, footer }) {
           <Banner content={contact.banner} />
         </Section>
 
-        <Section data-bg="dark">
-          <Contact content={{ ...contact.form, cover: contact.formCover }} />
-        </Section>
+        <GrowEffect style={{ backgroundColor: 'rgb(var(--dark-green))' }} stOptions={{ start: 'top 50%' }}>
+          <Section data-bg="dark">
+            <Contact content={{ ...contact.form, cover: contact.formCover }} />
+          </Section>
+        </GrowEffect>
 
         <Section data-bg="light">
           <FAQ content={contact.faq} />

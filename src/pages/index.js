@@ -11,44 +11,9 @@ import RecentPosts from 'src/components/home/RecentPosts';
 import Footer from 'src/components/layout/Footer';
 import fetchAPI from 'src/utils/fetch';
 import Section from 'src/components/common/Section';
+import GrowEffect from 'src/components/common/GrowEffect';
 
 export default function Home({ home, footer }) {
-  const style = {
-    position: 'relative',
-    marginTop: '-80px',
-    paddingTop: '120px',
-    backgroundColor: 'rgb(var(--light-green))',
-    borderTopLeftRadius: '16px',
-    borderTopRightRadius: '16px',
-    transformOrigin: 'top',
-  };
-
-  useEffect(() => {
-    const containerWidth = document.querySelector('#sobre-nos .container')?.getBoundingClientRect().width - 8;
-    const vw = window.innerWidth;
-    const initialScale = containerWidth / vw;
-    const body = document.getElementById('sobre-nos');
-    if (body) body.style.transform = `scale(${initialScale})`;
-  }, []);
-
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const ctx = gsap.context(() => {
-      gsap.to('#sobre-nos', {
-        scrollTrigger: {
-          trigger: '#sobre-nos',
-          scrub: 0.9,
-          start: 'top 85%',
-          end: 'top 15%',
-        },
-        scale: 1,
-        duration: 1,
-      });
-    });
-
-    return () => ctx.revert();
-  }, []);
-
   return (
     <>
       <Head>
@@ -61,9 +26,11 @@ export default function Home({ home, footer }) {
           <Banner content={home.banner} />
         </Section>
 
-        <Section data-bg="light" id="sobre-nos" pb="120" style={style}>
-          <AboutUs content={home.about} />
-        </Section>
+        <GrowEffect style={{backgroundColor: 'rgb(var(--light-green))'}}>
+          <Section data-bg="light" id="sobre-nos" pb="120">
+            <AboutUs content={home.about} />
+          </Section>
+        </GrowEffect>
 
         <Section data-bg="dark" id="solucoes">
           <Solutions content={home.solutions} />
@@ -80,7 +47,7 @@ export default function Home({ home, footer }) {
         <Section data-bg="dark" id="posts" pt="96" pb="120" style={{ backgroundColor: 'rgb(var(--dark-green))' }}>
           <RecentPosts />
         </Section>
-        
+
         <Footer content={footer} light />
       </main>
     </>
