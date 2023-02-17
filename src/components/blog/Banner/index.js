@@ -6,8 +6,8 @@ export default function Banner({ content }) {
   return (
     <div className={styles.banner}>
       <header>
-        <p className="overline large dark">Blog Pegada Neutra®</p>
-        <h1>Conhecimento que Transforma</h1>
+        <p className="overline large dark">{content.title.overline}</p>
+        <h1>{content.title.title}</h1>
       </header>
       <div className={styles.categories}>
         <Button btnElement className="phthalo small">Todos</Button>

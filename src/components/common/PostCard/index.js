@@ -9,7 +9,7 @@ import Img from '../Img';
 import { getExcerpt } from 'src/utils/helpers';
 
 export default function PostCard({ title, body, cover, categorias, slug, negative, small, }) {
-  const category = categorias.data[0].attributes.slug;
+  const category = categorias.data[0].attributes;
 
   return (
     <article className={`${styles.card}${negative ? ' ' + styles.negative : ''}${small ? ' ' + styles.small : ''}`}>
@@ -17,7 +17,7 @@ export default function PostCard({ title, body, cover, categorias, slug, negativ
         <Link title="Ler Mais" href={`/blog/posts/${slug}`} className="link-image">
           <Img {...cover} fill sizes={getSizesString('col-12 col-lg-5')} />
         </Link>
-        <Button tag className={`${styles.tag} ${negative ? 'dark' : 'light'}`} href={`/blog/categorias/${category}`}>Categoria</Button>
+        <Button tag className={`${styles.tag} ${negative ? 'dark' : 'light'}`} href={`/blog/categorias/${category.slug}`}>{category.name}</Button>
       </div>
 
       <div className={styles.cardBody}>
