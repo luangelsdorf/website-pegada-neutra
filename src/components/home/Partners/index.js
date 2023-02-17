@@ -7,41 +7,6 @@ import Button from 'src/components/common/Button';
 import Img from 'src/components/common/Img';
 
 export default function Partners({ content, partners }) {
-  const data = [
-    {
-      id: 1,
-      logo: 'tres',
-    },
-    {
-      id: 2,
-      logo: 'ambev',
-    },
-    {
-      id: 3,
-      logo: 'coca-cola',
-    },
-    {
-      id: 4,
-      logo: 'nestle',
-    },
-    {
-      id: 5,
-      logo: 'ifood',
-    },
-    {
-      id: 6,
-      logo: 'itambe',
-    },
-    {
-      id: 7,
-      logo: 'piraque',
-    },
-    {
-      id: 8,
-      logo: 'jbs',
-    },
-  ]
-
   return (
     <div className={styles.section}>
       <div className="container">

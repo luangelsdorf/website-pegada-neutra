@@ -6,39 +6,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import styles from './RecentPosts.module.scss';
 
 export default function RecentPosts({ postList }) {
-  const data = [
-    {
-      id: 1,
-      title: 'Título da Publicação',
-      body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididu...',
-      cover: '/images/blog/post-1.png',
-    },
-    {
-      id: 2,
-      title: 'Título da Publicação',
-      body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididu...',
-      cover: '/images/blog/post-2.jpg',
-    },
-    {
-      id: 3,
-      title: 'Título da Publicação',
-      body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididu...',
-      cover: '/images/blog/post-3.jpeg',
-    },
-    {
-      id: 4,
-      title: 'Título da Publicação',
-      body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididu...',
-      cover: '/images/blog/post-4.jpg',
-    },
-    {
-      id: 5,
-      title: 'Título da Publicação',
-      body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididu...',
-      cover: '/images/blog/post-5.jpg',
-    },
-  ]
-
   const swiper = useRef(null);
 
   function handleClick(e) {

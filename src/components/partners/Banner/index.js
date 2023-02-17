@@ -7,10 +7,10 @@ export default function Banner({ content }) {
   return (
     <div className={styles.banner}>
       <header>
-        <p className="overline large dark">Empresas que Neutralizam</p>
-        <h1>Marcas Parceiras</h1>
+        <p className="overline large dark">{content.title.overline}</p>
+        <h1>{content.title.title}</h1>
       </header>
-      <p>As marcas parceiras da <strong>Pegada Neutra®</strong> aqui imagino um texto curto contextualizando quem são essas empresas e o porquê elas se associaram / adquiriram o selo.</p>
+      <p>{content.text}</p>
       <Button href="/contato" className="outline phthalo large">Quero Participar</Button>
       <Button btnElement LeftIcon={ArrowDown} className={styles.arrow} />
     </div>

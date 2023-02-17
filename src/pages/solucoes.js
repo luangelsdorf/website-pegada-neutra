@@ -12,7 +12,7 @@ import EnvironmentalActions from 'src/components/solutions/EnvironmentalActions'
 import CustomSolutions from 'src/components/solutions/CustomSolutions';
 import GrowEffect from 'src/components/common/GrowEffect';
 
-export default function SobreNos({ services, footer }) {
+export default function SobreNos({ services, info, footer }) {
   return (
     <>
       <Head>
@@ -43,18 +43,20 @@ export default function SobreNos({ services, footer }) {
           <CustomSolutions content={services.customSolutions} />
         </Section>
       </main>
-      <Footer content={footer} />
+      <Footer info={info} content={footer} />
     </>
   )
 }
 
 export async function getStaticProps() {
   const services = await fetchAPI('service');
+  const info = await fetchAPI('info');
   const footer = await fetchAPI('footer');
 
   return {
     props: {
       services,
+      info,
       footer,
     },
     revalidate: 10,
