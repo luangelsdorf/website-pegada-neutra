@@ -53,15 +53,13 @@ export default function Partners({ content, partners }) {
             </header>
           </div>
           {
-            partners.map(client => {
-              return (
-                <div className="col-6 col-lg-3" key={client.id}>
-                  <div className={styles.logo}>
-                    <Img {...client.attributes.logo} />
-                  </div>
+            partners.map(client => (
+              <div className="col-6 col-lg-3" key={client.id}>
+                <div className={styles.logo}>
+                  <Img {...client.attributes.logo} />
                 </div>
-              );
-            })
+              </div>
+            ))
           }
         </div>
       </div>

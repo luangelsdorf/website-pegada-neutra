@@ -7,7 +7,7 @@ import Section from 'src/components/common/Section';
 import Footer from 'src/components/layout/Footer';
 import fetchAPI from 'src/utils/fetch';
 
-export default function SobreNos({ about, footer }) {
+export default function SobreNos({ about, info, footer }) {
   return (
     <>
       <Head>
@@ -21,25 +21,27 @@ export default function SobreNos({ about, footer }) {
         </Section>
 
         <Section data-bg="light" id="sobre">
-          <AboutUs content={about.aboutUs} />
+          <AboutUs content={about.aboutUs} info={footer} />
         </Section>
 
         <Section data-bg="dark" id="princípios">
           <Principles content={about.principles} />
         </Section>
       </main>
-      <Footer content={footer} light />
+      <Footer info={info} content={footer} light />
     </>
   )
 }
 
 export async function getStaticProps() {
   const about = await fetchAPI('about');
+  const info = await fetchAPI('info');
   const footer = await fetchAPI('footer');
 
   return {
     props: {
       about,
+      info,
       footer,
     },
     revalidate: 10,

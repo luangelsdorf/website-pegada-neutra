@@ -8,7 +8,7 @@ import Instagram from '@ui-icons/Instagram.svg';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
-export default function AboutUs({ content }) {
+export default function AboutUs({ content, info }) {
   const [light, setLight] = useState(false);
 
   useEffect(() => {
@@ -66,9 +66,9 @@ export default function AboutUs({ content }) {
               <div className={styles.socialMedia}>
                 <p>Nos encontre em:</p>
                 <div>
-                  <Button link className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Linkedin} />
-                  <Button link className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Facebook} />
-                  <Button link className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Instagram} />
+                  <Button link href={info.linkedin} className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Linkedin} />
+                  <Button link href={info.facebook} className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Facebook} />
+                  <Button link href={info.instagram} className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Instagram} />
                 </div>
               </div>
             </div>

@@ -1,9 +1,6 @@
 import Head from 'next/head';
-import { useEffect } from 'react';
 import AboutUs from 'src/components/home/AboutUs';
 import Banner from 'src/components/common/Banner';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import Solutions from 'src/components/home/Solutions';
 import Testimonials from 'src/components/home/Testimonials';
 import Partners from 'src/components/home/Partners';
