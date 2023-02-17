@@ -14,6 +14,7 @@ export default function Button({
   className,
   LeftIcon,
   RightIcon,
+  ...other
 }) {
 
   const Children = () => (
@@ -25,7 +26,7 @@ export default function Button({
   );
 
   const baseProps = {
-    className: `${link ? '' : 'btn'}${tag ? ' tag' : ''}${className ? ' ' + className : ''}`,
+    className: `${link ? '' : 'btn'}${tag ? ' tag' : ''}${className ? ' ' + className : ''}`, ...other
   };
 
   if (btnElement) {

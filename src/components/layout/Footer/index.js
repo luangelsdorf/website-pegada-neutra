@@ -11,7 +11,7 @@ import TelephoneFill from '@ui-icons/TelephoneFill.svg';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
-export default function Footer({ content, light }) {
+export default function Footer({ content, light, info }) {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -45,7 +45,7 @@ export default function Footer({ content, light }) {
             <div className="col-12 col-lg-4">
               <div className={styles.about}>
                 <LogoHorizontal />
-                <p>A Pegada Neutra® foi criada por recicladores e agentes ambientáis que acreditam que a economia e o meio ambiente podem coexistir em harmonia.</p>
+                <p>{content.text}</p>
                 <Button link href="#sobre-nos" className={`small ${light ? 'greenery' : 'phthalo'}`} RightIcon={ArrowRight}>Saiba Mais</Button>
               </div>
             </div>
@@ -70,7 +70,7 @@ export default function Footer({ content, light }) {
             </div>
             <div className="col-12 col-lg-3 offset-lg-1">
               <div className={styles.contact}>
-                <Button href="#tel" className="outline phthalo small" LeftIcon={TelephoneFill}>+55 51 3333.3333</Button>
+                <Button href="#tel" className="outline phthalo small" LeftIcon={TelephoneFill}>{info.phone}</Button>
                 <ul>
                   <li>
                     <Button className={`small ${light ? 'dark' : 'light'}`} link href="/contato">Fale Conosco</Button>
@@ -94,11 +94,11 @@ export default function Footer({ content, light }) {
                 <Abarca />
               </a>
             </div>
-            <p>Todos os Direitos Reservados © 2023</p>
+            <p>{content.copyright}</p>
             <div>
-              <Button link className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Linkedin} href="#linkedin" />
-              <Button link className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Facebook} href="#facebook" />
-              <Button link className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Instagram} href="#instagram" />
+              <Button link className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Linkedin} href={content.social.linkedin} />
+              <Button link className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Facebook} href={content.social.facebook} />
+              <Button link className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Instagram} href={content.social.instagram} />
             </div>
           </div>
         </div>

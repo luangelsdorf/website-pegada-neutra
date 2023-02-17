@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
 import styles from './Solutions.module.scss';
 import Whats from '@ui-icons/Whatsapp.svg';
-import Image from 'next/image';
 import ArrowRight from '@ui-icons/ArrowRight.svg';
 import Button from 'src/components/common/Button';
 import Link from 'next/link';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import Img from 'src/components/common/Img';
+import { slugify } from 'src/utils/helpers';
 
 export default function Solutions({ content }) {
-
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -66,12 +66,12 @@ export default function Solutions({ content }) {
     },
   ]
 
-  const Card = ({ icon, title, text, href, className, ...rest }) => (
+  const Card = ({ icon, title, text, className, ...rest }) => (
     <article className={`${styles.card} ${className ?? ''}`} {...rest}>
-      <Image width={70} height={70} src={`/images/icons/brand/${icon}.svg`} alt="" />
+      <Img {...icon} />
       <h3>{title}</h3>
       <p>{text}</p>
-      <Button divElement link className="dark" href={href} RightIcon={ArrowRight}>Saiba Mais</Button>
+      <Button divElement link href={'/solucoes#' + slugify(title)} className="dark" RightIcon={ArrowRight}>Saiba Mais</Button>
     </article>
   )
 
@@ -83,17 +83,17 @@ export default function Solutions({ content }) {
             <div className="col-12 col-lg-4">
               <div className={styles.firstPart}>
                 <header>
-                  <p className="overline dark">Faça a Diferença</p>
-                  <h2>{'Nossas \nSoluções'}</h2>
-                  <p>O selo <strong>Pegada Neutra®</strong> oferece quatro soluções para ajudar sua empresa em sua jornada ambiental.</p>
+                  <p className="overline dark">{content.firstCard.overline}</p>
+                  <h2>{content.firstCard.title}</h2>
+                  <p>{content.firstCard.text}</p>
                 </header>
               </div>
             </div>
             <div className="col-1" />
             {
-              cards.map((card, index) => (
-                <div className="co-12 col-xl-5 d-flex align-items-center" key={card.id}>
-                  <Link href={card.href} className="link-image">
+              content.solutionList.map((card, index) => (
+                <div className="co-12 col-md-8 col-lg-6 col-xl-5 d-flex align-items-center" key={card.id}>
+                  <Link href={'/solucoes#' + slugify(card.title)} className="link-image">
                     <Card {...card} className={`${index === 0 ? styles.first : ''} ${index === cards.length - 1 ? styles.last : ''}`} />
                   </Link>
                 </div>
@@ -102,9 +102,9 @@ export default function Solutions({ content }) {
             <div className="col-12 col-lg-5">
               <div className={styles.lastPart}>
                 <header>
-                  <p className="overline dark">Se Interessou?</p>
-                  <h2>{'Junte-se a essa \ntransformação'}</h2>
-                  <p>Vamos lhe ajudar a reduzir seu impacto sobre o meio ambiente.</p>
+                  <p className="overline dark">{content.lastCard.overline}</p>
+                  <h2>{content.lastCard.title}</h2>
+                  <p>{content.lastCard.text}</p>
                   <Button href="#whatsapp-chat" LeftIcon={Whats}>Fale Conosco</Button>
                 </header>
               </div>

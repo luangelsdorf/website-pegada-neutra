@@ -1,6 +1,6 @@
 import { dataSrc } from "./env";
 
-export default async function fetchAPI(endpoint = '', queryString = '', populateDeep = true) {
+export default async function fetchAPI(endpoint = '', queryString = '', populateDeep = true, dataOnly = true) {
   let result;
 
   if (dataSrc === 'local') {
@@ -11,16 +11,25 @@ export default async function fetchAPI(endpoint = '', queryString = '', populate
     result = await response.json();
 
     // update local json data
-    const fs = require('fs');
-    fs.writeFile(`src/data/${endpoint}.json`, JSON.stringify(result), error => error && console.error(error));
+    if (typeof window === 'undefined') {
+      const fs = require('fs');
+      fs.writeFile(`src/data/${endpoint}.json`, JSON.stringify(result), error => error && console.error(error));
+    }
   }
 
-  if (result.data.attributes) {
-    let { data: { attributes: data } } = result;
-    return data;
-  } else {
-    let { data: data } = result;
-    return data;
+  if (dataOnly) {
+    if (result.data.attributes) {
+      let { data: { attributes: data } } = result;
+      return data;
+    }
+    else {
+      let { data: data } = result;
+      return data;
+    }
+  }
+
+  else {
+    return result;
   }
 }
 

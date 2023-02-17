@@ -4,8 +4,9 @@ import Link from 'next/link';
 import React from 'react';
 import styles from './Partners.module.scss';
 import Button from 'src/components/common/Button';
+import Img from 'src/components/common/Img';
 
-export default function Partners({ content }) {
+export default function Partners({ content, partners }) {
   const data = [
     {
       id: 1,
@@ -47,18 +48,20 @@ export default function Partners({ content }) {
         <div className="row gy-4">
           <div className="col-12">
             <header>
-              <p className="overline light">Empresas que Neutralizam</p>
-              <h2>Marcas Parceiras</h2>
+              <p className="overline light">{content.title.overline}</p>
+              <h2>{content.title.title}</h2>
             </header>
           </div>
           {
-            data.map(client => (
-              <div className="col-6 col-lg-3" key={client.id}>
-                <div className={styles.logo}>
-                  <Image src={`/images/partners/${client.logo}.png`} width={100} height={100} alt="" />
+            partners.map(client => {
+              return (
+                <div className="col-6 col-lg-3" key={client.id}>
+                  <div className={styles.logo}>
+                    <Img {...client.attributes.logo} />
+                  </div>
                 </div>
-              </div>
-            ))
+              );
+            })
           }
         </div>
       </div>

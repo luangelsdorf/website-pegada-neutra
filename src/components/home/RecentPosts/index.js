@@ -5,7 +5,7 @@ import { Autoplay, FreeMode } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styles from './RecentPosts.module.scss';
 
-export default function RecentPosts({ content }) {
+export default function RecentPosts({ postList }) {
   const data = [
     {
       id: 1,
@@ -87,11 +87,11 @@ export default function RecentPosts({ content }) {
           }}
         >
           {
-            data.map((post, index) => {
+            postList.map((post, index) => {
               let isSmall = index % 2 === 1;
               return (
                 <SwiperSlide key={post.id} className={styles.item}>
-                  <PostCard {...post} small={isSmall} />
+                  <PostCard {...post.attributes} small={isSmall} />
                 </SwiperSlide>
               );
             })

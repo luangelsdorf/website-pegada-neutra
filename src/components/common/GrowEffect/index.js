@@ -29,8 +29,6 @@ export default function GrowEffect({ children, style, stOptions }) {
     const ctx = gsap.context(() => {
       gsap.to('#grow', {
         scrollTrigger: {
-          onUpdate: e => console.log(e.progress),
-          /* markers: 1, */
           trigger: '#grow',
           scrub: 0.9,
           start: 'top 85%',

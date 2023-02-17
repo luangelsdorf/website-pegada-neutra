@@ -13,3 +13,7 @@ export function getExcerpt(string, wordLimit = 24) {
 }
 
 export const hasCategory = (post, category = '') => !!post.attributes.categories.data.filter(cat => cat.attributes.slug === category).length;
+
+export function slugify(string = '') {
+  return string.toLocaleLowerCase().replaceAll(' ', '-');
+}
