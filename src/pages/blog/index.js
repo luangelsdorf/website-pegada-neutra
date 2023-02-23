@@ -7,7 +7,7 @@ import Footer from 'src/components/layout/Footer';
 import Header from 'src/components/layout/Header';
 import fetchAPI from 'src/utils/fetch';
 
-export default function Blog({blog, postList, info, footer}) {
+export default function Blog({ blog, postList, info, footer }) {
   return (
     <>
       <Head>

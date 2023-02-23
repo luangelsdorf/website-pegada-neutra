@@ -1,0 +1,38 @@
+.banner {
+  position: relative;
+  padding-top: 200px;
+  padding-bottom: 232px;
+  background-image: linear-gradient(180deg, rgba(24, 51, 47, 0.5) 0%, #18332f 100%);
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    left: -8.25%;
+    width: 116.5%;
+    height: 180px;
+    background-color: rgba(24, 51, 47, 0.4);
+    backdrop-filter: blur(24px);
+    opacity: 0.4;
+    filter: blur(48px);
+  }
+
+  img {
+    z-index: -1;
+  }
+}
+
+.content {
+  & > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+}
