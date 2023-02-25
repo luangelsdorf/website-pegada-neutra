@@ -1,0 +1,51 @@
+.article {
+  color: rgb(var(--dark-green));
+
+  img {
+    width: 120%;
+    height: auto;
+    position: relative;
+    left: -10%;
+  }
+
+  & > p,
+  & > h2,
+  & > blockquote {
+    width: 83.33333333%;
+    margin: 56px auto;
+  }
+
+  p {
+    font: var(--body-lg);
+    line-height: 48px;
+  }
+
+  blockquote {
+    position: relative;
+
+    p {
+      font-size: 28px;
+      line-height: 48px;
+      margin-left: 80px;
+    }
+
+    &::before {
+      content: "";
+      display: flex;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 48px;
+      height: 40px;
+      background-image: url("/images/icons/quote.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      transform: rotate(180deg);
+    }
+  }
+
+  h2 {
+    font: var(--heading-xs);
+  }
+}
