@@ -1,0 +1,35 @@
+@use "../../../styles/scss/mixins";
+
+.section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgb(var(--dark-green), 0.2);
+  border-bottom: 1px solid rgb(var(--dark-green), 0.2);
+
+  @include mixins.sm {
+    gap: 24px;
+  }
+
+  h2 {
+    font: var(--body-lg-bold);
+    color: rgb(var(--greenery));
+    padding: 32px 0;
+  }
+
+  menu {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+
+    @include mixins.sm {
+      gap: 24px;
+    }
+
+    button {
+      svg {
+        cursor: pointer;
+      }
+    }
+  }
+}

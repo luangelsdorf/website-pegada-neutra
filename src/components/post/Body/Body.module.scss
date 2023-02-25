@@ -2,16 +2,15 @@
   color: rgb(var(--dark-green));
 
   img {
-    width: 120%;
+    width: 125%;
     height: auto;
     position: relative;
-    left: -10%;
+    left: -12.5%;
   }
 
   & > p,
   & > h2,
   & > blockquote {
-    width: 83.33333333%;
     margin: 56px auto;
   }
 

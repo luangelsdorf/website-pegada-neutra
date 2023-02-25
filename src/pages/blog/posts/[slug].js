@@ -3,6 +3,7 @@ import React from 'react'
 import Section from 'src/components/common/Section';
 import Banner from 'src/components/post/Banner';
 import Body from 'src/components/post/Body';
+import Share from 'src/components/post/Share';
 import fetchAPI from 'src/utils/fetch'
 
 export default function Post({ post, recentPosts, info, footer }) {
@@ -18,12 +19,12 @@ export default function Post({ post, recentPosts, info, footer }) {
           <Banner cover={post.cover} title={post.title} date={post.publishedAt} cat={post.categorias} />
         </Section>
 
-        <div className="col-12 col-lg-10 mx-auto">
-          <Section pt="96" pb="80">
+        <div className="col-12 col-lg-8 mx-auto">
+          <Section pt="96" pb="24">
             <Body content={post.body} />
           </Section>
           <Section>
-            
+            <Share slug={post.slug} postTitle={post.title} />
           </Section>
         </div>
       </main>
