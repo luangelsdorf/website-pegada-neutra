@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import React from 'react'
 import Section from 'src/components/common/Section';
+import RecentPosts from 'src/components/home/RecentPosts';
+import Footer from 'src/components/layout/Footer';
 import Banner from 'src/components/post/Banner';
 import Body from 'src/components/post/Body';
 import Share from 'src/components/post/Share';
@@ -27,7 +29,12 @@ export default function Post({ post, recentPosts, info, footer }) {
             <Share slug={post.slug} postTitle={post.title} />
           </Section>
         </div>
+        <Section mt="120" pt="96" pb="120" style={{backgroundColor: 'rgb(var(--dark-green))'}}>
+          <RecentPosts postList={recentPosts} />
+        </Section>
       </main>
+
+      <Footer content={footer} info={info} light />
     </>
   )
 }
