@@ -56,7 +56,7 @@ export default function FAQ({ content }) {
 
               <div className={styles.questions} ref={faq}>
                 {
-                  content.question.map(q => (
+                  content.questions.map(q => (
                     <Question {...q} key={q.id} />
                   ))
                 }

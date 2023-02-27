@@ -8,7 +8,7 @@ import FAQ from 'src/components/contact/FAQ';
 import Footer from 'src/components/layout/Footer';
 import fetchAPI from 'src/utils/fetch';
 
-export default function Contato({ contact, footer }) {
+export default function Contato({ contact, faq, info, footer }) {
   return (
     <>
       <Head>
@@ -30,10 +30,10 @@ export default function Contato({ contact, footer }) {
         </GrowEffect>
 
         <Section data-bg="light">
-          <FAQ content={contact.faq} />
+          <FAQ content={faq} />
         </Section>
 
-        <Footer content={footer} />
+        <Footer info={info} content={footer} />
       </main>
     </>
   )
@@ -41,11 +41,15 @@ export default function Contato({ contact, footer }) {
 
 export async function getStaticProps() {
   const contact = await fetchAPI('contact');
+  const faq = await fetchAPI('faq');
+  const info = await fetchAPI('info');
   const footer = await fetchAPI('footer');
 
   return {
     props: {
       contact,
+      faq,
+      info,
       footer,
     },
     revalidate: 10,

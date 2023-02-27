@@ -3,6 +3,8 @@ import styles from './Contact.module.scss';
 import ArrowRight from '@ui-icons/ArrowRight.svg'
 import Button from 'src/components/common/Button';
 import Img from 'src/components/common/Img';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper';
 
 export default function Contact({ content }) {
   return (
@@ -64,9 +66,21 @@ export default function Contact({ content }) {
       </div>
       <div className={`row ${styles.imageSection}`}>
         <div className="col-12 col-lg-5">
-          <div className={styles.image}>
-            <Img fill {...content.cover} />
-          </div>
+          <Swiper modules={[Autoplay]} autoplay={{ pauseOnMouseEnter: false, disableOnInteraction: false }} speed={0}>
+            {
+              content.cover.data.map(img => {
+                img.data = {};
+                img.data.attributes = img.attributes;
+                return (
+                  <SwiperSlide key={img.id}>
+                    <div className={styles.image}>
+                      <Img fill {...img} />
+                    </div>
+                  </SwiperSlide>
+                )
+              })
+            }
+          </Swiper>
         </div>
       </div>
     </div>
