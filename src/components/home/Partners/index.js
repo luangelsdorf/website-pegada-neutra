@@ -21,7 +21,9 @@ export default function Partners({ content, partners }) {
             partners.map(client => (
               <div className="col-6 col-lg-3" key={client.id}>
                 <div className={styles.logo}>
-                  <Img {...client.attributes.logo} />
+                  <a className="link-image" href={client.attributes.link}>
+                    <Img {...client.attributes.logo} />
+                  </a>
                 </div>
               </div>
             ))

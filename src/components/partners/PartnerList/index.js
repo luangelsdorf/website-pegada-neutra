@@ -15,7 +15,9 @@ export default function PartnerList({ content }) {
             content.map((client, index) => (
               <div className="col-6 col-lg-3" key={index}>
                 <PartnerLogo>
-                  <Img {...client.attributes.logo} />
+                  <a className="link-image" href={client.attributes.link}>
+                    <Img {...client.attributes.logo} />
+                  </a>
                 </PartnerLogo>
               </div>
             ))
