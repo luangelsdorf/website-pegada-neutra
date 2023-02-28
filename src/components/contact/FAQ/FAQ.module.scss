@@ -2,7 +2,7 @@
 
 .section {
   padding: 120px 0;
-  background-color: rgb(var(--light-green));
+  background-color: rgb(var(--dark-green));
 
   .sectionHeader {
     display: flex;
@@ -11,11 +11,49 @@
     margin-bottom: 80px;
 
     h2 {
-      color: rgb(var(--dark-green));
+      color: rgb(var(--light-green));
     }
 
     p {
-      color: rgb(var(--dark-green));
+      color: rgb(var(--light-green));
+    }
+  }
+
+  &.light {
+    background-color: rgb(var(--light-green));
+
+    .sectionHeader {
+      h2 {
+        color: rgb(var(--dark-green));
+      }
+
+      p {
+        color: rgb(var(--dark-green));
+      }
+    }
+
+    .questions {
+      header {
+        color: rgb(var(--soft-dark-green));
+        &:hover {
+          color: rgb(var(--dark-green));
+        }
+      }
+
+      article {
+        border: 2px solid rgb(var(--dark-green), 0.2);
+        .answer {
+          p {
+            color: rgb(var(--soft-dark-green));
+            border-top: 2px solid rgb(var(--dark-green), 0.2);
+          }
+        }
+      }
+    }
+    .active {
+      header {
+        color: rgb(var(--greenery)) !important;
+      }
     }
   }
 }
@@ -32,7 +70,7 @@
     align-items: center;
     gap: 24px;
     padding: 32px;
-    color: rgb(var(--soft-dark-green));
+    color: rgb(var(--soft-phthalo-green));
     transition: all 350ms;
 
     path {
@@ -41,12 +79,12 @@
     }
 
     &:hover {
-      color: rgb(var(--dark-green));
+      color: rgb(var(--phthalo-green));
     }
   }
 
   article {
-    border: 2px solid rgb(var(--dark-green), 0.2);
+    border: 2px solid rgb(var(--light-green), 0.2);
     border-radius: 16px;
 
     h3 {
@@ -57,8 +95,8 @@
       padding: 0 32px 40px 32px;
 
       p {
-        color: rgb(var(--soft-dark-green));
-        border-top: 2px solid rgb(var(--dark-green), 0.2);
+        color: rgb(var(--light-green));
+        border-top: 2px solid rgb(var(--light-green), 0.2);
         padding-top: 24px;
       }
 

@@ -11,8 +11,9 @@ import CarbonCredits from 'src/components/solutions/CarbonCredits';
 import EnvironmentalActions from 'src/components/solutions/EnvironmentalActions';
 import CustomSolutions from 'src/components/solutions/CustomSolutions';
 import GrowEffect from 'src/components/common/GrowEffect';
+import FAQ from 'src/components/contact/FAQ';
 
-export default function SobreNos({ services, info, footer }) {
+export default function SobreNos({ services, faq, info, footer }) {
   return (
     <>
       <Head>
@@ -42,20 +43,27 @@ export default function SobreNos({ services, info, footer }) {
         <Section data-bg="light" id="soluções-customizadas" style={{ backgroundColor: 'rgb(var(--dark-green))' }}>
           <CustomSolutions content={services.customSolutions} />
         </Section>
+
+        <Section data-bg="light">
+          <FAQ content={faq} />
+        </Section>
       </main>
-      <Footer info={info} content={footer} />
+
+      <Footer light info={info} content={footer} />
     </>
   )
 }
 
 export async function getStaticProps() {
   const services = await fetchAPI('service');
+  const faq = await fetchAPI('faq');
   const info = await fetchAPI('info');
   const footer = await fetchAPI('footer');
 
   return {
     props: {
       services,
+      faq,
       info,
       footer,
     },

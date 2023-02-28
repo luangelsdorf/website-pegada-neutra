@@ -4,10 +4,11 @@ import AboutUs from 'src/components/about/AboutUs';
 import Banner from 'src/components/about/Banner';
 import Principles from 'src/components/about/Principles';
 import Section from 'src/components/common/Section';
+import FAQ from 'src/components/contact/FAQ';
 import Footer from 'src/components/layout/Footer';
 import fetchAPI from 'src/utils/fetch';
 
-export default function SobreNos({ about, info, footer }) {
+export default function SobreNos({ about, faq, info, footer }) {
   return (
     <>
       <Head>
@@ -27,20 +28,27 @@ export default function SobreNos({ about, info, footer }) {
         <Section data-bg="dark" id="princípios">
           <Principles content={about.principles} />
         </Section>
+
+        <Section data-bg="light">
+          <FAQ light content={faq} />
+        </Section>
       </main>
-      <Footer info={info} content={footer} light />
+
+      <Footer info={info} content={footer} />
     </>
   )
 }
 
 export async function getStaticProps() {
   const about = await fetchAPI('about');
+  const faq = await fetchAPI('faq');
   const info = await fetchAPI('info');
   const footer = await fetchAPI('footer');
 
   return {
     props: {
       about,
+      faq,
       info,
       footer,
     },

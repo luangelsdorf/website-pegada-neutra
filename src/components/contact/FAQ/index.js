@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import styles from './FAQ.module.scss';
 import CaretDownFill from '@ui-icons/CaretDownFill.svg';
 
-export default function FAQ({ content }) {
+export default function FAQ({ content, light }) {
   const faq = useRef(null);
 
   useEffect(() => {
@@ -44,7 +44,7 @@ export default function FAQ({ content }) {
   )
 
   return (
-    <div className={styles.section}>
+    <div className={`${styles.section}${light ? ' ' + styles.light : ''}`} data-bg={light ? 'light' : 'dark'}>
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10">
