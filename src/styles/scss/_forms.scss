@@ -167,6 +167,10 @@ input[type="checkbox"] {
 }
 
 [disabled] {
-  pointer-events: none;
-  opacity: 0.4;
+  &,
+  &::after,
+  & + label {
+    pointer-events: none;
+    opacity: 0.4 !important;
+  }
 }

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@next/font": "13.1.1",
+    "@sendgrid/mail": "^7.7.0",
     "@svgr/webpack": "^6.5.1",
     "bootstrap": "^5.2.3",
     "eslint": "8.30.0",
@@ -18,7 +19,7 @@
     "next": "^13.1.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-hook-form": "^7.41.3",
+    "react-hook-form": "^7.43.2",
     "sass": "^1.57.1",
     "share-url": "^1.2.0",
     "sharp": "^0.31.3",

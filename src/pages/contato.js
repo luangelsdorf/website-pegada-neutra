@@ -23,7 +23,7 @@ export default function Contato({ contact, faq, info, footer }) {
           <Banner content={contact.banner} />
         </Section>
 
-        <GrowEffect style={{ backgroundColor: 'rgb(var(--dark-green))' }} stOptions={{ start: 'top 50%' }}>
+        <GrowEffect style={{ backgroundColor: 'rgb(var(--dark-green))', paddingTop: 0, borderRadius: '16px' }} stOptions={{ start: 'top 50%' }}>
           <Section data-bg="dark">
             <Contact content={{ ...contact.form, cover: contact.formCover }} />
           </Section>

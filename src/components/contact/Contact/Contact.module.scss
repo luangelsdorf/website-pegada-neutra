@@ -3,6 +3,7 @@
   padding-top: 96px;
   padding-bottom: 120px;
   background-color: rgb(var(--dark-green));
+  clip-path: inset(0 0 round 16px 16px 0 0);
 
   form {
     p {
@@ -34,6 +35,7 @@
 .formSection {
   position: relative;
   z-index: 1;
+
   h2 {
     font: var(--heading-md);
     margin-bottom: 48px;
@@ -68,6 +70,26 @@
 
     & > div {
       flex-basis: 43%;
+    }
+  }
+
+  [type="submit"] {
+    cursor: pointer;
+  }
+
+  & > div:last-child {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transform: translateY(calc(100% + 12px));
+    color: rgb(var(--soft-phthalo-green));
+
+    & > div {
+      position: absolute;
+
+      &:first-child {
+        transition: all 350ms 350ms;
+      }
     }
   }
 }
