@@ -7,6 +7,7 @@ import useSmoothScroll from 'src/hooks/useSmoothScroll';
 import Header from 'src/components/layout/Header';
 import Footer from 'src/components/layout/Footer';
 import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 const manrope = Manrope({
   display: 'swap',
@@ -16,9 +17,13 @@ const manrope = Manrope({
 export default function App({ Component, pageProps }) {
 
   const scroller = useSmoothScroll();
+  const router = useRouter();
 
   useEffect(() => {
-    const callback = entries => {
+    const observer = new IntersectionObserver(callback, { rootMargin: '0px 0px -99.9% 0px' });
+    let targets;
+
+    function callback(entries) {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           if (entry.target.dataset.bg === 'dark') {
@@ -30,11 +35,38 @@ export default function App({ Component, pageProps }) {
       })
     }
 
-    const observer = new IntersectionObserver(callback, { rootMargin: '0px 0px -99.9% 0px' });
-    const targets = document.querySelectorAll('[data-bg]');
-    targets.forEach(target => observer.observe(target))
+    function handleChangeStart() {
+      targets = document.querySelectorAll('[data-bg]');
+      targets?.forEach(target => observer.unobserve(target));
+    }
 
-    return () => targets.forEach(target => observer.unobserve(target));
+    function handleChangeComplete() {
+      targets = document.querySelectorAll('[data-bg]');
+      targets?.forEach(target => observer.observe(target));
+    }
+
+    handleChangeComplete();
+
+    router.events.on('routeChangeStart', handleChangeStart);
+    router.events.on('routeChangeComplete', handleChangeComplete);
+
+    return () => {
+      targets?.forEach(target => observer.unobserve(target));
+      router.events.off('routeChangeStart', handleChangeStart);
+      router.events.off('routeChangeComplete', handleChangeComplete);
+    }
+  }, []);
+
+  useEffect(() => {
+    function handleChangeComplete() {
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+      }, 1);
+    }
+
+    router.events.on('routeChangeComplete', handleChangeComplete);
+
+    return () => router.events.off('routeChangeComplete', handleChangeComplete);
   }, []);
 
   return (
