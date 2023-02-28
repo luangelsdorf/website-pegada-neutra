@@ -42,7 +42,7 @@ export default function CarbonCredits({ content }) {
                 <Img {...content.about.icon} />
                 <h2>{content.about.title}</h2>
               </div>
-              <Button href="/contato" className="outline large light" LeftIcon={Plus}>Adquirir Créditos de CO2</Button>
+              <Button href={content.button.url} className="outline large light" LeftIcon={Plus}>{content.button.text}</Button>
             </header>
           </div>
         </div>

@@ -11,7 +11,7 @@ export default function Banner({ content }) {
         <h1>{content.title.title}</h1>
       </header>
       <p>{content.text}</p>
-      <Button href="/contato" className="outline phthalo large">Quero Participar</Button>
+      <Button href={content.button.url} className="outline phthalo large">{content.button.text}</Button>
       <Button href="#lista" LeftIcon={ArrowDown} className={styles.arrow} />
     </div>
   )

@@ -31,7 +31,7 @@ export default function CustomSolutions({ content }) {
           }
         </div>
       </div>
-      <Button href="/contato" RightIcon={ArrowRight} className="large dark" >Solicite Proposta Exclusiva</Button>
+      <Button href={content.button.url} RightIcon={ArrowRight} className="large dark" >{content.button.text}</Button>
     </div>
   )
 }

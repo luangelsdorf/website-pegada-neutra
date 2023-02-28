@@ -46,8 +46,8 @@
 
 .howItWorks {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 128px;
   margin-top: 40px;
   padding: 64px 80px;
   border: 1px solid rgb(var(--soft-dark-green));
@@ -56,7 +56,7 @@
   & > p {
     font: var(--body-sm);
     color: rgb(var(--phthalo-green));
-    max-width: 646px;
+    max-width: 68%;
   }
 
   & > div {
