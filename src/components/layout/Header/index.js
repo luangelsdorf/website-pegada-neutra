@@ -33,6 +33,9 @@ export default function Header({ content, light }) {
             <Button link className={light ? 'dark' : 'light'} href="/solucoes">Nossas Soluções</Button>
           </li>
           <li>
+            <Button link className={light ? 'dark' : 'light'} href="/contato#faq">FAQ</Button>
+          </li>
+          <li>
             <Button link href="/" className="link-image">
               <Logo />
             </Button>

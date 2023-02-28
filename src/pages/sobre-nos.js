@@ -29,7 +29,7 @@ export default function SobreNos({ about, faq, info, footer }) {
           <Principles content={about.principles} />
         </Section>
 
-        <Section data-bg="light">
+        <Section data-bg="light" id="faq">
           <FAQ light content={faq} />
         </Section>
       </main>

@@ -19,18 +19,18 @@ export default function Contato({ contact, faq, info, footer }) {
       </Head>
 
       <main>
-        <Section data-bg="light">
+        <Section id="home" data-bg="light">
           <Banner content={contact.banner} />
         </Section>
 
         <GrowEffect style={{ backgroundColor: 'rgb(var(--dark-green))', paddingTop: 0, borderRadius: '16px' }} stOptions={{ start: 'top 50%' }}>
-          <Section data-bg="dark">
+          <Section id="contato" data-bg="dark">
             <Contact content={{ ...contact.form, cover: contact.formCover }} />
           </Section>
         </GrowEffect>
 
-        <Section data-bg="light">
-          <FAQ content={faq} />
+        <Section id="faq" data-bg="light">
+          <FAQ light content={faq} />
         </Section>
 
         <Footer info={info} content={footer} />
