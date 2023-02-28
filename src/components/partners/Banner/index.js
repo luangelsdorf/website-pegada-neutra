@@ -12,7 +12,7 @@ export default function Banner({ content }) {
       </header>
       <p>{content.text}</p>
       <Button href="/contato" className="outline phthalo large">Quero Participar</Button>
-      <Button btnElement LeftIcon={ArrowDown} className={styles.arrow} />
+      <Button href="#lista" LeftIcon={ArrowDown} className={styles.arrow} />
     </div>
   )
 }

@@ -17,13 +17,13 @@ export default function Parceiros({ clients, partners, info, footer }) {
       </Head>
 
       <main>
-        <Section data-bg="dark" pb="120" pt="200" style={{ background: 'rgb(var(--dark-green))' }}>
+        <Section id="home" data-bg="dark" pb="120" pt="200" style={{ background: 'rgb(var(--dark-green))' }}>
           <Banner content={clients} />
         </Section>
         
         <Filter />
 
-        <Section data-bg="light" mt="48" pb="120">
+        <Section id="lista" data-bg="light" mt="48" pb="120">
           <PartnerList content={partners}  />
         </Section>
       </main>

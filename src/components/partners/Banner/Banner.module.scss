@@ -15,9 +15,11 @@
   }
 
   .arrow {
+    cursor: pointer;
     position: absolute !important;
     bottom: calc(-120px - 28px);
     height: 56px;
     width: 56px;
+    box-sizing: border-box;
   }
 }
