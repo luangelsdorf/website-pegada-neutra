@@ -16,7 +16,7 @@ export default function Banner({ content }) {
                   <h1>{content.title.title}</h1>
                 </header>
                 <p>{content.text}</p>
-                <Button className="outline phthalo" RightIcon={PlayCircleFill} href="#video">Assistir Vídeo</Button>
+                {/* <Button className="outline phthalo" RightIcon={PlayCircleFill} href="#video">Assistir Vídeo</Button> */}
               </div>
             </div>
           </div>
