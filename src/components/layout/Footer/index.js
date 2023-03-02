@@ -46,7 +46,7 @@ export default function Footer({ content, light, info }) {
               <div className={styles.about}>
                 <LogoHorizontal />
                 <p>{content.text}</p>
-                <Button link href="#sobre-nos" className={`small ${light ? 'greenery' : 'phthalo'}`} RightIcon={ArrowRight}>Saiba Mais</Button>
+                <Button link href="/sobre-nos" className={`small ${light ? 'greenery' : 'phthalo'}`} RightIcon={ArrowRight}>Saiba Mais</Button>
               </div>
             </div>
             <div className="col-12 col-lg-3 offset-lg-1">

@@ -55,18 +55,68 @@ export default function App({ Component, pageProps }) {
       router.events.off('routeChangeStart', handleChangeStart);
       router.events.off('routeChangeComplete', handleChangeComplete);
     }
-  }, []);
+  }, [router.events]);
+
+  useEffect(() => {
+    function handleLinkClick(e) {
+      e.preventDefault();
+      let hash = decodeURI(e.currentTarget.hash);
+      let id = hash.substring(1);
+      let target = document.querySelector(hash);
+
+      // if the hash does not exist on the current page, navigate to the <a>'s pathname and pass the hash in a query string
+      if (!target) {
+        router.push({ pathname: e.currentTarget.pathname, query: { hash: id } }, { pathname: e.currentTarget.pathname });
+        return;
+      }
+
+      // if it does, then scroll to the corresponding element
+      let scrollPosition = (target.getBoundingClientRect().top + window.scrollY) - 120;
+      window.history.pushState({}, '', hash);
+      scrollTo(0, scrollPosition);
+    }
+
+    let links = document.querySelectorAll(`a[href*="#"`);
+    links.forEach(link => link.addEventListener('click', handleLinkClick));
+
+    return () => links.forEach(link => link.removeEventListener('click', handleLinkClick));
+  }, [router]);
 
   useEffect(() => {
     function handleChangeComplete() {
       setTimeout(() => {
-        window.scrollTo(0, 0);
+        scrollTo(0, 0);
       }, 1);
     }
 
     router.events.on('routeChangeComplete', handleChangeComplete);
 
     return () => router.events.off('routeChangeComplete', handleChangeComplete);
+  }, [router.events]);
+
+  useEffect(() => {
+    if (router.query.hash) {
+      let target = document.getElementById(router.query.hash);
+      if (!target) return;
+
+      let scrollPosition = (target.getBoundingClientRect().top + window.scrollY) - 120;
+      window.history.pushState({}, '', `#${router.query.hash}`);
+      setTimeout(() => {
+        scrollTo(0, scrollPosition);
+      }, 50);
+    }
+  }, [router.query]);
+
+  useEffect(() => {
+    if (window.location.hash) {
+      let target = document.querySelector(decodeURI(window.location.hash));
+      if (!target) return;
+
+      let scrollPosition = (target.getBoundingClientRect().top + window.scrollY) - 120;
+      setTimeout(() => {
+        scrollTo(0, scrollPosition);
+      }, 50);
+    }
   }, []);
 
   return (
