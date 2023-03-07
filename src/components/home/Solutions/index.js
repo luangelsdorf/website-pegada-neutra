@@ -38,7 +38,6 @@ export default function Solutions({ content }) {
       title: 'Créditos de Reciclagem',
       text: 'Oferecemos a compensação ambiental através dos créditos de reciclagem.',
       href: '/solucoes',
-      /* href: '/solucoes#créditos-de-reciclagem', */
     },
     {
       id: 2,
@@ -46,7 +45,6 @@ export default function Solutions({ content }) {
       title: 'Créditos de Carbono',
       text: 'Créditos de carbono provenientes de energia renovável e reflorestamento.',
       href: '/solucoes',
-      /* href: '/solucoes#créditos-de-carbono', */
     },
     {
       id: 3,
@@ -54,7 +52,6 @@ export default function Solutions({ content }) {
       title: 'Ações Sócio-Ambientais',
       text: 'Participe a projetos de conscientização e limpeza do meio ambiente.',
       href: '/solucoes',
-      /* href: '/solucoes#ações-socioambientais', */
     },
     {
       id: 4,
@@ -62,7 +59,6 @@ export default function Solutions({ content }) {
       title: 'Soluções Customizadas',
       text: 'Cada empresa é única, nada mais natural que sua solução seja também.',
       href: '/solucoes',
-      /* href: '/solucoes#soluções-customizadas', */
     },
   ]
 

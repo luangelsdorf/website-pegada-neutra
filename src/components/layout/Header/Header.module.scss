@@ -4,7 +4,7 @@
   height: 80px;
   z-index: 10000;
 
-  ul {
+  .inner {
     font: var(--body-sm);
     display: flex;
     justify-content: space-around;
@@ -14,14 +14,86 @@
     background-color: rgb(var(--dark-green));
     transition: all 350ms;
 
-    li {
+    & > li {
       display: inline-flex;
       align-items: center;
+
+      ul {
+        position: absolute;
+        z-index: -1;
+        bottom: 0;
+        transform: translateX(-24px);
+        display: flex;
+        background-color: rgb(var(--dark-green), 1);
+        border-top: 1px solid rgb(var(--soft-dark-green), 0.2);
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+        transition: 350ms;
+
+        li {
+          padding: 32px 32px 28px 32px;
+          width: 224px;
+          background-color: rgb(var(--dark-green));
+
+          &:first-child {
+            border-bottom-left-radius: 16px;
+          }
+
+          &:last-child {
+            border-bottom-right-radius: 16px;
+          }
+
+          &:not(:last-child) {
+            border-right: 1px solid rgb(var(--soft-dark-green), 0.2);
+          }
+
+          &:nth-child(even) {
+            position: relative;
+
+            &::before {
+              content: "";
+              position: absolute;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              right: 0;
+              background-color: rgb(var(--soft-dark-green), 0.2);
+            }
+          }
+
+          & > svg {
+            position: relative;
+            width: 40px;
+            height: 40px;
+          }
+
+          & > div {
+            position: relative;
+            margin: 24px 0;
+            font: var(--body-default-bold);
+          }
+        }
+      }
+    }
+
+    [data-dd-trigger] {
+      &:hover {
+        & > ul {
+          transform: translateX(-24px) translateY(calc(100% - 1px));
+          &:hover {
+            transform: translateX(-24px) translateY(calc(100% - 1px));
+          }
+        }
+      }
+
+      & > a path {
+        fill: rgb(var(--greenery));
+      }
     }
   }
 
   &:global(.light) {
-    ul {
+    .inner {
       background-color: rgb(var(--light-green));
       a:not(:global(.btn)) {
         color: rgb(var(--dark-green));
@@ -29,9 +101,33 @@
           background-color: rgb(var(--phthalo-green));
         }
       }
+      & > li {
+        ul {
+          background-color: rgb(var(--light-green), 1);
+          border-top: 1px solid rgb(var(--dark-green), 0.1);
+
+          li {
+            background-color: rgb(var(--light-green));
+
+            &:not(:last-child) {
+              border-right: 1px solid rgb(var(--dark-green), 0.1);
+            }
+
+            &:nth-child(even) {
+              &::before {
+                background-color: rgb(var(--soft-dark-green), 0.05);
+              }
+            }
+
+            & > div {
+              color: rgb(var(--dark-green));
+            }
+          }
+        }
+      }
     }
 
-    svg path:not(:last-child) {
+    a svg path:not(:last-child) {
       fill: rgb(var(--dark-green));
     }
   }
