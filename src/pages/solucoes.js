@@ -13,7 +13,7 @@ import CustomSolutions from 'src/components/solutions/CustomSolutions';
 import GrowEffect from 'src/components/common/GrowEffect';
 import FAQ from 'src/components/contact/FAQ';
 
-export default function SobreNos({ services, faq, info, footer }) {
+export default function SobreNos({ services, actions, faq, info, footer }) {
   return (
     <>
       <Head>
@@ -37,7 +37,7 @@ export default function SobreNos({ services, faq, info, footer }) {
         </Section>
 
         <Section data-bg="dark" id="ações-sócio-ambientais">
-          <EnvironmentalActions content={services.environmentalActions} />
+          <EnvironmentalActions content={services.environmentalActions} actions={actions} />
         </Section>
 
         <Section data-bg="light" id="soluções-customizadas" style={{ backgroundColor: 'rgb(var(--dark-green))' }}>
@@ -56,6 +56,7 @@ export default function SobreNos({ services, faq, info, footer }) {
 
 export async function getStaticProps() {
   const services = await fetchAPI('service');
+  const actions = await fetchAPI('posts', `&filters[$and][0][categorias][name][$eq]=Ações%20Socioambientais&pagination[start]=${0}&pagination[limit]=${5}`, false);
   const faq = await fetchAPI('faq');
   const info = await fetchAPI('info');
   const footer = await fetchAPI('footer');
@@ -63,6 +64,7 @@ export async function getStaticProps() {
   return {
     props: {
       services,
+      actions,  
       faq,
       info,
       footer,

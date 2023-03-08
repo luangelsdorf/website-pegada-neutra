@@ -80,7 +80,7 @@ export default function App({ Component, pageProps }) {
     links.forEach(link => link.addEventListener('click', handleLinkClick));
 
     return () => links.forEach(link => link.removeEventListener('click', handleLinkClick));
-  }, [router]);
+  }, []);
 
   useEffect(() => {
     function handleChangeComplete() {
@@ -92,7 +92,7 @@ export default function App({ Component, pageProps }) {
     router.events.on('routeChangeComplete', handleChangeComplete);
 
     return () => router.events.off('routeChangeComplete', handleChangeComplete);
-  }, [router.events]);
+  }, []);
 
   useEffect(() => {
     if (router.query.hash) {

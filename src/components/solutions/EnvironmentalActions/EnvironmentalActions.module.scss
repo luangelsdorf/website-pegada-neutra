@@ -30,14 +30,22 @@
   height: 100%;
 
   :global(.swiper-pagination) {
+    font: var(--body-sm-bold);
+    color: rgb(var(--soft-phthalo-green));
     position: absolute;
     bottom: 40px;
     right: 40px;
     z-index: 1;
-    color: rgb(var(--soft-phthalo-green));
 
     & > :first-child {
+      font: var(--body-default-bold);
       color: rgb(var(--phthalo-green));
+    }
+
+    & > span {
+      &::before {
+        content: '0';
+      }
     }
   }
 }
@@ -56,6 +64,7 @@
 
     img {
       z-index: -3;
+      transition: 350ms;
     }
 
     & > a:global(.tag) {
@@ -68,6 +77,12 @@
       position: relative;
       height: 100%;
       width: 100%;
+
+      &:hover {
+        img {
+          transform: rotate(2deg) scale(1.1);
+        }
+      }
 
       &::after {
         content: "";
