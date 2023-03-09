@@ -55,9 +55,9 @@ export default function Button({
 
   else {
     return (
-      <Link scroll={false} {...baseProps} href={href}>
+      <a scroll={false} {...baseProps} href={href}>
         <Children />
-      </Link>
+      </a>
     )
   }
 }
