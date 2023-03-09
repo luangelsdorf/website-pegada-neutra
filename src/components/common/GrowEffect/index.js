@@ -41,7 +41,7 @@ export default function GrowEffect({ children, style, stOptions }) {
     });
 
     return () => ctx.revert();
-  }, []);
+  }, [stOptions]);
 
   return (
     <div style={elementStyles} id="grow">

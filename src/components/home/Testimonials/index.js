@@ -34,7 +34,7 @@ export default function Testimonials({ content, testimonials }) {
 
     async function getTestimonials() {
       let newTestimonials = await fetchAPI('testimonials', `&pagination[pageSize]=${6}&pagination[page]=${page}`, false, false);
-      setPaginatedContent([...paginatedContent, newTestimonials]);
+      setPaginatedContent(previous => [...previous, newTestimonials]);
     }
 
     getTestimonials();
@@ -44,7 +44,7 @@ export default function Testimonials({ content, testimonials }) {
   useEffect(() => {
     if (page <= 1) return;
     dispatchEvent(new Event('resize'));
-  }, [paginatedContent]);
+  }, [paginatedContent, page]);
 
   return (
     <div className={styles.section}>

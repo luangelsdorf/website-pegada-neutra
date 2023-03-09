@@ -8,6 +8,8 @@ export default function FAQ({ content, light }) {
   useEffect(() => {
     require('bootstrap/js/dist/collapse');
 
+    let faqElement = faq.current;
+
     function handleCollapse(e) {
       if (e.type === 'show.bs.collapse') {
         e.currentTarget.classList.add(styles.active);
@@ -22,7 +24,7 @@ export default function FAQ({ content, light }) {
     });
 
     return () => {
-      faq.current?.childNodes.forEach(q => {
+      faqElement?.childNodes.forEach(q => {
         q.removeEventListener('show.bs.collapse', handleCollapse);
         q.removeEventListener('hide.bs.collapse', handleCollapse);
       });

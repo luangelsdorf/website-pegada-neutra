@@ -29,7 +29,7 @@ export default function Post({ post, recentPosts, info, footer }) {
             <Share slug={post.slug} postTitle={post.title} />
           </Section>
         </div>
-        <Section mt="120" pt="96" pb="120" style={{backgroundColor: 'rgb(var(--dark-green))'}}>
+        <Section mt="120" pt="96" pb="120" style={{ backgroundColor: 'rgb(var(--dark-green))' }}>
           <RecentPosts postList={recentPosts} />
         </Section>
       </main>
@@ -49,8 +49,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const singlePost = await fetchAPI('posts', `&filters[slug][$eq]=${slug}`);
-  const recentPosts = await fetchAPI('posts', `&pagination[start]=${0}&pagination[limit]=${5}`, false, true);
+  const singlePost = await fetchAPI('posts', `&filters[slug][$eq]=${slug}`, false);
+  const recentPosts = await fetchAPI('posts', `&pagination[start]=${0}&pagination[limit]=${5}`, false);
   const info = await fetchAPI('info');
   const footer = await fetchAPI('footer');
 

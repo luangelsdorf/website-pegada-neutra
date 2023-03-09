@@ -6,10 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "analyze": "cross-env ANALYZE=true next build"
   },
   "dependencies": {
-    "@next/font": "13.1.1",
+    "@next/bundle-analyzer": "^13.2.3",
     "@sendgrid/mail": "^7.7.0",
     "@svgr/webpack": "^6.5.1",
     "bootstrap": "^5.2.3",
@@ -24,5 +25,8 @@
     "share-url": "^1.2.0",
     "sharp": "^0.31.3",
     "swiper": "^8.4.5"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
   }
 }
