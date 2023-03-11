@@ -51,9 +51,9 @@ export default function EnvironmentalActions({ content, actions }) {
                 actions.map((card, index) => (
                   <SwiperSlide key={index} className="col-12 col-lg-5">
                     <div className={styles.coverWrapper}>
-                      <Link href={`/blog/posts/${card.attributes.slug}`} className="link-image">
+                      <a href={`/blog/posts/${card.attributes.slug}`} className="link-image">
                         <Img {...card.attributes.cover} fill />
-                      </Link>
+                      </a>
                       <Button className="tag light">Ações Socioambientais</Button>
                       <div className={styles.footer}>
                         <h3>{card.attributes.title}</h3>

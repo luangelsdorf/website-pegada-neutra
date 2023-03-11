@@ -24,7 +24,8 @@
     "sass": "^1.57.1",
     "share-url": "^1.2.0",
     "sharp": "^0.31.3",
-    "swiper": "^8.4.5"
+    "swiper": "^8.4.5",
+    "swr": "^2.1.0"
   },
   "devDependencies": {
     "cross-env": "^7.0.3"

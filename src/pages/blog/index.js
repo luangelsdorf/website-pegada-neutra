@@ -7,7 +7,7 @@ import Footer from 'src/components/layout/Footer';
 import Header from 'src/components/layout/Header';
 import fetchAPI from 'src/utils/fetch';
 
-export default function Blog({ blog, postList, info, footer }) {
+export default function Blog({ blog, postList, pagination, info, footer }) {
   return (
     <>
       <Head>
@@ -23,7 +23,7 @@ export default function Blog({ blog, postList, info, footer }) {
         </Section>
 
         <Section mt="120" data-bg="light">
-          <PostList posts={postList} />
+          <PostList posts={postList} pagination={pagination} />
         </Section>
       </main>
       <Footer info={info} content={footer} />
@@ -33,14 +33,17 @@ export default function Blog({ blog, postList, info, footer }) {
 
 export async function getStaticProps() {
   const blog = await fetchAPI('blog');
-  const postList = await fetchAPI('posts', '&pagintion[start]=0&pagination[limit]=6&sort=createdAt:DESC', false, true);
+  const postListMeta = await fetchAPI('posts', `&pagination[page]=${1}&pagination[pageSize]=${6}&sort=createdAt:DESC`, false, false);
   const info = await fetchAPI('info');
   const footer = await fetchAPI('footer');
+
+  const { data: postList, meta: { pagination } } = postListMeta;
 
   return {
     props: {
       blog,
       postList,
+      pagination,
       info,
       footer,
     },
