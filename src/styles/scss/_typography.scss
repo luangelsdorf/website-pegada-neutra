@@ -30,10 +30,28 @@
     --body-default: 500 18px/28px var(--ff);
     --body-sm: 500 14px/21px var(--ff);
     --body-detail: 500 12px/18px var(--ff);
-    
+
     --body-lg-bold: 600 22px/36px var(--ff);
     --body-default-bold: 600 18px/28px var(--ff);
     --body-sm-bold: 600 14px/21px var(--ff);
+    --body-detail-bold: 600 12px/18px var(--ff);
+  }
+
+  @include mixins.lg {
+    --display: 700 56px/72px var(--ff);
+    --heading-lg: 700 48px/64px var(--ff);
+    --heading-md: 700 40px/56px var(--ff);
+    --heading-sm: 700 32px/48px var(--ff);
+    --heading-xs: 700 28px/40px var(--ff);
+
+    --body-lg: 500 21px/36px var(--ff);
+    --body-default: 500 18px/32px var(--ff);
+    --body-sm: 500 14px/27px var(--ff);
+    --body-detail: 500 12px/18px var(--ff);
+
+    --body-lg-bold: 500 21px/36px var(--ff);
+    --body-default-bold: 500 18px/32px var(--ff);
+    --body-sm-bold: 500 14px/27px var(--ff);
     --body-detail-bold: 600 12px/18px var(--ff);
   }
 }

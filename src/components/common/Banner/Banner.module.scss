@@ -1,3 +1,5 @@
+@use "../../../styles/scss/mixins";
+
 @keyframes intro {
   to {
     scale: 1;
@@ -63,6 +65,44 @@
     p,
     h1 {
       color: rgb(var(--dark-green));
+    }
+  }
+
+  @include mixins.lg {
+    clip-path: inset(0 0 round 0 0 24px 24px);
+    align-items: flex-end;
+
+    .bannerContent {
+      margin-top: 0;
+      margin-bottom: 40px;
+      text-align: center;
+
+      h1 {
+        margin-bottom: 24px;
+      }
+    }
+
+    .cover {
+      img {
+        object-fit: cover;
+        object-position: center -150px;
+        height: calc(100vh + 150px) !important;
+      }
+    }
+  }
+
+  @include mixins.md {
+
+    .bannerContent {
+      margin-bottom: 80px;
+    }
+
+    .cover {
+      img {
+        object-fit: cover;
+        object-position: center -180px;
+        height: calc(100vh + 180px) !important;
+      }
     }
   }
 }
