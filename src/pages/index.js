@@ -19,7 +19,7 @@ export default function Home({ home, testimonials, partners, recentPosts, info, 
       </Head>
 
       <main>
-        <Section data-bg="light" id="home">
+        <Section data-bg="dark" id="home">
           <Banner content={home.banner} />
         </Section>
 

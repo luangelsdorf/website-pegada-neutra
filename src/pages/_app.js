@@ -5,7 +5,6 @@ import '../styles/styles.scss';
 import { Manrope } from "next/font/google";
 import useSmoothScroll from 'src/hooks/useSmoothScroll';
 import Header from 'src/components/layout/Header';
-import Footer from 'src/components/layout/Footer';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
@@ -59,6 +58,7 @@ export default function App({ Component, pageProps }) {
 
   useEffect(() => {
     function handleLinkClick(e) {
+      if (!e.currentTarget.hash) return;
       e.preventDefault();
       let hash = decodeURI(e.currentTarget.hash);
       let id = hash.substring(1);

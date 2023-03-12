@@ -1,16 +1,24 @@
+@use "../../../styles/scss/mixins";
+
 .header {
   position: fixed;
   width: 100%;
-  height: 80px;
   z-index: 10000;
+
+  :global(.container) {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
 
   .inner {
     font: var(--body-sm);
     display: flex;
     justify-content: space-around;
-    height: 80px;
+    width: 100%;
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
+    padding: 8px 0;
     background-color: rgb(var(--dark-green));
     transition: all 350ms;
 
@@ -18,7 +26,7 @@
       display: inline-flex;
       align-items: center;
 
-      ul {
+      .dropdown {
         position: absolute;
         z-index: -1;
         bottom: 0;
@@ -28,6 +36,7 @@
         border-top: 1px solid rgb(var(--soft-dark-green), 0.2);
         border-bottom-left-radius: 16px;
         border-bottom-right-radius: 16px;
+        opacity: 0;
         transition: 350ms;
 
         li {
@@ -80,8 +89,10 @@
       &:hover {
         & > ul {
           transform: translateX(-24px) translateY(calc(100% - 1px));
+          opacity: 1;
           &:hover {
             transform: translateX(-24px) translateY(calc(100% - 1px));
+            opacity: 1;
           }
         }
       }
@@ -90,6 +101,22 @@
         fill: rgb(var(--greenery));
       }
     }
+  }
+
+  .toggler {
+    display: none;
+    background-color: transparent;
+    border: 0;
+
+    &.active {
+      path {
+        d: path('M10.2518 10.2518C10.3314 10.172 10.4259 10.1086 10.53 10.0654C10.6342 10.0222 10.7458 10 10.8585 10C10.9712 10 11.0828 10.0222 11.1869 10.0654C11.291 10.1086 11.3856 10.172 11.4652 10.2518L16.0002 14.7885L20.5352 10.2518C20.6149 10.1721 20.7095 10.1089 20.8136 10.0658C20.9177 10.0226 21.0293 10.0004 21.142 10.0004C21.2546 10.0004 21.3662 10.0226 21.4703 10.0658C21.5744 10.1089 21.669 10.1721 21.7487 10.2518C21.8284 10.3314 21.8916 10.426 21.9347 10.5301C21.9778 10.6342 22 10.7458 22 10.8585C22 10.9712 21.9778 11.0827 21.9347 11.1868C21.8916 11.2909 21.8284 11.3855 21.7487 11.4652L17.212 16.0002L21.7487 20.5352C21.8284 20.6149 21.8916 20.7095 21.9347 20.8136C21.9778 20.9177 22 21.0293 22 21.142C22 21.2546 21.9778 21.3662 21.9347 21.4703C21.8916 21.5744 21.8284 21.669 21.7487 21.7487C21.669 21.8284 21.5744 21.8916 21.4703 21.9347C21.3662 21.9778 21.2546 22 21.142 22C21.0293 22 20.9177 21.9778 20.8136 21.9347C20.7095 21.8916 20.6149 21.8284 20.5352 21.7487L16.0002 17.212L11.4652 21.7487C11.3855 21.8284 11.2909 21.8916 11.1868 21.9347C11.0827 21.9778 10.9712 22 10.8585 22C10.7458 22 10.6342 21.9778 10.5301 21.9347C10.426 21.8916 10.3314 21.8284 10.2518 21.7487C10.1721 21.669 10.1089 21.5744 10.0658 21.4703C10.0226 21.3662 10.0004 21.2546 10.0004 21.142C10.0004 21.0293 10.0226 20.9177 10.0658 20.8136C10.1089 20.7095 10.1721 20.6149 10.2518 20.5352L14.7885 16.0002L10.2518 11.4652C10.172 11.3856 10.1086 11.291 10.0654 11.1869C10.0222 11.0828 10 10.9712 10 10.8585C10 10.7458 10.0222 10.6342 10.0654 10.53C10.1086 10.4259 10.172 10.3314 10.2518 10.2518Z');
+      }
+    }
+  }
+
+  .linksMobile {
+    display: none;
   }
 
   &:global(.light) {
@@ -101,27 +128,26 @@
           background-color: rgb(var(--phthalo-green));
         }
       }
-      & > li {
-        ul {
-          background-color: rgb(var(--light-green), 1);
-          border-top: 1px solid rgb(var(--dark-green), 0.1);
 
-          li {
-            background-color: rgb(var(--light-green));
+      .dropdown {
+        background-color: rgb(var(--light-green), 1);
+        border-top: 1px solid rgb(var(--dark-green), 0.1);
 
-            &:not(:last-child) {
-              border-right: 1px solid rgb(var(--dark-green), 0.1);
+        li {
+          background-color: rgb(var(--light-green));
+
+          &:not(:last-child) {
+            border-right: 1px solid rgb(var(--dark-green), 0.1);
+          }
+
+          &:nth-child(even) {
+            &::before {
+              background-color: rgb(var(--soft-dark-green), 0.05);
             }
+          }
 
-            &:nth-child(even) {
-              &::before {
-                background-color: rgb(var(--soft-dark-green), 0.05);
-              }
-            }
-
-            & > div {
-              color: rgb(var(--dark-green));
-            }
+          & > div {
+            color: rgb(var(--dark-green));
           }
         }
       }
@@ -129,6 +155,96 @@
 
     a svg path:not(:last-child) {
       fill: rgb(var(--dark-green));
+    }
+  }
+
+  @include mixins.lg {
+    top: 24px;
+
+    .inner {
+      border-radius: 40px;
+      flex-direction: column;
+      align-items: center;
+
+      & > :not(.logoItem, .linksMobile) {
+        display: none;
+      }
+
+      .logoItem {
+        svg {
+          height: 64px;
+        }
+      }
+    }
+
+    .toggler {
+      color: rgb(var(--greenery));
+      display: inline-flex;
+      position: absolute;
+      margin-right: 16px;
+      top: 24px;
+    }
+
+    .linksMobile {
+      width: 100%;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        width: 100%;
+        border-top: 1px solid rgb(var(--soft-dark-green), 0.2);
+        overflow: hidden;
+
+        li {
+          display: flex;
+          justify-content: center;
+
+          &:first-child {
+            padding-top: 16px;
+          }
+
+          &:last-child {
+            padding-bottom: 24px;
+          }
+
+          &:not(:last-child) > a path {
+            fill: rgb(var(--greenery));
+          }
+
+          &:not(:first-child, :last-child) {
+            position: relative;
+            &::before {
+              content: "";
+              position: absolute;
+              top: -16px;
+              height: 1px;
+              width: 73%;
+              background-color: rgb(var(--soft-dark-green), 0.2);
+            }
+          }
+        }
+      }
+    }
+
+    &:global(.light) {
+      .toggler {
+        color: rgb(var(--dark-green));
+      }
+
+      .linksMobile {
+        ul {
+          border-top: 1px solid rgb(var(--dark-green), 0.1);
+
+          li {
+            &:not(:first-child, :last-child) {
+              &::before {
+                background-color: rgb(var(--dark-green), 0.1);
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

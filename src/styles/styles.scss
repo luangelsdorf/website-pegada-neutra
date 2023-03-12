@@ -71,7 +71,7 @@ menu {
 }
 
 .collapse:not(.show) {
-  display: none;
+  display: none !important;
 }
 
 .collapsing {
