@@ -10,10 +10,10 @@ export default function AboutUs({ content }) {
     <div className={styles.section}>
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-10" style={{ position: 'relative' }}>
+          <div className="col-12 col-lg-10" style={{ position: 'relative' }}>
             <video className={styles.video} src={apiURL + content.video.data.attributes.url} autoPlay loop muted />
             <div className={`row justify-content-center ${styles.background}`}>
-              <div className="col-10">
+              <div className="col-lg-10 px-0">
                 <div className={styles.content}>
                   <h2>{content.title}</h2>
                   <div>

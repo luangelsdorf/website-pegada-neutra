@@ -1,0 +1,16 @@
+@use "../../../styles/scss/mixins";
+
+.grow {
+  @media (min-width: 992px) {
+    position: relative;
+    margin-top: -104px;
+    padding-top: 120px;
+    background-color: rgb(var(--dark-green));
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    transform-origin: top;
+  }
+
+  @include mixins.lg {
+  }
+}

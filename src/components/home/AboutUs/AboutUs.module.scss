@@ -1,3 +1,5 @@
+@use "../../../styles/scss/mixins";
+
 .section {
 }
 
@@ -32,14 +34,48 @@
       align-self: flex-end;
     }
   }
+
+  @include mixins.lg {
+    padding: 0;
+
+    video {
+      display: none;
+    }
+
+    h2 {
+      color: rgb(var(--dark-green));
+      margin-bottom: 40px;
+
+      &::first-line {
+        color: inherit;
+      }
+    }
+
+    & > div {
+      flex-direction: column;
+      text-align: center;
+
+      p {
+        color: rgb(var(--dark-green));
+      }
+
+      a:last-child {
+       margin-top: 40px;
+       margin-left: auto;
+       margin-right: auto;
+      }
+    }
+  }
 }
 
 .background {
-  background-color: rgba(24, 51, 47, 0.4);
-  background-image: linear-gradient(180deg, rgba(8, 37, 23, 0.4) 0%, rgba(8, 37, 23, 0.8) 100%);
-  backdrop-filter: blur(8px);
-  border-radius: 16px;
-  border: 2px solid rgb(var(--light-green), 0.2);
+  @media (min-width: 992px) {
+    background-color: rgba(24, 51, 47, 0.4);
+    background-image: linear-gradient(180deg, rgba(8, 37, 23, 0.4) 0%, rgba(8, 37, 23, 0.8) 100%);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    border: 2px solid rgb(var(--light-green), 0.2);
+  }
 }
 
 .video {

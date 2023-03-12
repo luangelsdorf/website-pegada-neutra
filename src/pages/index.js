@@ -19,12 +19,12 @@ export default function Home({ home, testimonials, partners, recentPosts, info, 
       </Head>
 
       <main>
-        <Section data-bg="dark" id="home">
+        <Section data-bg="dark" id="home" className="home">
           <Banner content={home.banner} />
         </Section>
 
         <GrowEffect style={{backgroundColor: 'rgb(var(--light-green))'}}>
-          <Section data-bg="light" id="sobre-nos" pb="120">
+          <Section data-bg="light" id="sobre-nos" pb="120 88" pt="0 88">
             <AboutUs content={home.about} />
           </Section>
         </GrowEffect>

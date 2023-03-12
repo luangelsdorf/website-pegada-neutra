@@ -69,7 +69,6 @@
   }
 
   @include mixins.lg {
-    clip-path: inset(0 0 round 0 0 24px 24px);
     align-items: flex-end;
 
     .bannerContent {
@@ -83,6 +82,10 @@
     }
 
     .cover {
+      &::before {
+        background: linear-gradient(0deg, rgba(8, 37, 23, 0.6) 0%, rgba(8, 37, 23, 0) 39.58%);
+      }
+
       img {
         object-fit: cover;
         object-position: center -150px;
@@ -92,7 +95,6 @@
   }
 
   @include mixins.md {
-
     .bannerContent {
       margin-bottom: 80px;
     }

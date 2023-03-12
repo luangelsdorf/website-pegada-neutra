@@ -4,29 +4,20 @@ import React, { useEffect } from 'react';
 import styles from './GrowEffect.module.scss';
 
 export default function GrowEffect({ children, style, stOptions }) {
-
-  const elementStyles = {
-    position: 'relative',
-    marginTop: '-104px',
-    paddingTop: '120px',
-    backgroundColor: 'rgb(var(--dark-green))',
-    borderTopLeftRadius: '16px',
-    borderTopRightRadius: '16px',
-    transformOrigin: 'top',
-    ...style
-  };
-
   useEffect(() => {
-    const containerWidth = document.querySelector('#grow .container')?.getBoundingClientRect().width - 8;
-    const vw = window.innerWidth;
-    const initialScale = containerWidth / vw;
-    const body = document.getElementById('grow');
-    if (body) body.style.transform = `scale(${initialScale})`;
+    if (matchMedia('(min-width: 992px)').matches) {
+      const containerWidth = document.querySelector('#grow .container')?.getBoundingClientRect().width - 8;
+      const vw = window.innerWidth;
+      const initialScale = containerWidth / vw;
+      const body = document.getElementById('grow');
+      if (body) body.style.transform = `scale(${initialScale})`;
+    }
   }, []);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    const ctx = gsap.context(() => {
+    const mm = gsap.matchMedia();
+    mm.add('(min-width: 992px)', () => {
       gsap.to('#grow', {
         scrollTrigger: {
           trigger: '#grow',
@@ -40,11 +31,11 @@ export default function GrowEffect({ children, style, stOptions }) {
       });
     });
 
-    return () => ctx.revert();
+    return () => mm.revert();
   }, [stOptions]);
 
   return (
-    <div style={elementStyles} id="grow">
+    <div style={style} id="grow" className={styles.grow}>
       {
         children
       }

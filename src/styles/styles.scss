@@ -35,6 +35,12 @@ main {
   z-index: -1;
 }
 
+#home.home {
+  @media (max-width: 992px) {
+    clip-path: inset(0 0 round 0 0 24px 24px);
+  }
+}
+
 figure,
 blockquote {
   margin: 0;
@@ -78,4 +84,19 @@ menu {
   height: 0;
   overflow: hidden;
   transition: height 0.35s ease;
+}
+
+@include mixins.lg {
+  [class*="col-lg"] {
+    & > div {
+      text-align: center;
+      align-items: center;
+    }
+  }
+}
+
+@include mixins.sm {
+  .col-12 {
+    padding: 0 30px;
+  }
 }
