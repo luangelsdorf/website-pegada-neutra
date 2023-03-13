@@ -1,9 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Testimonials.module.scss';
 import ArrowRight from '@ui-icons/ArrowRight.svg';
+import Plus from '@ui-icons/PlusLg.svg';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, FreeMode } from 'swiper';
+import { Autoplay } from 'swiper';
 import Button from 'src/components/common/Button';
 import Img from 'src/components/common/Img';
 import fetchAPI from 'src/utils/fetch';
@@ -30,7 +31,6 @@ export default function Testimonials({ content, testimonials }) {
 
   useEffect(() => {
     if (page === 1) return;
-    console.log('page changed to =', page);
 
     async function getTestimonials() {
       let newTestimonials = await fetchAPI('testimonials', `&pagination[pageSize]=${6}&pagination[page]=${page}`, false, false);
@@ -60,7 +60,7 @@ export default function Testimonials({ content, testimonials }) {
                 disabled={page >= testimonials.meta.pagination.pageCount}
                 onClick={() => setPage(page + 1)}
                 btnElement
-                className="outline dark large"
+                className="outline dark large d-none d-lg-inline-flex"
                 RightIcon={ArrowRight}
               >
                 Ver Mais
@@ -78,11 +78,10 @@ export default function Testimonials({ content, testimonials }) {
                 grabCursor
                 speed={1500}
                 loop
-                modules={[Autoplay, FreeMode]}
-                freeMode
+                modules={[Autoplay]}
                 autoplay={{
                   delay: 200,
-                  disableOnInteraction: false,
+                  disableOnInteraction: true,
                   pauseOnMouseEnter: true,
                   reverseDirection: index % 2 === 1,
                 }}
@@ -99,6 +98,15 @@ export default function Testimonials({ content, testimonials }) {
           }
         </div>
       </div>
+      <Button
+        disabled={page >= testimonials.meta.pagination.pageCount}
+        onClick={() => setPage(page + 1)}
+        btnElement
+        className="outline dark large d-inline-flex d-lg-none"
+        RightIcon={Plus}
+      >
+        Ver Mais
+      </Button>
     </div>
   )
 }

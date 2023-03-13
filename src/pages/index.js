@@ -33,7 +33,7 @@ export default function Home({ home, testimonials, partners, recentPosts, info, 
           <Solutions content={home.solutions} />
         </Section>
 
-        <Section data-bg="light" id="depoimentos" pb="120" pt="120">
+        <Section data-bg="light" id="depoimentos" pb="120 48" pt="120 88">
           <Testimonials testimonials={testimonials} content={home.testimonials} />
         </Section>
 

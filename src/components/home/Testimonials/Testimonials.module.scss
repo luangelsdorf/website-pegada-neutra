@@ -1,3 +1,5 @@
+@use "../../../styles/scss/mixins";
+
 .section {
   background-color: rgb(var(--light-green));
 
@@ -13,6 +15,14 @@
 
     a {
       align-self: flex-end;
+    }
+  }
+
+  @include mixins.lg {
+    text-align: center;
+
+    & > button {
+      margin-top: 40px;
     }
   }
 }
@@ -56,6 +66,23 @@
       font-weight: 700;
     }
   }
+
+  @include mixins.lg {
+    padding: 40px 32px;
+    text-align: left;
+
+    header {
+      img {
+        &:first-child {
+          max-width: 96px;
+        }
+        &:last-child {
+          width: 24px;
+          object-fit: contain;
+        }
+      }
+    }
+  }
 }
 
 .swipers {
@@ -65,5 +92,11 @@
 
   :global(.swiper) {
     width: 100%;
+  }
+
+  @include mixins.sm {
+    :global(.col-12) {
+      padding: 0 12px;
+    }
   }
 }
