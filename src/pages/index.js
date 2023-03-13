@@ -37,7 +37,7 @@ export default function Home({ home, testimonials, partners, recentPosts, info, 
           <Testimonials testimonials={testimonials} content={home.testimonials} />
         </Section>
 
-        <Section data-bg="light" id="parceiros" pb="96" pt="96">
+        <Section data-bg="light" id="parceiros" pb="96 88" pt="96 48">
           <Partners partners={partners} content={home.partners} />
         </Section>
 

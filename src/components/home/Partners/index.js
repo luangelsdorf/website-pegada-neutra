@@ -1,6 +1,4 @@
 import ArrowRight from '@ui-icons/ArrowRight.svg';
-import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
 import styles from './Partners.module.scss';
 import Button from 'src/components/common/Button';
@@ -10,7 +8,7 @@ export default function Partners({ content, partners }) {
   return (
     <div className={styles.section}>
       <div className="container">
-        <div className="row gy-4">
+        <div className="row gy-3 gy-lg-4">
           <div className="col-12">
             <header>
               <p className="overline light">{content.title.overline}</p>

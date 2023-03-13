@@ -1,3 +1,5 @@
+@use '../../../styles/scss/mixins';
+
 .section {
   background-color: rgb(var(--light-green));
   text-align: center;
@@ -35,5 +37,13 @@
     margin: auto;
     width: 150px;
     height: auto;
+  }
+
+  @include mixins.lg {
+    padding: 0;
+
+    img {
+      width: 80px;
+    }
   }
 }
