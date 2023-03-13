@@ -19,7 +19,6 @@ export default function Solutions({ content }) {
         ease: 'none',
         scrollTrigger: {
           trigger: '.horizontal',
-          start: 'top top',
           end: self => `top ${-(self.trigger.scrollWidth - innerWidth + 250)}`,
           scrub: true,
           pin: true,
@@ -30,37 +29,6 @@ export default function Solutions({ content }) {
 
     return () => ctx.revert();
   }, []);
-
-  const cards = [
-    {
-      id: 1,
-      icon: 'Recycle',
-      title: 'Créditos de Reciclagem',
-      text: 'Oferecemos a compensação ambiental através dos créditos de reciclagem.',
-      href: '/solucoes',
-    },
-    {
-      id: 2,
-      icon: 'Carbon',
-      title: 'Créditos de Carbono',
-      text: 'Créditos de carbono provenientes de energia renovável e reflorestamento.',
-      href: '/solucoes',
-    },
-    {
-      id: 3,
-      icon: 'World',
-      title: 'Ações Sócio-Ambientais',
-      text: 'Participe a projetos de conscientização e limpeza do meio ambiente.',
-      href: '/solucoes',
-    },
-    {
-      id: 4,
-      icon: 'Environmental',
-      title: 'Soluções Customizadas',
-      text: 'Cada empresa é única, nada mais natural que sua solução seja também.',
-      href: '/solucoes',
-    },
-  ]
 
   const Card = ({ icon, title, text, className, ...rest }) => (
     <article className={`${styles.card} ${className ?? ''}`} {...rest}>
@@ -90,7 +58,7 @@ export default function Solutions({ content }) {
               content.solutionList.map((card, index) => (
                 <div className="co-12 col-md-8 col-lg-6 col-xl-5 d-flex align-items-center" key={card.id}>
                   <Link href={'/solucoes#' + slugify(card.title)} className="link-image">
-                    <Card {...card} className={`${index === 0 ? styles.first : ''} ${index === cards.length - 1 ? styles.last : ''}`} />
+                    <Card {...card} className={`${index === 0 ? styles.first : ''} ${index === content.solutionList.length - 1 ? styles.last : ''}`} />
                   </Link>
                 </div>
               ))

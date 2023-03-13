@@ -23,8 +23,8 @@ export default function Home({ home, testimonials, partners, recentPosts, info, 
           <Banner content={home.banner} />
         </Section>
 
-        <GrowEffect style={{backgroundColor: 'rgb(var(--light-green))'}}>
-          <Section data-bg="light" id="sobre-nos" pb="120 88" pt="0 88">
+        <GrowEffect style={{ backgroundColor: 'rgb(var(--light-green))' }}>
+          <Section data-bg="light" id="sobre-nos">
             <AboutUs content={home.about} />
           </Section>
         </GrowEffect>

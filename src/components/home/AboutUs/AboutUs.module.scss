@@ -1,6 +1,13 @@
 @use "../../../styles/scss/mixins";
 
 .section {
+  padding-top: 0;
+  padding-bottom: 120px;
+
+  @include mixins.lg {
+    padding-top: 88px;
+    padding-bottom: 88px;
+  }
 }
 
 .content {
@@ -38,10 +45,6 @@
   @include mixins.lg {
     padding: 0;
 
-    video {
-      display: none;
-    }
-
     h2 {
       color: rgb(var(--dark-green));
       margin-bottom: 40px;
@@ -60,9 +63,9 @@
       }
 
       a:last-child {
-       margin-top: 40px;
-       margin-left: auto;
-       margin-right: auto;
+        margin-top: 40px;
+        margin-left: auto;
+        margin-right: auto;
       }
     }
   }
@@ -87,4 +90,8 @@
   width: 100%;
   height: 100%;
   border-radius: 16px;
+
+  @include mixins.lg {
+    display: none;
+  }
 }
