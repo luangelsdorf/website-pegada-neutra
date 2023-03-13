@@ -1,6 +1,4 @@
 import ArrowRight from '@ui-icons/ArrowRight.svg';
-import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
 import styles from './PostCard.module.scss';
 import Button from '../Button';

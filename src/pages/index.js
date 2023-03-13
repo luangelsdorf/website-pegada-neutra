@@ -41,7 +41,7 @@ export default function Home({ home, testimonials, partners, recentPosts, info, 
           <Partners partners={partners} content={home.partners} />
         </Section>
 
-        <Section data-bg="dark" id="posts" pt="96" pb="120" style={{ backgroundColor: 'rgb(var(--dark-green))' }}>
+        <Section data-bg="dark" id="posts" pt="96 80" pb="120 88" style={{ backgroundColor: 'rgb(var(--dark-green))' }}>
           <RecentPosts postList={recentPosts} />
         </Section>
 

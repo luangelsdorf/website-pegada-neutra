@@ -1,6 +1,6 @@
+@use '../../../styles/scss/mixins';
+
 .section {
-  /* position: fixed; */
-  /* bottom: 0; */
   width: 100%;
   background-color: rgb(var(--dark-green));
   position: relative;
@@ -106,6 +106,10 @@
   display: flex;
   align-items: center;
   border-top: 1px solid rgb(var(--soft-dark-green));
+
+  @include mixins.lg {
+    gap: 16px;
+  }
 
   & > div:first-child {
     display: flex;

@@ -1,7 +1,7 @@
 import ArrowRight from '@ui-icons/ArrowRight.svg';
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import PostCard from 'src/components/common/PostCard';
-import { Autoplay, FreeMode } from 'swiper';
+import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styles from './RecentPosts.module.scss';
 
@@ -45,11 +45,10 @@ export default function RecentPosts({ postList }) {
           centeredSlides
           loop
           speed={1500}
-          modules={[Autoplay, FreeMode]}
-          freeMode
+          modules={[Autoplay]}
           autoplay={{
             delay: 200,
-            disableOnInteraction: false,
+            disableOnInteraction: true,
             pauseOnMouseEnter: true,
           }}
         >

@@ -1,3 +1,5 @@
+@use '../../../styles/scss/mixins';
+
 .card {
   .cover {
     position: relative;
@@ -71,6 +73,18 @@
   &.small {
     .cover {
       height: 360px;
+    }
+  }
+
+  @include mixins.lg {
+    .cover {
+      height: 320px;
+    }
+
+    &.small {
+      .cover {
+        height: 270px;
+      }
     }
   }
 }

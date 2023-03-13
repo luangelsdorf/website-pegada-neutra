@@ -1,3 +1,5 @@
+@use "../../../styles/scss/mixins";
+
 .section {
   background-color: rgb(var(--dark-green));
 
@@ -43,6 +45,16 @@
       }
     }
   }
+
+  @include mixins.lg {
+    header {
+      text-align: center;
+
+      .controls {
+        display: none;
+      }
+    }
+  }
 }
 
 .postList {
@@ -51,5 +63,11 @@
 
   .item {
     width: 448px;
+  }
+
+  @include mixins.lg {
+    .item {
+      width: 100%;
+    }
   }
 }
