@@ -36,9 +36,11 @@ export default function Header({ light }) {
 
   const DropDownCard = ({ Icon, title, href }) => (
     <li>
-      <Icon />
-      <div>{title}</div>
-      <Button className="light" RightIcon={ArrowRight} link href={`/solucoes${href}`}>Saiba Mais</Button>
+      <Button className="link-image" link href={`/solucoes${href}`}>
+        <Icon />
+        <div>{title}</div>
+        <Button className="light" RightIcon={ArrowRight} divElement link>Saiba Mais</Button>
+      </Button>
     </li>
   );
 
