@@ -13,8 +13,9 @@ export default function AboutUs({ content, info }) {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+    let mm = gsap.matchMedia();
 
-    let ctx = gsap.context(() => {
+    mm.add('(min-width: 992px)', () => {
       gsap.fromTo('#sobre h2 div:first-child',
         { x: 200, },
         {
@@ -38,15 +39,26 @@ export default function AboutUs({ content, info }) {
         });
     });
 
-    return () => ctx.revert();
-  }, []);
+    mm.add('(max-width: 992px)', () => {
+      gsap.to('#sobre h2 div:first-child', {
+        scrollTrigger: {
+          trigger: '#sobre',
+          start: '120px 15%',
+          scrub: 1,
+          onEnter: () => setLight(true),
+          onLeaveBack: () => setLight(false),
+        },
+      })
+    })
 
+    return () => mm.revert();
+  }, []);
 
   return (
     <div className={`${styles.section}${light ? ' ' + styles.light : ''}`}>
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-12 col-lg-8">
+          <div className="col-12 col-lg-8 order-1 order-lg-0">
             <header>
               <h2>
                 {
@@ -56,10 +68,10 @@ export default function AboutUs({ content, info }) {
               </h2>
             </header>
           </div>
-          <div className="col-12 col-lg-5">
+          <div className="col-12 col-lg-5 order-0 order-lg-1">
             <Img {...content.image} />
           </div>
-          <div className="col-12 col-lg-5">
+          <div className="col-12 col-lg-5 order-2">
             <div className={styles.textContent}>
               <p>{content.firstText}</p>
               <p>{content.secondText}</p>

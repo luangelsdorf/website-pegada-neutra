@@ -1,13 +1,17 @@
-.section {
-  padding-top: 120px;
-  padding-bottom: 160px;
+@use '../../../styles/scss/mixins';
 
+.section {
   header {
     margin-top: 40px;
     h2 {
       span {
         color: rgb(var(--phthalo-green));
       }
+    }
+
+    @include mixins.lg {
+      text-align: left;
+      margin-bottom: 48px;
     }
   }
 }
@@ -39,6 +43,14 @@
       p {
         color: rgb(var(--soft-dark-green));
       }
+    }
+  }
+
+  @include mixins.lg {
+    text-align: left !important;
+
+    article {
+      padding: 64px 32px;
     }
   }
 }

@@ -7,8 +7,9 @@ export default function Principles({ content }) {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+    let mm = gsap.matchMedia();
 
-    let ctx = gsap.context(() => {
+    mm.add('(min-width: 992px)', () => {
       ScrollTrigger.create({
         trigger: '#princípios header',
         endTrigger: '#princípios',
@@ -36,9 +37,9 @@ export default function Principles({ content }) {
           onLeaveBack: self => self.trigger.classList.remove(styles.active),
         })
       })
-    });
+    })
 
-    return () => ctx.revert();
+    return () => mm.revert();
   }, []);
 
   const Card = props => (

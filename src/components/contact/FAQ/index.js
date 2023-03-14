@@ -11,7 +11,8 @@ export default function FAQ({ content, light }) {
     let faqElement = faq.current;
 
     function handleCollapse(e) {
-      if (e.type === 'show.bs.collapse') {
+      window.dispatchEvent(new Event('resize'));
+      if (e.type === 'shown.bs.collapse') {
         e.currentTarget.classList.add(styles.active);
       } else {
         e.currentTarget.classList.remove(styles.active);
@@ -19,14 +20,14 @@ export default function FAQ({ content, light }) {
     }
 
     faq.current?.childNodes.forEach(q => {
-      q.addEventListener('show.bs.collapse', handleCollapse);
-      q.addEventListener('hide.bs.collapse', handleCollapse);
+      q.addEventListener('shown.bs.collapse', handleCollapse);
+      q.addEventListener('hidden.bs.collapse', handleCollapse);
     });
 
     return () => {
       faqElement?.childNodes.forEach(q => {
-        q.removeEventListener('show.bs.collapse', handleCollapse);
-        q.removeEventListener('hide.bs.collapse', handleCollapse);
+        q.removeEventListener('shown.bs.collapse', handleCollapse);
+        q.removeEventListener('hidden.bs.collapse', handleCollapse);
       });
     }
   }, []);

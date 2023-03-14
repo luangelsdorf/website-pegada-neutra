@@ -15,3 +15,11 @@
   --soft-dark-green: 46, 97, 90;
   --soft-phthalo-green: 222, 239, 191;
 }
+
+.bg-light {
+  background-color: rgb(var(--light-green));
+}
+
+.bg-dark {
+  background-color: rgb(var(--dark-green));
+}

@@ -25,11 +25,11 @@ export default function SobreNos({ about, faq, info, footer }) {
           <AboutUs content={about.aboutUs} info={footer} />
         </Section>
 
-        <Section data-bg="dark" id="princípios">
+        <Section data-bg="dark" id="princípios" pt="120 80" pb="160 96">
           <Principles content={about.principles} />
         </Section>
 
-        <Section data-bg="light" id="faq">
+        <Section className="bg-light" data-bg="light" id="faq" pt="120 80" pb="120 80">
           <FAQ light content={faq} />
         </Section>
       </main>

@@ -202,8 +202,8 @@ a:not(.btn),
   }
 }
 
-.social {
-  display: flex;
+.social:not(.btn) {
+  display: inline-flex;
   padding: 16px;
   border-radius: 56px;
 
