@@ -6,6 +6,7 @@
 
 :root {
   scroll-behavior: auto !important;
+  overflow: overlay;
 }
 
 *,
@@ -100,3 +101,14 @@ menu {
     padding: 0 30px;
   }
 }
+
+/* ::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background-color: rgb(0, 0, 0, 0);
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(var(--greenery), 0.6);
+  border-radius: 56px;
+} */

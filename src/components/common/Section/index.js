@@ -34,6 +34,10 @@ export default function Section({
     isMobile ? setDevice('mobile') : setDevice('desktop');
   }, [isMobile]);
 
+  useEffect(() => {
+    window.dispatchEvent(new Event('resize'));
+  }, [device]);
+
   return (
     <section style={{ ...spacing[device], ...style }} {...rest}>
       {children}

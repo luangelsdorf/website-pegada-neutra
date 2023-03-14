@@ -70,7 +70,7 @@ export default function Footer({ content, light, info }) {
             </div>
             <div className="col-12 col-lg-3 offset-lg-1">
               <div className={styles.contact}>
-                <Button href="#tel" className="outline phthalo small" LeftIcon={TelephoneFill}>{info.phone}</Button>
+                <Button href="#tel" className="outline phthalo small d-none d-lg-inline-flex" LeftIcon={TelephoneFill}>{info.phone}</Button>
                 <ul>
                   <li>
                     <Button className={`small ${light ? 'dark' : 'light'}`} link href="/contato">Fale Conosco</Button>
@@ -85,6 +85,7 @@ export default function Footer({ content, light, info }) {
                     <Button className={`small ${light ? 'dark' : 'light'}`} link href="#">Política de Privacidade</Button>
                   </li>
                 </ul>
+                <Button href="#tel" className="outline phthalo small d-inline-flex d-lg-none" LeftIcon={TelephoneFill}>{info.phone}</Button>
               </div>
             </div>
           </div>
