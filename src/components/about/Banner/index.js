@@ -1,7 +1,5 @@
 import React from 'react';
-import Button from 'src/components/common/Button';
 import styles from './Banner.module.scss';
-import PlayCircleFill from '@ui-icons/PlayCircleFill.svg';
 
 export default function Banner({ content }) {
   return (

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Testimonials.module.scss';
-import ArrowRight from '@ui-icons/ArrowRight.svg';
 import Plus from '@ui-icons/PlusLg.svg';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -61,7 +60,7 @@ export default function Testimonials({ content, testimonials }) {
                 onClick={() => setPage(page + 1)}
                 btnElement
                 className="outline dark large d-none d-lg-inline-flex"
-                RightIcon={ArrowRight}
+                RightIcon={Plus}
               >
                 Ver Mais
               </Button>
