@@ -27,11 +27,11 @@ export default function Principles({ content }) {
           end: "bottom 120px",
           onEnter: self => {
             self.trigger.classList.add(styles.active);
-            document.getElementById('principle').textContent = self.trigger.dataset.overline;
+            document.getElementById('principle').textContent = ' ' + self.trigger.dataset.overline;
           },
           onEnterBack: self => {
             self.trigger.classList.add(styles.active);
-            document.getElementById('principle').textContent = self.trigger.dataset.overline;
+            document.getElementById('principle').textContent = ' ' + self.trigger.dataset.overline;
           },
           onLeave: self => self.trigger.classList.remove(styles.active),
           onLeaveBack: self => self.trigger.classList.remove(styles.active),
@@ -56,7 +56,7 @@ export default function Principles({ content }) {
           <div className="col-12 col-lg-5 offset-lg-1">
             <header>
               <p className="overline dark">{content.title.overline}</p>
-              <h2>{content.title.title}: <span id="principle"></span></h2>
+              <h2>{content.title.title} <span id="principle"></span></h2>
             </header>
           </div>
           <div className="col-12 col-lg-5 offset-lg-1">
