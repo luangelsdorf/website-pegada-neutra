@@ -44,7 +44,7 @@ export default function SobreNos({ services, actions, faq, info, footer }) {
           <CustomSolutions content={services.customSolutions} />
         </Section>
 
-        <Section data-bg="light" id="faq">
+        <Section data-bg="light" id="faq" pt="120 80" pb="120 80" className="bg-dark">
           <FAQ content={faq} />
         </Section>
       </main>

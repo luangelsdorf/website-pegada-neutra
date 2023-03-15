@@ -1,3 +1,5 @@
+@use "../../../styles/scss/mixins";
+
 .section {
   padding-top: 104px;
   padding-bottom: 120px;
@@ -23,6 +25,26 @@
       color: rgb(var(--dark-green));
     }
   }
+
+  @include mixins.lg {
+    padding-top: 80px;
+    padding-bottom: 96px;
+    text-align: center;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    gap: 40px;
+
+    :global(.row) {
+      gap: 24px;
+    }
+
+    header {
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: 16px;
+      gap: 40px;
+    }
+  }
 }
 
 .card {
@@ -40,5 +62,9 @@
     display: inline;
     font: var(--body-sm);
     color: rgb(var(--soft-dark-green));
+  }
+
+  @include mixins.lg {
+    text-align: left;
   }
 }
