@@ -23,7 +23,7 @@ export default function Parceiros({ clients, partners, info, footer }) {
         
         <Filter />
 
-        <Section id="lista" data-bg="light" mt="48" pb="120">
+        <Section id="lista" data-bg="light" mt="48 56" pb="120">
           <PartnerList content={partners}  />
         </Section>
       </main>

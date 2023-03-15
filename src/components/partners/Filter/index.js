@@ -21,8 +21,8 @@ export default function Filter({ content }) {
           <input type="radio" name="order" id="category" />
           <label className="btn outline dark small" htmlFor="category">Por Categoria</label>
         </div>
+        <Button btnElement className="btn outline dark small" LeftIcon={Search}>Pesquisar</Button>
       </div>
-      <Button btnElement className="btn outline dark small" LeftIcon={Search}>Pesquisar</Button>
     </div>
   )
 }

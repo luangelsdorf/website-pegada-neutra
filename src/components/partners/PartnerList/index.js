@@ -13,7 +13,7 @@ export default function PartnerList({ content }) {
         <div className="row gy-4 justify-content-center">
           {
             content.map((client, index) => (
-              <div className="col-6 col-lg-3" key={index}>
+              <div className="col-12 col-md-4 col-lg-3" key={index}>
                 <PartnerLogo>
                   <a className="link-image" href={client.attributes.link}>
                     <Img {...client.attributes.logo} />
