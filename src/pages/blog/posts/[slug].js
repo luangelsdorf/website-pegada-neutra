@@ -22,13 +22,15 @@ export default function Post({ post, recentPosts, info, footer }) {
         </Section>
 
         <div className="col-12 col-lg-8 mx-auto">
-          <Section pt="96" pb="24">
+          <Section data-bg="light" pt="96 16" pb="24">
             <Body content={post.body} />
           </Section>
-          <Section>
+
+          <Section data-bg="light">
             <Share slug={post.slug} postTitle={post.title} />
           </Section>
         </div>
+        
         <Section mt="120" pt="96" pb="120" style={{ backgroundColor: 'rgb(var(--dark-green))' }}>
           <RecentPosts postList={recentPosts} />
         </Section>

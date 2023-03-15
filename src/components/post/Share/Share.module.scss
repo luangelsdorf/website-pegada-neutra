@@ -8,7 +8,7 @@
   border-bottom: 1px solid rgb(var(--dark-green), 0.2);
 
   @include mixins.sm {
-    gap: 24px;
+    gap: 8px;
   }
 
   h2 {
@@ -32,6 +32,15 @@
       svg {
         cursor: pointer;
       }
+    }
+  }
+
+  @include mixins.lg {
+    flex-direction: column;
+    padding: 24px 0;
+
+    h2 {
+      padding: 0;
     }
   }
 }

@@ -1,7 +1,9 @@
+@use '../../../styles/scss/mixins';
+
 .banner {
   position: relative;
   padding-top: 200px;
-  padding-bottom: 232px;
+  padding-bottom: 200px;
   background-image: linear-gradient(180deg, rgba(24, 51, 47, 0.5) 0%, #18332f 100%);
 
   &::before {
