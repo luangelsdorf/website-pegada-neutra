@@ -1,3 +1,5 @@
+@use '../../../styles/scss/mixins';
+
 @keyframes spin {
   100% {
     transform: rotate(360deg);
@@ -8,7 +10,7 @@
 }
 
 .list {
-  columns: 2 448px;
+  columns: 2;
   gap: 60px;
 
   [data-left="true"] {
@@ -20,17 +22,28 @@
   & + button {
     justify-content: center;
   }
+
+  @include mixins.md {
+    columns: auto;
+    margin: auto;
+  }
 }
 
 .item {
   max-width: 448px;
   break-inside: avoid;
   margin-bottom: 48px;
+
+  @include mixins.md {
+    max-width: none;
+    padding: 0 12px;
+    margin-bottom: 24px;
+  }
 }
 
 .more {
   text-align: center;
-  padding: 120px 0;
+  padding: 24px 0;
   pointer-events: none;
 
   button {

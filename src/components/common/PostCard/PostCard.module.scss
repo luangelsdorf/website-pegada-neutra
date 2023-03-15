@@ -105,4 +105,14 @@
   p {
     color: rgb(var(--soft-phthalo-green));
   }
+
+  @include mixins.md {
+    margin-top: 24px;
+
+    h3 {
+      a {
+        display: inline;
+      }
+    }
+  }
 }

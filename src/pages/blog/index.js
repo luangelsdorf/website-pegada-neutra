@@ -18,7 +18,7 @@ export default function Blog({ blog, postList, pagination, info, footer }) {
       <Header />
 
       <main>
-        <Section id="home" data-bg="dark" pt="176" pb="96" style={{ background: 'rgb(var(--dark-green))' }}>
+        <Section id="home" data-bg="dark" pt="176 168" pb="96 80" style={{ background: 'rgb(var(--dark-green))' }}>
           <Banner content={blog} />
         </Section>
 
