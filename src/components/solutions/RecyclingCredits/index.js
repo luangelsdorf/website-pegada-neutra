@@ -33,9 +33,11 @@ export default function RecyclingCredits({ content }) {
     <div className={styles.section}>
       <div className="container">
         <div className="row">
-          <div className="col-12 col-lg-5 d-flex align-items-center justify-content-between">
-            <Img {...content.intro.icon} />
-            <h2>{content.intro.title}</h2>
+          <div className="col-12 col-lg-5">
+            <div className={styles.sectionHeader}>
+              <Img {...content.intro.icon} />
+              <h2>{content.intro.title}</h2>
+            </div>
           </div>
           <div className="col-12 col-lg-6 offset-lg-1 d-flex align-items-center">
             <p>{content.intro.text}</p>
@@ -45,11 +47,17 @@ export default function RecyclingCredits({ content }) {
 
       <div className="parallax-section">
         <div className={styles.about}>
-          <Img {...content.image} />
+          <div>
+            <Img {...content.image} />
+          </div>
           <div>
             <div className="container">
               <h3>{content.about.title}</h3>
-              <p>{content.about.text}</p>
+              <p>
+                {
+                  content.about.text.split('\n').map((half, index) => <span key={index}>{half}</span>)
+                }
+              </p>
             </div>
           </div>
         </div>

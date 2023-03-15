@@ -94,6 +94,7 @@
     }
 
     &.solutions {
+      clip-path: inset(0 0 round 0 0 24px 24px);
       .cover {
         &::before {
           background-image: none;

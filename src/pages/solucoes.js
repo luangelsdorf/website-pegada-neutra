@@ -22,12 +22,12 @@ export default function SobreNos({ services, actions, faq, info, footer }) {
       </Head>
 
       <main>
-        <Section data-bg="light" id="home">
+        <Section data-bg="light" id="home" className="bg-dark" style={{ position: 'relative', zIndex: '-1' }}>
           <Banner content={services.banner} solutions />
         </Section>
 
-        <GrowEffect style={{ backgroundColor: 'rgb(var(--dark-green))' }}>
-          <Section data-bg="dark" id="créditos-de-reciclagem" pb="96">
+        <GrowEffect style={{ backgroundColor: 'rgb(var(--dark-green))', position: 'relative', zIndex: '-1' }}>
+          <Section data-bg="dark" id="créditos-de-reciclagem" pb="96" pt="0 80">
             <RecyclingCredits content={services.recyclingCredits} />
           </Section>
         </GrowEffect>
@@ -64,7 +64,7 @@ export async function getStaticProps() {
   return {
     props: {
       services,
-      actions,  
+      actions,
       faq,
       info,
       footer,
