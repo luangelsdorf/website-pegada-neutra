@@ -1,3 +1,5 @@
+@use "../../../styles/scss/mixins";
+
 .section {
   position: relative;
   border-top-left-radius: 16px;
@@ -71,6 +73,34 @@
       align-items: center;
     }
   }
+
+  @include mixins.md {
+    height: 800px;
+
+    &::after {
+      height: 640px;
+    }
+
+    video {
+      height: 800px;
+    }
+
+    & > div {
+      bottom: 56px;
+    }
+
+    header {
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+
+      & > div {
+        flex-direction: column;
+        gap: 32px;
+        margin-bottom: 40px;
+      }
+    }
+  }
 }
 
 .textSection {
@@ -82,5 +112,16 @@
   p {
     columns: 2;
     column-gap: 80px;
+  }
+
+  @include mixins.md {
+    padding-top: 56px;
+    padding-bottom: 80px;
+
+    p {
+      text-align: center;
+      columns: auto;
+      white-space: break-spaces;
+    }
   }
 }
