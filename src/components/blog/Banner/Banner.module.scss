@@ -1,3 +1,5 @@
+@use '../../../styles/scss/mixins';
+
 .banner {
   text-align: center;
 
@@ -7,6 +9,7 @@
     }
 
     h1 {
+      font: var(--heading-md);
       max-width: 628px;
       margin: 0 auto;
     }
@@ -18,4 +21,11 @@
   margin-top: 72px;
   justify-content: center;
   gap: 24px;
+
+  @include mixins.lg {
+    flex-wrap: wrap;
+    gap: 16px;
+
+    margin-top: 40px;
+  }
 }
