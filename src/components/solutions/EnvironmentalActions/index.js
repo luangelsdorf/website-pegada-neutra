@@ -4,7 +4,7 @@ import Img from 'src/components/common/Img';
 import styles from './EnvironmentalActions.module.scss';
 import ArrowRight from '@ui-icons/ArrowRight.svg';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination } from 'swiper';
+import { Autoplay, Pagination, EffectFade } from 'swiper';
 import Link from 'next/link';
 
 export default function EnvironmentalActions({ content, actions }) {
@@ -20,7 +20,7 @@ export default function EnvironmentalActions({ content, actions }) {
                 <h2>{content.about.title}</h2>
               </header>
               <p>{content.about.text}</p>
-              <Button href={content.button.url} RightIcon={ArrowRight}>{content.button.text}</Button>
+              <Button className="d-none d-lg-inline-flex" href={content.button.url} RightIcon={ArrowRight}>{content.button.text}</Button>
             </div>
           </div>
         </div>
@@ -30,6 +30,8 @@ export default function EnvironmentalActions({ content, actions }) {
         <div className="col-12 col-lg-5">
           <div className={styles.sliderSection}>
             <Swiper
+              effect="fade"
+              noSwiping
               spaceBetween={24}
               grabCursor
               centeredSlides
@@ -37,7 +39,7 @@ export default function EnvironmentalActions({ content, actions }) {
               speed={1200}
               onTransitionEnd={self => self.params.speed = 1200}
               onTouchStart={self => self.params.speed = 300}
-              modules={[Autoplay, Pagination]}
+              modules={[Autoplay, Pagination, EffectFade]}
               pagination={{
                 enabled: true,
                 type: 'fraction',

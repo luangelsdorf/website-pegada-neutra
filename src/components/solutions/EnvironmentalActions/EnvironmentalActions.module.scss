@@ -1,3 +1,5 @@
+@use '../../../styles/scss/mixins';
+
 .section {
   position: relative;
   background-color: rgb(var(--dark-green));
@@ -23,6 +25,19 @@
     margin-bottom: 72px;
     margin-right: 130px;
   }
+
+  @include mixins.lg {
+    header {
+      gap: 32px;
+      flex-direction: column;
+    }
+
+    p {
+      margin-right: 0;
+      margin-bottom: 80px;
+      white-space: break-spaces;
+    }
+  }
 }
 
 .sliderSection {
@@ -46,6 +61,12 @@
       &::before {
         content: '0';
       }
+    }
+  }
+
+  @include mixins.lg {
+    :global(.swiper-pagination) {
+      right: 24px;
     }
   }
 }
@@ -117,6 +138,36 @@
       h3 {
         font: var(--body-lg-bold);
       }
+    }
+  }
+
+  @include mixins.lg {
+    width: 100%;
+    position: relative;
+    left: 12px;
+    height: 640px;
+
+    .coverWrapper {
+      clip-path: inset(0 0 round 16px 16px 0 0);
+
+      .footer {
+        max-width: 200px;
+        text-align: left;
+        bottom: 32px;
+        left: 24px;
+
+        a {
+          font: var(--body-sm);
+        }
+      }
+    }
+
+    & > :global(.col-12) {
+      padding: 0;
+    }
+
+    :global(.col-12.swiper-slide) {
+      padding: 0;
     }
   }
 }

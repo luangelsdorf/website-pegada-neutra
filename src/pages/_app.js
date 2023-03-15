@@ -1,5 +1,7 @@
 import Head from 'next/head';
 import 'swiper/css';
+import 'swiper/css/autoplay';
+import 'swiper/css/effect-fade';
 import 'bootstrap/dist/css/bootstrap-grid.min.css';
 import '../styles/styles.scss';
 import { Manrope } from "next/font/google";
