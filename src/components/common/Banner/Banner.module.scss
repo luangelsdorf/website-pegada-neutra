@@ -92,6 +92,24 @@
         height: calc(100vh + 150px) !important;
       }
     }
+
+    &.solutions {
+      .cover {
+        &::before {
+          background-image: none;
+        }
+
+        img {
+          object-position: center -110px;
+          height: calc(100vh - 30px) !important;
+
+          &:first-child {
+            object-position: bottom;
+            height: 100% !important;
+          }
+        }
+      }
+    }
   }
 
   @include mixins.md {

@@ -27,13 +27,22 @@ export default function Banner({ content, solutions, height, }) {
       <div className={styles.cover} id="banner-cover">
         {
           content.cover ? (
-            <Img
-              {...content.cover}
-              fill
-              sizes=""
-              quality={100}
-              priority
-            />
+            <>
+              <Img
+                {...content.cover}
+                fill
+                sizes=""
+                quality={100}
+                priority
+              />
+              <Img
+                {...content.cover}
+                fill
+                sizes=""
+                quality={100}
+                priority
+              />
+            </>
           ) : null
         }
         <div className={styles.overlay} />
