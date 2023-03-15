@@ -29,7 +29,7 @@ export default function Contato({ contact, faq, info, footer }) {
           </Section>
         </GrowEffect>
 
-        <Section id="faq" data-bg="light">
+        <Section id="faq" data-bg="light" pt="120 80" pb="120 80">
           <FAQ light content={faq} />
         </Section>
 

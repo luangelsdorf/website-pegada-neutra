@@ -1,3 +1,5 @@
+@use "../../../styles/scss/mixins";
+
 .section {
   height: 564px;
   display: flex;
@@ -10,5 +12,13 @@
 
   & > div {
     text-align: center;
+  }
+
+  @include mixins.lg {
+    height: 468px;
+
+    & > div {
+      margin-top: 56px;
+    }
   }
 }
