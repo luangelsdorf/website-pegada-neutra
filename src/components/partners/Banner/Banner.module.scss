@@ -1,3 +1,5 @@
+@use '../../../styles/scss/mixins';
+
 .banner {
   position: relative;
   display: flex;
@@ -21,5 +23,9 @@
     height: 56px;
     width: 56px;
     box-sizing: border-box;
+
+    @include mixins.lg {
+      bottom: calc(-120px + 14px);
+    }
   }
 }

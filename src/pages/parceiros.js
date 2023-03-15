@@ -17,7 +17,7 @@ export default function Parceiros({ clients, partners, info, footer }) {
       </Head>
 
       <main>
-        <Section id="home" data-bg="dark" pb="120" pt="200" style={{ background: 'rgb(var(--dark-green))' }}>
+        <Section id="home" data-bg="dark" pb="120 80" pt="200 168" style={{ background: 'rgb(var(--dark-green))' }}>
           <Banner content={clients} />
         </Section>
         
