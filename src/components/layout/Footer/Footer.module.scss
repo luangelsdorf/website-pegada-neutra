@@ -12,6 +12,9 @@
 
     @include mixins.lg {
       padding-top: 168px;
+      :global(.row) {
+        padding-left: 40px;
+      }
     }
   }
 
@@ -139,11 +142,6 @@
   align-items: center;
   border-top: 1px solid rgb(var(--soft-dark-green));
 
-  @include mixins.lg {
-    margin-top: 80px;
-    gap: 16px;
-  }
-
   & > div:first-child {
     display: flex;
     align-items: center;
@@ -154,11 +152,25 @@
     font: var(--body-detail);
     color: rgb(var(--soft-phthalo-green));
     margin: auto;
+    white-space: normal;
   }
 
   & > div:last-child {
     display: flex;
     flex: 1;
     justify-content: flex-end;
+  }
+
+  @include mixins.lg {
+    margin-top: 80px;
+    gap: 16px;
+
+    p {
+      white-space: break-spaces;
+    }
+
+    & > div:last-child {
+      flex: auto;
+    }
   }
 }
