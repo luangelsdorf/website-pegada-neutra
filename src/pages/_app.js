@@ -84,7 +84,7 @@ export default function App({ Component, pageProps }) {
     return () => links.forEach(link => link.removeEventListener('click', handleLinkClick));
   }, [router]);
 
-  useEffect(() => {
+  /* useEffect(() => {
     function handleChangeComplete() {
       setTimeout(() => {
         scrollTo(0, 0);
@@ -94,32 +94,33 @@ export default function App({ Component, pageProps }) {
     router.events.on('routeChangeComplete', handleChangeComplete);
 
     return () => router.events.off('routeChangeComplete', handleChangeComplete);
-  }, [router.events]);
+  }, [router.events]); */
 
   useEffect(() => {
     if (router.query.hash) {
       let target = document.getElementById(router.query.hash);
       if (!target) return;
 
-      let scrollPosition = (target.getBoundingClientRect().top + window.scrollY) - 120;
       window.history.pushState({}, '', `#${router.query.hash}`);
       setTimeout(() => {
+        let scrollPosition = (target.getBoundingClientRect().top + window.scrollY) - 120;
+        console.log(scrollPosition);
         scrollTo(0, scrollPosition);
-      }, 50);
+      }, 1);
     }
   }, [router.query]);
 
-  useEffect(() => {
-    if (window.location.hash) {
-      let target = document.querySelector(decodeURI(window.location.hash));
-      if (!target) return;
+  /* useEffect(() => {
+    let id = decodeURIComponent(router.asPath.split('#').at(-1));
+    let target = document.getElementById(id);
 
-      let scrollPosition = (target.getBoundingClientRect().top + window.scrollY) - 120;
-      setTimeout(() => {
-        scrollTo(0, scrollPosition);
-      }, 50);
-    }
-  }, []);
+    if (!target) return;
+
+    let scrollPosition = (target.getBoundingClientRect().top + window.scrollY) - 80;
+    setTimeout(() => {
+      scrollTo(0, scrollPosition);
+    }, 1);
+  }, [router.asPath]); */
 
   return (
     <>

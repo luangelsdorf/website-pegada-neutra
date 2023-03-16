@@ -57,9 +57,9 @@ export default function Solutions({ content }) {
             {
               content.solutionList.map((card, index) => (
                 <div className="co-12 col-md-8 col-lg-6 col-xl-5 d-flex align-items-center" key={card.id}>
-                  <Link href={'/solucoes#' + slugify(card.title)} className="link-image">
+                  <Button link href={'/solucoes#' + slugify(card.title)} className="link-image">
                     <Card {...card} className={`${index === 0 ? styles.first : ''} ${index === content.solutionList.length - 1 ? styles.last : ''}`} />
-                  </Link>
+                  </Button>
                 </div>
               ))
             }
