@@ -24,7 +24,7 @@ export default function PartnerList({ content }) {
           }
         </div>
       </div>
-      <Button RightIcon={Plus} className="large outline dark" btnElement>Ver Mais</Button>
+      {/* <Button RightIcon={Plus} className="large outline dark" btnElement>Ver Mais</Button> */}
     </div>
   )
 }

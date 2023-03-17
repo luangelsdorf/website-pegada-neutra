@@ -78,9 +78,9 @@ export default function AboutUs({ content, info }) {
               <div className={styles.socialMedia}>
                 <p>Nos encontre em:</p>
                 <div>
-                  <Button link href={info.linkedin} className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Linkedin} />
-                  <Button link href={info.facebook} className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Facebook} />
-                  <Button link href={info.instagram} className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Instagram} />
+                  <Button link href={info.social.linkedin} className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Linkedin} />
+                  <Button link href={info.social.facebook} className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Facebook} />
+                  <Button link href={info.social.instagram} className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Instagram} />
                 </div>
               </div>
             </div>
