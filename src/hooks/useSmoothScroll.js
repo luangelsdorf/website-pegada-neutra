@@ -76,7 +76,9 @@ export default function useSmoothScroll() {
   const router = useRouter();
 
   useLayoutEffect(() => {
-    function initScroll() {
+    function initScroll(url, shallow) {
+      /* if (shallow?.shallow) return; */
+      /* console.log('passou'); */
       return smoothScroll("#content", undefined, 1);
     }
 
@@ -86,7 +88,7 @@ export default function useSmoothScroll() {
 
     return () => {
       router.events.off('routeChangeComplete', initScroll);
-      init.kill();
+      /* init.kill(); */
     }
   }, [router.events]);
 }

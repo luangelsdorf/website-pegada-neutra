@@ -7,7 +7,7 @@ import Footer from 'src/components/layout/Footer';
 import Header from 'src/components/layout/Header';
 import fetchAPI from 'src/utils/fetch';
 
-export default function Blog({ blog, postList, pagination, categories, info, footer, currentCategory = '' }) {
+export default function Categories({ blog, postList, pagination, categories, info, footer, currentCategory }) {
   return (
     <>
       <Head>
@@ -31,9 +31,18 @@ export default function Blog({ blog, postList, pagination, categories, info, foo
   )
 }
 
-export async function getStaticProps() {
+export async function getStaticPaths() {
+  const categories = await fetchAPI('categories', '', false);
+  const paths = categories.map(cat => ({
+    params: { slug: cat.attributes.slug },
+  }));
+
+  return { paths, fallback: 'blocking' };
+}
+
+export async function getStaticProps({ params }) {
   const blog = await fetchAPI('blog');
-  const postListMeta = await fetchAPI('posts', `&pagination[page]=${1}&pagination[pageSize]=${6}&sort=createdAt:DESC`, false, false);
+  const postListMeta = await fetchAPI('posts', `&pagination[page]=${1}&pagination[pageSize]=${6}&sort=createdAt:DESC&filter&filters[$and][0][categorias][slug][$contains]=${params.slug}`, false, false);
   const categories = await fetchAPI('categories', `&pagination[page]=${1}&pagination[pageSize]=${3}&sort=createdAt:DESC`, false);
   const info = await fetchAPI('info');
   const footer = await fetchAPI('footer');
@@ -48,6 +57,7 @@ export async function getStaticProps() {
       categories,
       info,
       footer,
+      currentCategory: params.slug,
     },
     revalidate: 10,
   }

@@ -1,8 +1,20 @@
-import React from 'react';
-import Button from 'src/components/common/Button';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import React, { useEffect } from 'react';
 import styles from './Banner.module.scss';
 
-export default function Banner({ content }) {
+export default function Banner({ content, categories, currentCategory }) {
+  const router = useRouter();
+
+  useEffect(() => {
+    if (router.query.slug) {
+      document.querySelectorAll('[data-slug]')?.forEach(btn => btn.classList.add('outline'));
+      document.querySelector(`[data-slug="${currentCategory}"]`)?.classList.remove('outline');
+    } else {
+      document.querySelector(`[data-slug="all"]`)?.classList.remove('outline');
+    }
+  }, [router.query]);
+
   return (
     <div className={styles.banner}>
       <div className="col-12">
@@ -11,10 +23,20 @@ export default function Banner({ content }) {
           <h1>{content.title.title}</h1>
         </header>
         <div className={styles.categories}>
-          <Button btnElement className="phthalo small">Todos</Button>
-          <Button btnElement className="phthalo small outline">Categoria 01</Button>
-          <Button btnElement className="phthalo small outline">Categoria 02</Button>
-          <Button btnElement className="phthalo small outline">Categoria 04</Button>
+          <Link data-slug="all" scroll={false} href="/blog" className="btn phthalo small outline">Todos</Link>
+          {
+            categories.map((cat, index) => (
+              <Link
+                data-slug={cat.attributes.slug}
+                key={index}
+                scroll={false}
+                href={`/blog/categorias/${cat.attributes.slug}`}
+                className="btn phthalo small outline"
+              >
+                {cat.attributes.name}
+              </Link>
+            ))
+          }
         </div>
       </div>
     </div>

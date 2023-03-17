@@ -97,6 +97,7 @@ export default function App({ Component, pageProps }) {
   }, [router.events]); */
 
   useEffect(() => {
+    window.dispatchEvent(new Event('resize'));
     if (router.query.hash) {
       let target = document.getElementById(router.query.hash);
       if (!target) return;
@@ -104,7 +105,6 @@ export default function App({ Component, pageProps }) {
       window.history.pushState({}, '', `#${router.query.hash}`);
       setTimeout(() => {
         let scrollPosition = (target.getBoundingClientRect().top + window.scrollY) - 120;
-        console.log(scrollPosition);
         scrollTo(0, scrollPosition);
       }, 1);
     }
