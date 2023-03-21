@@ -122,6 +122,17 @@ export default function App({ Component, pageProps }) {
     }, 1);
   }, [router.asPath]); */
 
+  useEffect(() => {
+    const handleCollapse = () => window.dispatchEvent(new Event('resize'));
+    window.addEventListener('shown.bs.collapse', handleCollapse);
+    window.addEventListener('hidden.bs.collapse', handleCollapse);
+
+    return () => {
+      window.removeEventListener('shown.bs.collapse', handleCollapse);
+      window.removeEventListener('hidden.bs.collapse', handleCollapse);
+    }
+  }, []);
+
   return (
     <>
       <Head>

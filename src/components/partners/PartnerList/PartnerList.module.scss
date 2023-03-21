@@ -5,3 +5,33 @@
     margin-top: 80px;
   }
 }
+
+.list {
+  position: relative;
+
+  :global(.row) > h2 {
+    color: rgb(var(--dark-green));
+    font: var(--heading-sm);
+  }
+
+  &:global(.loading) {
+    :global(.container) {
+      opacity: 0.2;
+    }
+
+    .loading {
+      visibility: visible;
+    }
+  }
+
+  .loading {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: -24px;
+    left: 0;
+    padding-top: 48px;
+    z-index: 2;
+    visibility: hidden;
+  }
+}

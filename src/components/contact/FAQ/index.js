@@ -11,7 +11,6 @@ export default function FAQ({ content, light }) {
     let faqElement = faq.current;
 
     function handleCollapse(e) {
-      window.dispatchEvent(new Event('resize'));
       if (e.type === 'shown.bs.collapse') {
         e.currentTarget.classList.add(styles.active);
       } else {

@@ -1,11 +1,11 @@
-@use '../../../styles/scss/mixins';
+@use "../../../styles/scss/mixins";
 
 .filter {
-  display: flex;
+  /* display: flex;
   width: 100%;
   justify-content: center;
-  gap: 24px;
-  margin-top: 112px;
+  gap: 24px; */
+  margin-bottom: 48px;
 
   label {
     cursor: pointer;
@@ -18,11 +18,6 @@
     flex-wrap: wrap;
     justify-content: center;
   }
-}
-
-.radio {
-  display: flex;
-  gap: 24px;
 
   input[type="radio"] {
     appearance: none;
@@ -35,10 +30,41 @@
       color: rgb(var(--light-green));
     }
   }
+}
+
+.searchBox {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+
+  input {
+    color: rgb(var(--dark-green));
+
+    &:hover,
+    &:focus {
+      border-bottom-color: rgb(var(--greenery));
+    }
+  }
+
+  @include mixins.sm {
+    width: 100%;
+    padding: 0 24px;
+  }
+}
+
+.radio,
+.categories {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
 
   @include mixins.lg {
     gap: 16px;
     flex-wrap: wrap;
-    justify-content: center;
   }
+}
+
+.categories,
+.searchBox {
+  padding-top: 48px;
 }
