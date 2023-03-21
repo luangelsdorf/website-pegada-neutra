@@ -1,4 +1,4 @@
-@use '../../../styles/scss/mixins';
+@use "../../../styles/scss/mixins";
 
 @keyframes spin {
   100% {
@@ -12,6 +12,14 @@
 .list {
   columns: 2;
   gap: 60px;
+
+  & > h3 {
+    color: rgb(var(--dark-green));
+    position: relative;
+    left: 25%;
+    transform: translateX(25%);
+    text-align: center;
+  }
 
   [data-left="true"] {
     margin-left: auto;
@@ -53,7 +61,7 @@
     &.active {
       opacity: 1;
     }
-    
+
     svg {
       animation: spin 2s linear infinite;
     }

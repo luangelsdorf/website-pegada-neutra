@@ -43,6 +43,7 @@ export default function PostList({ posts, pagination }) {
     <div className={styles.section}>
       <div className="container">
         <div className={styles.list}>
+          {posts.length === 0 && <h3 style={{ color: 'rgb(var(--dark-green))' }}>Nenhum post encontrado.</h3>}
           {
             posts.map((post, index) => {
               let isSmall = index % 2 === 1;
