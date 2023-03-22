@@ -25,7 +25,7 @@ export default function Header({ light }) {
     {
       Icon: World,
       title: 'Ações Socioambientais',
-      href: '#ações-sócio-ambientais',
+      href: '#ações-socioambientais',
     },
     {
       Icon: Environmental,

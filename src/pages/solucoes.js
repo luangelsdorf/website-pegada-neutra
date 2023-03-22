@@ -36,7 +36,7 @@ export default function SobreNos({ services, actions, faq, info, footer }) {
           <CarbonCredits content={services.carbonCredits} />
         </Section>
 
-        <Section data-bg="dark" id="ações-sócio-ambientais">
+        <Section data-bg="dark" id="ações-socioambientais">
           <EnvironmentalActions content={services.environmentalActions} actions={actions} />
         </Section>
 

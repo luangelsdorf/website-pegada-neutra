@@ -60,7 +60,7 @@ export default function Footer({ content, light, info }) {
                     <Button link className={`${light ? 'dark' : 'phthalo'}`} href="/solucoes#créditos-de-carbono">Créditos de Carbono</Button>
                   </li>
                   <li>
-                    <Button link className={`${light ? 'dark' : 'phthalo'}`} href="/solucoes#ações-sócio-ambientais">Ações Sociombientais</Button>
+                    <Button link className={`${light ? 'dark' : 'phthalo'}`} href="/solucoes#ações-socioambientais">Ações Sociombientais</Button>
                   </li>
                   <li>
                     <Button link className={`${light ? 'dark' : 'phthalo'}`} href="/solucoes#soluções-customizadas">Soluções Customizadas</Button>

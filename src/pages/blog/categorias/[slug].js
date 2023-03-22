@@ -8,7 +8,6 @@ import Header from 'src/components/layout/Header';
 import fetchAPI from 'src/utils/fetch';
 
 export default function Categories({ blog, postList, pagination, categories, info, footer, currentCategory }) {
-  console.log(postList);
   return (
     <>
       <Head>

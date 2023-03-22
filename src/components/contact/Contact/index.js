@@ -29,7 +29,7 @@ export default function Contact({ content }) {
                     <label htmlFor="name">Nome</label>
                   </div>
                   <div className="floating">
-                    <input type="text" id="business" placeholder="Pegada Neutra" {...register('business', { required: true })} />
+                    <input type="text" id="business" placeholder="Nome da Empresa" {...register('business', { required: true })} />
                     <label htmlFor="business">Empresa</label>
                   </div>
                   <div className="floating">
@@ -37,7 +37,7 @@ export default function Contact({ content }) {
                     <label htmlFor="phone">Telefone</label>
                   </div>
                   <div className="floating">
-                    <input type="email" id="email" placeholder="contato@pegadaneutra.com.br" {...register('email', { required: true })} />
+                    <input type="email" id="email" placeholder="Seu Email" {...register('email', { required: true })} />
                     <label htmlFor="email">Email</label>
                   </div>
                 </div>

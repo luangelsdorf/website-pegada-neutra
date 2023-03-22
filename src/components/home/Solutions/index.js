@@ -30,12 +30,19 @@ export default function Solutions({ content }) {
     return () => ctx.revert();
   }, []);
 
-  const Card = ({ icon, title, text, className, ...rest }) => (
+  const hashes = [
+    'créditos-de-reciclagem',
+    'créditos-de-carbono',
+    'ações-socioambientais',
+    'soluções-customizadas',
+  ];
+
+  const Card = ({ icon, title, text, className, index, ...rest }) => (
     <article className={`${styles.card} ${className ?? ''}`} {...rest}>
       <Img {...icon} />
       <h3>{title}</h3>
       <p>{text}</p>
-      <Button divElement link href={'/solucoes#' + slugify(title)} className="dark" RightIcon={ArrowRight}>Saiba Mais</Button>
+      <Button divElement link href={'/solucoes#' + hashes[index]} className="dark" RightIcon={ArrowRight}>Saiba Mais</Button>
     </article>
   )
 
@@ -57,8 +64,8 @@ export default function Solutions({ content }) {
             {
               content.solutionList.map((card, index) => (
                 <div className="co-12 col-md-8 col-lg-6 col-xl-5 d-flex align-items-center" key={card.id}>
-                  <Button link href={'/solucoes#' + slugify(card.title)} className="link-image">
-                    <Card {...card} className={`${index === 0 ? styles.first : ''} ${index === content.solutionList.length - 1 ? styles.last : ''}`} />
+                  <Button link href={'/solucoes#' + hashes[index]} className="link-image">
+                    <Card {...card} className={`${index === 0 ? styles.first : ''} ${index === content.solutionList.length - 1 ? styles.last : ''}`} index={index} />
                   </Button>
                 </div>
               ))
