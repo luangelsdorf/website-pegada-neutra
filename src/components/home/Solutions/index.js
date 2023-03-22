@@ -76,7 +76,7 @@ export default function Solutions({ content }) {
                   <p className="overline dark">{content.lastCard.overline}</p>
                   <h2>{content.lastCard.title}</h2>
                   <p>{content.lastCard.text}</p>
-                  <Button href="#whatsapp-chat" LeftIcon={Whats}>Fale Conosco</Button>
+                  <Button href="/contato">Fale Conosco</Button>
                 </header>
               </div>
             </div>
