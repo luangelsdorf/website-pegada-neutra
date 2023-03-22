@@ -1,4 +1,4 @@
-import { dataSrc } from "./env";
+import { dataSrc, env } from "./env";
 
 export default async function fetchAPI(endpoint = '', queryString = '', populateDeep = true, dataOnly = true) {
   let result;
@@ -11,7 +11,7 @@ export default async function fetchAPI(endpoint = '', queryString = '', populate
     result = await response.json();
 
     // update local json data
-    if (typeof window === 'undefined') {
+    if (typeof window === 'undefined' && env === 'dev') {
       const fs = require('fs');
       fs.writeFile(`src/data/${endpoint}.json`, JSON.stringify(result), error => error && console.error(error));
     }
