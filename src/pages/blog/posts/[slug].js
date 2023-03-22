@@ -18,7 +18,7 @@ export default function Post({ post, recentPosts, info, footer }) {
 
       <main>
         <Section id="#banner" data-bg="dark">
-          <Banner cover={post.cover} title={post.title} date={post.publishedAt} cat={post.categorias} />
+          <Banner cover={post.cover} title={post.title} date={{ date: post.date, created: post.createdAt }} cat={post.categorias} />
         </Section>
 
         <div className="col-12 col-lg-8 mx-auto">
@@ -30,7 +30,7 @@ export default function Post({ post, recentPosts, info, footer }) {
             <Share slug={post.slug} postTitle={post.title} />
           </Section>
         </div>
-        
+
         <Section mt="120" pt="96" pb="120" style={{ backgroundColor: 'rgb(var(--dark-green))' }}>
           <RecentPosts postList={recentPosts} />
         </Section>

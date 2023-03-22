@@ -4,9 +4,16 @@ import Img from 'src/components/common/Img';
 import styles from './Banner.module.scss';
 
 export default function Banner({ cover, title, date, cat }) {
-  const dateObj = new Date(date);
-  const pubDate = dateObj.toLocaleDateString('pt-BR');
-  const datetime = dateObj.toISOString().split('T')[0];
+  let pubDate;
+  let datetime;
+
+  if (date.date) {
+    pubDate = new Date(`${date.date} GMT-3`).toLocaleDateString('pt-BR');
+    datetime = date.date;
+  } else {
+    pubDate = new Date(`${date.created}`).toLocaleDateString('pt-BR');
+    datetime = new Date(`${date.created}`).toISOString().split('T')[0];
+  }
 
   return (
     <div className={styles.banner}>
