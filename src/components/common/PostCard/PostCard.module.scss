@@ -1,4 +1,4 @@
-@use '../../../styles/scss/mixins';
+@use "../../../styles/scss/mixins";
 
 .card {
   .cover {
@@ -100,6 +100,10 @@
 
   h3 {
     font: var(--body-lg-bold);
+    
+    a {
+      display: inline;
+    }
   }
 
   p {
@@ -108,11 +112,5 @@
 
   @include mixins.md {
     margin-top: 24px;
-
-    h3 {
-      a {
-        display: inline;
-      }
-    }
   }
 }

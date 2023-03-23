@@ -1,5 +1,5 @@
 export function getExcerpt(string, wordLimit = 24) {
-  let cleanText = string.replace(/(<([^>]+)>)/gi, "").split(' ').slice(0, wordLimit).join(' ');
+  let cleanText = string.replace(/(<([^>]+)>)/gi, "").split(' ').slice(0, wordLimit).join(' ').replaceAll('&nbsp;', '');
   const lastChar = cleanText.at(-1);
   switch (lastChar) {
     case '.':
