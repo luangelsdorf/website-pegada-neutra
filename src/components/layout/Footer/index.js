@@ -60,7 +60,7 @@ export default function Footer({ content, light, info }) {
                     <Button link className={`${light ? 'dark' : 'phthalo'}`} href="/solucoes#créditos-de-carbono">Créditos de Carbono</Button>
                   </li>
                   <li>
-                    <Button link className={`${light ? 'dark' : 'phthalo'}`} href="/solucoes#ações-socioambientais">Ações Sociombientais</Button>
+                    <Button link className={`${light ? 'dark' : 'phthalo'}`} href="/solucoes#ações-socioambientais">Ações Socioambientais</Button>
                   </li>
                   <li>
                     <Button link className={`${light ? 'dark' : 'phthalo'}`} href="/solucoes#soluções-customizadas">Soluções Customizadas</Button>
@@ -76,7 +76,7 @@ export default function Footer({ content, light, info }) {
                     <Button className={`small ${light ? 'dark' : 'light'}`} link href="/contato">Fale Conosco</Button>
                   </li>
                   <li>
-                    <Button className={`small ${light ? 'dark' : 'light'}`} link href="/contato">Perguntas Frequentes</Button>
+                    <Button className={`small ${light ? 'dark' : 'light'}`} link href="/contato#faq">Perguntas Frequentes</Button>
                   </li>
                   <li>
                     <Button className={`small ${light ? 'dark' : 'light'}`} link href="#">Termos e Condições</Button>
