@@ -76,7 +76,7 @@ export default function Footer({ content, light, info }) {
                     <Button className={`small ${light ? 'dark' : 'light'}`} link href="/contato">Fale Conosco</Button>
                   </li>
                   <li>
-                    <Button className={`small ${light ? 'dark' : 'light'}`} link href="/contato#faq">Perguntas Frequentes</Button>
+                    <Button className={`small ${light ? 'dark' : 'light'}`} link href="/sobre-nos#faq">Perguntas Frequentes</Button>
                   </li>
                   <li>
                     <Button className={`small ${light ? 'dark' : 'light'}`} link href="#">Termos e Condições</Button>

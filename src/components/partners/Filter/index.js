@@ -23,9 +23,9 @@ export default function Filter({ categories, setClients }) {
       document.getElementById(e.target.dataset.target)?.bsCollapse.show();
     }
 
-    document.querySelector(`.${styles.filter}`).addEventListener('change', handleChange);
+    document.querySelector(`.${styles.filter}`)?.addEventListener('change', handleChange);
     return () => {
-      document.querySelector(`.${styles.filter}`).removeEventListener('change', handleChange);
+      document.querySelector(`.${styles.filter}`)?.removeEventListener('change', handleChange);
     }
   }, []);
 

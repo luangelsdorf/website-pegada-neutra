@@ -78,7 +78,7 @@ export default function Header({ light }) {
             </Button>
           </li>
           <li>
-            <Button link className={light ? 'dark' : 'light'} href="/contato#faq">FAQ</Button>
+            <Button link className={light ? 'dark' : 'light'} href="/sobre-nos#faq">FAQ</Button>
           </li>
           <li>
             <Button link className={light ? 'dark' : 'light'} href="/blog">Blog</Button>
@@ -101,7 +101,7 @@ export default function Header({ light }) {
                 <Button RightIcon={CaretDownFill} link className={light ? 'dark' : 'light'} href="/solucoes">Nossas Soluções</Button>
               </li>
               <li>
-                <Button link className={light ? 'dark' : 'light'} href="/contato#faq">Perguntas Frequentes</Button>
+                <Button link className={light ? 'dark' : 'light'} href="/sobre-nos#faq">Perguntas Frequentes</Button>
               </li>
               <li>
                 <Button link className={light ? 'dark' : 'light'} href="/blog">Blog</Button>
