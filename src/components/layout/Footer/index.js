@@ -99,9 +99,9 @@ export default function Footer({ content, light, info }) {
             </div>
             <p>{content.copyright}</p>
             <div>
-              <Button link className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Linkedin} href={content.social.linkedin} />
-              <Button link className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Facebook} href={content.social.facebook} />
-              <Button link className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Instagram} href={content.social.instagram} />
+              <Button target="_blank" link className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Linkedin} href={content.social.linkedin} />
+              <Button target="_blank" link className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Facebook} href={content.social.facebook} />
+              <Button target="_blank" link className={`social ${light ? 'negative' : 'positive'}`} LeftIcon={Instagram} href={content.social.instagram} />
             </div>
           </div>
         </div>

@@ -28,7 +28,7 @@ export default function PartnerList({ content, categories }) {
               clients.map((client, index) => (
                 <div className="col-12 col-md-4 col-lg-3" key={index}>
                   <PartnerLogo>
-                    <a className="link-image" href={client.attributes.link}>
+                    <a className="link-image" href={client.attributes.link} target="_blank" rel="noopener noreferrer">
                       <Img {...client.attributes.logo} />
                     </a>
                   </PartnerLogo>
