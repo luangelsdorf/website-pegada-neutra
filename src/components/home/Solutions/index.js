@@ -1,13 +1,10 @@
 import React, { useEffect } from 'react';
 import styles from './Solutions.module.scss';
-import Whats from '@ui-icons/Whatsapp.svg';
 import ArrowRight from '@ui-icons/ArrowRight.svg';
 import Button from 'src/components/common/Button';
-import Link from 'next/link';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import Img from 'src/components/common/Img';
-import { slugify } from 'src/utils/helpers';
 
 export default function Solutions({ content }) {
   useEffect(() => {
@@ -50,7 +47,7 @@ export default function Solutions({ content }) {
     <div className={styles.section}>
       <div className="container" style={{ height: '100%' }}>
         <div className="horizontal">
-          <div className="row container" style={{ flexWrap: 'nowrap', height: '100%' }}>
+          <div className="row container" style={{ flexWrap: 'nowrap', height: '100%', width: '100vw' }}>
             <div className="col-12 col-lg-4">
               <div className={styles.firstPart}>
                 <header>
@@ -63,7 +60,7 @@ export default function Solutions({ content }) {
             <div className="col-1" />
             {
               content.solutionList.map((card, index) => (
-                <div className="co-12 col-md-8 col-lg-6 col-xl-5 d-flex align-items-center" key={card.id}>
+                <div className="col-12 col-md-8 col-lg-6 col-xl-5 d-flex align-items-center" key={card.id}>
                   <Button link href={'/solucoes#' + hashes[index]} className="link-image">
                     <Card {...card} className={`${index === 0 ? styles.first : ''} ${index === content.solutionList.length - 1 ? styles.last : ''}`} index={index} />
                   </Button>
