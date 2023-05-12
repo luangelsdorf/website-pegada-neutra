@@ -35,12 +35,13 @@ export default function Filter({ categories, setClients }) {
   }
 
   useEffect(() => {
-    if (!order) return;
+    if (!order || order === 'category') return;
+    setSelectedCategory('');
     document.querySelector('#partner-list').classList.add('loading');
 
     async function getData() {
       let data;
-      if (order === 'all') {
+      if (order === 'all' || order === 'search') {
         data = await fetchAPI('partners', '', false);
       }
       else if (order === 'alpha') {
@@ -49,6 +50,7 @@ export default function Filter({ categories, setClients }) {
       setClients(data);
       window.dispatchEvent(new Event('resize'));
       document.querySelector('#partner-list').classList.remove('loading');
+      document.querySelectorAll('[name="categories"]').forEach(el => el.checked = false);
     }
     getData();
 
@@ -98,12 +100,12 @@ export default function Filter({ categories, setClients }) {
         </div>
 
         <div>
-          <input type="radio" name="filter" id="category" data-target="category-collapse" />
+          <input type="radio" name="filter" id="category" value="category" data-target="category-collapse" onChange={e => setOrder(e.target.value)} />
           <label className="btn outline dark small" htmlFor="category">Por Categoria</label>
         </div>
 
         <div>
-          <input type="radio" name="filter" id="search" data-target="search-collapse" />
+          <input type="radio" name="filter" id="search" value="search" data-target="search-collapse" onChange={e => setOrder(e.target.value)} />
           <label className="btn outline dark small" htmlFor="search"><Search /> Pesquisar</label>
         </div>
       </div>
