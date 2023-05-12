@@ -84,6 +84,12 @@ menu {
 }
 
 @include mixins.lg {
+  #wp-floating {
+    display: none;
+  }
+}
+
+@include mixins.lg {
   [class*="col-lg"] {
     & > div {
       text-align: center;

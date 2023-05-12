@@ -1,0 +1,21 @@
+.btn {
+  position: fixed !important;
+  justify-content: center;
+  bottom: 30px;
+  right: 30px;
+  height: 72px !important;
+  width: 72px !important;
+  z-index: 3;
+  background-color: #128C7E;
+  border-radius: 50%;
+  
+  &:hover {
+    filter: brightness(0.8);
+  }
+  
+  svg {
+    color: white;
+    height: 24px;
+    width: 24px;
+  }
+}
