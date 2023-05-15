@@ -1,3 +1,5 @@
+@use "../../../styles/scss/mixins";
+
 .article {
   color: rgb(var(--dark-green));
 
@@ -17,6 +19,22 @@
   p {
     font: var(--body-lg);
     line-height: 48px;
+    @include mixins.lg {
+      font: var(--body-default);
+    }
+  }
+
+  strong {
+    font: var(--body-lg);
+    font-weight: 800;
+    @include mixins.lg {
+      font: var(--body-default);
+      font-weight: 800;
+    }
+  }
+
+  a {
+    padding: 0 !important;
   }
 
   blockquote {
