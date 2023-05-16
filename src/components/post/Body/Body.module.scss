@@ -3,11 +3,26 @@
 .article {
   color: rgb(var(--dark-green));
 
+  @media (min-width: 576px) {
+    padding: 0 24px;
+  }
+
+  @media (min-width: 992px) {
+    padding: 0;
+  }
+
+  @include mixins.lg {
+    :global(.image-style-side) {
+      float: initial;
+      margin-left: 0;
+      min-width: 100%;
+    }
+  }
+
   img {
-    width: 125%;
+    width: 100%;
     height: auto;
     position: relative;
-    left: -12.5%;
   }
 
   & > p,
