@@ -10,6 +10,7 @@ import Header from 'src/components/layout/Header';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import WhatsAppButton from 'src/components/common/WhatsAppButton';
+import Cookies from 'src/components/common/Cookies';
 
 const manrope = Manrope({
   display: 'swap',
@@ -156,6 +157,7 @@ export default function App({ Component, pageProps }) {
         </div>
       </div>
       <WhatsAppButton number={pageProps.info.phone.replace(/[^0-9]/g, '')} />
+      <Cookies />
     </>
   )
 }
