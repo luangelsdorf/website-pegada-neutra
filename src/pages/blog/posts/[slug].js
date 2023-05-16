@@ -22,7 +22,7 @@ export default function Post({ post, recentPosts, info, footer }) {
         </Section>
 
         <div className="col-12 col-lg-8 mx-auto">
-          <Section data-bg="light" pt="96 16" pb="24">
+          <Section data-bg="light" pt="96 16" pb="80 72">
             <Body content={post.body} />
           </Section>
 

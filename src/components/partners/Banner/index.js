@@ -8,12 +8,12 @@ export default function Banner({ content }) {
     <div className="col-12">
       <div className={styles.banner}>
         <header>
-          <p className="overline large dark">{content.title.overline}</p>
+          {content.title.overline && <p className="overline large dark">{content.title.overline}</p>}
           <h1>{content.title.title}</h1>
         </header>
         <p>{content.text}</p>
-        <Button href={content.button.url} className="outline phthalo large">{content.button.text}</Button>
-        <Button href="#lista" LeftIcon={ArrowDown} className={styles.arrow} />
+        {content.button && <Button href={content.button.url} className="outline phthalo large">{content.button.text}</Button>}
+        {content.button && <Button href="#lista" LeftIcon={ArrowDown} className={styles.arrow} />}
       </div>
     </div>
   )
