@@ -160,7 +160,7 @@ export default function App({ Component, pageProps }) {
           <Component {...pageProps} />
         </div>
       </div>
-      <WhatsAppButton number={pageProps.info.phone.replace(/[^0-9]/g, '')} />
+      {pageProps.info && <WhatsAppButton number={pageProps.info.phone.replace(/[^0-9]/g, '')} />}
       <Cookies />
     </>
   )
