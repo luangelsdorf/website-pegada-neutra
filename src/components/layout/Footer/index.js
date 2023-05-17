@@ -81,10 +81,10 @@ export default function Footer({ content, light, info }) {
                     <Button className={`small ${light ? 'dark' : 'light'}`} link href="/sobre-nos#faq">Perguntas Frequentes</Button>
                   </li>
                   <li>
-                    <Button className={`small ${light ? 'dark' : 'light'}`} link href="#">Termos e Condições</Button>
+                    <Button className={`small ${light ? 'dark' : 'light'}`} link href="/termos">Termos e Condições</Button>
                   </li>
                   <li>
-                    <Button className={`small ${light ? 'dark' : 'light'}`} link href="#">Política de Privacidade</Button>
+                    <Button className={`small ${light ? 'dark' : 'light'}`} link href="/privacidade">Política de Privacidade</Button>
                   </li>
                 </ul>
                 <Button href={`https://wa.me/${clearNumber(info.phone)}`} target="_blank" className="outline phthalo small d-inline-flex d-lg-none" LeftIcon={TelephoneFill}>{info.phone}</Button>
