@@ -11,6 +11,8 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import WhatsAppButton from 'src/components/common/WhatsAppButton';
 import Cookies from 'src/components/common/Cookies';
+import Analytics from 'src/components/analytics/Analytics';
+import { env } from 'src/utils/env';
 
 const manrope = Manrope({
   display: 'swap',
@@ -140,6 +142,8 @@ export default function App({ Component, pageProps }) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
+
+      {env !== 'dev' && <Analytics />}
 
       <style jsx global>{`
         html {
