@@ -7,7 +7,7 @@ import Facebook from '@ui-icons/Facebook.svg';
 import Instagram from '@ui-icons/Instagram.svg';
 import Button from 'src/components/common/Button';
 import ArrowRight from '@ui-icons/ArrowRight.svg';
-import TelephoneFill from '@ui-icons/TelephoneFill.svg';
+import Whatsapp from '@ui-icons/Whatsapp.svg';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
@@ -72,7 +72,7 @@ export default function Footer({ content, light, info }) {
             </div>
             <div className="col-12 col-lg-3 offset-lg-1">
               <div className={styles.contact}>
-                <Button href={`https://wa.me/${clearNumber(info.phone)}`} target="_blank" className="outline phthalo small d-none d-lg-inline-flex" LeftIcon={TelephoneFill}>{info.phone}</Button>
+                <Button href={`https://wa.me/${clearNumber(info.phone)}`} target="_blank" className="outline phthalo small d-none d-lg-inline-flex" LeftIcon={Whatsapp}>{info.phone}</Button>
                 <ul>
                   <li>
                     <Button className={`small ${light ? 'dark' : 'light'}`} link href="/contato">Fale Conosco</Button>
@@ -87,7 +87,7 @@ export default function Footer({ content, light, info }) {
                     <Button className={`small ${light ? 'dark' : 'light'}`} link href="/privacidade">Política de Privacidade</Button>
                   </li>
                 </ul>
-                <Button href={`https://wa.me/${clearNumber(info.phone)}`} target="_blank" className="outline phthalo small d-inline-flex d-lg-none" LeftIcon={TelephoneFill}>{info.phone}</Button>
+                <Button href={`https://wa.me/${clearNumber(info.phone)}`} target="_blank" className="outline phthalo small d-inline-flex d-lg-none" LeftIcon={Whatsapp}>{info.phone}</Button>
               </div>
             </div>
           </div>
