@@ -14,12 +14,12 @@ export default function Header({ light }) {
   const solutions = [
     {
       Icon: Recycle,
-      title: 'Créditios de Reciclagem',
+      title: 'Créditos de Reciclagem',
       href: '#créditos-de-reciclagem',
     },
     {
       Icon: Carbon,
-      title: 'Créditios de Carbono',
+      title: 'Créditos de Carbono',
       href: '#créditos-de-carbono',
     },
     {
@@ -49,7 +49,7 @@ export default function Header({ light }) {
   }
 
   function closeMenus() {
-    document.querySelector('#solutions').click();
+    document.querySelector('#solutionsLink').click();
     document.querySelector('[data-bs-target="#links"]').click();
   }
 
@@ -97,13 +97,13 @@ export default function Header({ light }) {
           <li className={styles.linksMobile}>
             <ul id="links" className="collapse">
               <li>
-                <Button id="home" link className={light ? 'dark' : 'light'} href="/">Home</Button>
+                <Button link className={light ? 'dark' : 'light'} href="/">Home</Button>
               </li>
               <li>
-                <Button id="about" link className={light ? 'dark' : 'light'} href="/sobre-nos">Sobre Nós</Button>
+                <Button link className={light ? 'dark' : 'light'} href="/sobre-nos">Sobre Nós</Button>
               </li>
               <li data-dd-trigger>
-                <Button id="solutions" link href="" className={light ? 'dark' : 'light'} data-bs-target="#solutionsCollapse" data-bs-toggle="collapse" RightIcon={CaretDownFill}>Nossas Soluções</Button>
+                <Button id="solutionsLink" link href="" className={light ? 'dark' : 'light'} data-bs-target="#solutionsCollapse" data-bs-toggle="collapse" RightIcon={CaretDownFill}>Nossas Soluções</Button>
                 <div id="solutionsCollapse" className="collapse">
                   <ul>
                     {
@@ -117,16 +117,16 @@ export default function Header({ light }) {
                 </div>
               </li>
               <li>
-                <Button id="faq" link className={light ? 'dark' : 'light'} href="/sobre-nos#faq">Perguntas Frequentes</Button>
+                <Button link className={light ? 'dark' : 'light'} href="/sobre-nos#faq">Perguntas Frequentes</Button>
               </li>
               <li>
-                <Button id="blog" link className={light ? 'dark' : 'light'} href="/blog">Blog</Button>
+                <Button link className={light ? 'dark' : 'light'} href="/blog">Blog</Button>
               </li>
               <li>
-                <Button id="parceiros" link className={light ? 'dark' : 'light'} href="/parceiros">Parceiros</Button>
+                <Button link className={light ? 'dark' : 'light'} href="/parceiros">Parceiros</Button>
               </li>
               <li>
-                <Button id="home" RightIcon={ArrowRight} className="small d-inline-flex d-lg-none" href="/contato">Neutralize Já</Button>
+                <Button RightIcon={ArrowRight} className="small d-inline-flex d-lg-none" href="/contato">Neutralize Já</Button>
               </li>
             </ul>
           </li>
