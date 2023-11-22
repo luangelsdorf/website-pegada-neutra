@@ -18,6 +18,7 @@
 
 .categories {
   display: flex;
+  flex-wrap: wrap;
   margin-top: 72px;
   justify-content: center;
   gap: 24px;

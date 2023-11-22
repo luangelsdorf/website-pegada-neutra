@@ -34,7 +34,7 @@ export default function Blog({ blog, postList, pagination, categories, info, foo
 export async function getStaticProps() {
   const blog = await fetchAPI('blog');
   const postListMeta = await fetchAPI('posts', `&pagination[page]=${1}&pagination[pageSize]=${6}&sort=createdAt:DESC`, false, false);
-  const categories = await fetchAPI('categories', `&pagination[page]=${1}&pagination[pageSize]=${3}&sort=createdAt:DESC`, false);
+  const categories = await fetchAPI('categories', `&sort=createdAt:DESC`, false);
   const info = await fetchAPI('info');
   const footer = await fetchAPI('footer');
 

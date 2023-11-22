@@ -22,21 +22,23 @@ export default function Banner({ content, categories, currentCategory }) {
           <p className="overline large dark">{content.title.overline}</p>
           <h1>{content.title.title}</h1>
         </header>
-        <div className={styles.categories}>
-          <Link data-slug="all" scroll={false} href="/blog" className="btn phthalo small outline">Todos</Link>
-          {
-            categories.map((cat, index) => (
-              <Link
-                data-slug={cat.attributes.slug}
-                key={index}
-                scroll={false}
-                href={`/blog/categorias/${cat.attributes.slug}`}
-                className="btn phthalo small outline"
-              >
-                {cat.attributes.name}
-              </Link>
-            ))
-          }
+        <div className="container">
+          <div className={styles.categories}>
+            <Link data-slug="all" scroll={false} href="/blog" className="btn phthalo small outline">Todos</Link>
+            {
+              categories.map((cat, index) => (
+                <Link
+                  data-slug={cat.attributes.slug}
+                  key={index}
+                  scroll={false}
+                  href={`/blog/categorias/${cat.attributes.slug}`}
+                  className="btn phthalo small outline"
+                >
+                  {cat.attributes.name}
+                </Link>
+              ))
+            }
+          </div>
         </div>
       </div>
     </div>
