@@ -6,7 +6,7 @@ export default async function handler(req, res) {
 
     const message = {
       from: process.env.SENDGRID_SENDER,
-      to: process.env.SENDGRID_SENDER,
+      to: process.env.SENDGRID_RECIPIENT,
       subject: `Nova Mensagem | Website Pegada Neutra`,
       text: `Nova mensagem enviada de ${req.body.name}`,
       html: `
