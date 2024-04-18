@@ -9,8 +9,9 @@ import Environmental from '@brand-icons/Environmental.svg';
 import ArrowRight from '@ui-icons/ArrowRight.svg';
 import CaretDownFill from '@ui-icons/CaretDownFill.svg';
 import Bars from '@ui-icons/Bars.svg';
+import WhatsIcon from '@ui-icons/Whatsapp.svg';
 
-export default function Header({ light }) {
+export default function Header({ light, phone }) {
   const solutions = [
     {
       Icon: Recycle,
@@ -60,6 +61,7 @@ export default function Header({ light }) {
   return (
     <header id="header" className={`${styles.header}`}>
       <div className="container">
+        <Button className={styles.whatsApp} LeftIcon={WhatsIcon} href={`https://api.whatsapp.com/send?phone=${phone}`} target="_blank" rel="noopener noreferrer" />
         <ul className={styles.inner}>
           <li>
             <Button link className={light ? 'dark' : 'light'} href="/">Home</Button>

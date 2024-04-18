@@ -11,6 +11,10 @@
     align-items: center;
   }
 
+  .whatsApp {
+    display: none;
+  }
+
   .inner {
     font: var(--body-sm);
     display: flex;
@@ -229,6 +233,15 @@
 
   @include mixins.lg {
     top: 24px;
+
+    .whatsApp {
+      display: inline-flex;
+      position: absolute !important;
+      left: 28px;
+      width: 32px;
+      height: 32px;
+      padding: 0;
+    }
 
     .inner {
       border-radius: 40px;
