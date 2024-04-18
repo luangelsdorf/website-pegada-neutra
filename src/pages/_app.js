@@ -153,7 +153,7 @@ export default function App({ Component, pageProps }) {
       `}
       </style>
 
-      <Header phone={pageProps.info.phone.replace(/[^0-9]/g, '')} />
+      {router.route !== '/_error' && <Header phone={pageProps.info.phone.replace(/[^0-9]/g, '')} />}
 
       <div id="viewport">
         <div id="content">

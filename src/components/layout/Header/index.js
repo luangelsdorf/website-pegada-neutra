@@ -60,7 +60,7 @@ export default function Header({ light, phone }) {
 
   return (
     <header id="header" className={`${styles.header}`}>
-      <div className="container">
+      <div className="container" style={{ position: 'relative' }}>
         <Button className={styles.whatsApp} LeftIcon={WhatsIcon} href={`https://api.whatsapp.com/send?phone=${phone}`} target="_blank" rel="noopener noreferrer" />
         <ul className={styles.inner}>
           <li>
