@@ -235,6 +235,7 @@
       flex-direction: column;
       align-items: center;
       padding: 10px 0;
+      gap: 0;
 
       & > :not(.logoItem, .linksMobile) {
         display: none;

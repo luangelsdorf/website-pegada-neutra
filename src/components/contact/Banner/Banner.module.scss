@@ -1,13 +1,14 @@
 @use "../../../styles/scss/mixins";
 
 .section {
-  height: 564px;
+  height: 652px;
   display: flex;
   justify-content: center;
   align-items: center;
 
   h1 {
     color: rgb(var(--dark-green));
+    margin-bottom: 48px;
   }
 
   & > div {
@@ -15,7 +16,7 @@
   }
 
   @include mixins.lg {
-    height: 468px;
+    height: 572px;
 
     & > div {
       margin-top: 56px;
