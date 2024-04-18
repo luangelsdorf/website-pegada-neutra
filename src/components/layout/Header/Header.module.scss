@@ -14,13 +14,17 @@
   .inner {
     font: var(--body-sm);
     display: flex;
-    justify-content: space-around;
+    gap: 40px;
     width: 100%;
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
-    padding: 8px 0;
+    padding: 8px 40px;
     background-color: rgb(var(--dark-green));
     transition: all 350ms;
+
+    .logoItem {
+      margin: auto;
+    }
 
     & > li {
       display: inline-flex;
@@ -107,6 +111,10 @@
         fill: rgb(var(--greenery));
       }
     }
+
+    .linksMobile {
+      display: none;
+    }
   }
 
   .toggler {
@@ -124,8 +132,6 @@
   }
 
   .linksMobile {
-    display: none;
-
     [data-dd-trigger] {
       flex-direction: column;
       align-items: center;
@@ -250,6 +256,7 @@
     }
 
     .linksMobile {
+      display: inline-flex !important;
       width: 100%;
 
       ul {
