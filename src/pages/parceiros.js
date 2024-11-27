@@ -31,7 +31,7 @@ export default function Parceiros({ clients, partners, partnerCategories, info, 
 
 export async function getStaticProps() {
   const clients = await fetchAPI('client');
-  const partners = await fetchAPI('partners');
+  const partners = await fetchAPI('partners', '&pagination[page]=1&pagination[pageSize]=20&sort=id:DESC');
   const partnerCategories = await fetchAPI('partner-categories', undefined, false);
   const info = await fetchAPI('info');
   const footer = await fetchAPI('footer');

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from 'src/components/common/Button';
 import Plus from '@ui-icons/PlusLg.svg';
 import PartnerLogo from 'src/components/common/PartnerLogo';
@@ -6,9 +6,35 @@ import styles from './PartnerList.module.scss';
 import Img from 'src/components/common/Img';
 import Filter from '../Filter';
 import Spinner from 'src/components/common/Spinner';
+import fetchAPI from 'src/utils/fetch';
 
 export default function PartnerList({ content, categories }) {
   const [clients, setClients] = useState(content);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(false);
+  console.log(clients);
+  
+
+  useEffect(() => {
+    if (currentPage === 1) return;
+    async function getData() {
+      let data;
+      try {
+        setIsLoading(true);
+        data = await fetchAPI('partners', `&pagination[page]=${currentPage}&pagination[pageSize]=20&sort=id:DESC`);
+        setClients(prev => [...prev, ...data]);
+        window.dispatchEvent(new Event('resize'));
+      }
+      catch (e) {
+        console.error(e);
+      }
+      finally {
+        setIsLoading(false);
+      }
+      console.log(data);
+    }
+    getData();
+  }, [currentPage]);
 
   return (
     <div className={styles.section}>
@@ -38,7 +64,19 @@ export default function PartnerList({ content, categories }) {
           </div>
         </div>
       </div>
-      {/* <Button RightIcon={Plus} className="large outline dark" btnElement>Ver Mais</Button> */}
+      <Button
+        RightIcon={isLoading ? null : Plus}
+        className="large outline dark"
+        btnElement
+        disabled={isLoading}
+        onClick={() => setCurrentPage(currentPage + 1)}
+      >
+        {isLoading ? (
+          <Spinner />
+        ): (
+          <span>Ver Mais</span>
+        )}
+      </Button>
     </div>
   )
 }
