@@ -9,19 +9,35 @@ export async function onSubmit(data, e) {
 
   await new Promise(r => setTimeout(r, 1000));
 
-  fetch('/api/contact', {
+  const res = await fetch('/api/contact', {
     method: 'POST',
     headers: {
       'Accept': 'application/json, text/plain, */*',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({ name, business, phone, email, subjects }),
-  }).then(res => {
-    if (res.ok) {
-      console.log('%cMensgaem enviada.', 'color: limegreen');
-    } else {
-      console.log('%cMensgaem não enviada.', 'color: tomato');
-      console.log(res);
-    }
+    body: JSON.stringify({ name, business, phone, email, subjects, recipients: data.recipients }),
   });
+
+  if (res.ok) {
+    console.log('%cMensgaem enviada.', 'color: limegreen');
+  } else {
+    console.log('%cMensgaem não enviada.', 'color: tomato');
+    throw new Error('Ocorreu um erro ao enviar a mensagem!')
+  }
+
+  // fetch('/api/contact', {
+  // method: 'POST',
+  // headers: {
+  // 'Accept': 'application/json, text/plain, */*',
+  // 'Content-Type': 'application/json'
+  // },
+  // body: JSON.stringify({ name, business, phone, email, subjects, recipients: data.recipients }),
+  // }).then(res => {
+  // if (res.ok) {
+  // console.log('%cMensgaem enviada.', 'color: limegreen');
+  // } else {
+  // console.log('%cMensgaem não enviada.', 'color: tomato');
+  // console.log(res);
+  // }
+  // });
 }

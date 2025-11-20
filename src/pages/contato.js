@@ -25,7 +25,7 @@ export default function Contato({ contact, faq, info, footer }) {
 
         <GrowEffect style={{ backgroundColor: 'rgb(var(--dark-green))', paddingTop: 0, borderRadius: '16px' }} stOptions={{ start: 'top 50%' }}>
           <Section id="contato" data-bg="dark">
-            <Contact content={{ ...contact.form, cover: contact.formCover }} />
+            <Contact content={{ ...contact.form, cover: contact.formCover }} info={info} />
           </Section>
         </GrowEffect>
 

@@ -6,7 +6,7 @@ export default async function handler(req, res) {
 
     const message = {
       from: process.env.SENDGRID_SENDER,
-      to: process.env.SENDGRID_RECIPIENT,
+      to: req.body.recipients,
       subject: `Nova Mensagem | Website Pegada Neutra`,
       text: `Nova mensagem enviada de ${req.body.name}`,
       html: `
@@ -19,7 +19,17 @@ export default async function handler(req, res) {
               `
     }
 
-    await sgMail.send(message);
+    try {
+      await sgMail.send(message);
+      // await Promise.all(messages)
+    }
+    catch (e) {
+      console.error('Ocorreu um erro ao enviar o e-mail de contato:');
+      console.error(e);
+      console.error(e?.response?.body);
+      return res.status(500).json({ message: e?.response?.body?.errors?.[0]?.message });
+    }
+
     return res.status(200).end();
   }
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Contact.module.scss';
 import ArrowRight from '@ui-icons/ArrowRight.svg'
 import Button from 'src/components/common/Button';
@@ -9,10 +9,22 @@ import { useForm } from 'react-hook-form';
 import { onSubmit } from 'src/utils/contact';
 import Spinner from 'src/components/common/Spinner';
 
-export default function Contact({ content }) {
+export default function Contact({ content, info }) {
   const { register, watch, handleSubmit, formState: { isSubmitting, isSubmitSuccessful } } = useForm();
   const checkBoxes = watch(["subject.Créditos de Reciclagem", "subject.Créditos de Carbono", "subject.Ações Socioambientais", "subject.Soluções Customizadas"]);
   const checkRequired = !checkBoxes.some(item => item);
+  const [isSuccessful, setIsSuccessful] = useState(null);
+
+  async function submit(data, e) {
+    try {
+      await onSubmit(data, e);
+      setIsSuccessful(true);
+    }
+    catch (e) {
+      console.log(e);
+      setIsSuccessful(false);
+    }
+  }
 
   return (
     <div className={styles.section}>
@@ -22,7 +34,7 @@ export default function Contact({ content }) {
             <div className={styles.formSection}>
               <h2>{content.title}</h2>
               <p>{content.text}</p>
-              <form onSubmit={handleSubmit(onSubmit)}>
+              <form onSubmit={handleSubmit(submit)}>
                 <div className={styles.textboxes}>
                   <div className="floating">
                     <input type="text" id="name" placeholder="Nome" {...register('name', { required: true })} />
@@ -61,9 +73,12 @@ export default function Contact({ content }) {
                   </div>
                 </div>
                 <Button btnElement type="submit" RightIcon={ArrowRight} className="large phthalo">Enviar Mensagem</Button>
+                <input type="hidden" value={info.recipientEmail1} {...register('recipients.0')} />
+                <input type="hidden" value={info.recipientEmail2} {...register('recipients.1')} />
               </form>
               <div>
-                <div style={{ opacity: isSubmitSuccessful ? '1' : '0' }}>✓ Enviada com sucesso!</div>
+                <div style={{ opacity: isSuccessful === true ? '1' : '0' }}>✓ Enviada com sucesso!</div>
+                <div style={{ opacity: isSuccessful === false ? '1' : '0' }}>Ocorreu um erro ao enviar a mensagem!</div>
                 <Spinner style={{ opacity: isSubmitting ? '1' : '0' }} />
               </div>
             </div>

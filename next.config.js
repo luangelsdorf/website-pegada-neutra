@@ -14,8 +14,8 @@ const nextConfig = withBundleAnalyzer({
     remotePatterns: [
       {
         protocol: 'http',
-        hostname: 'localhost',
-        port: '1337',
+        hostname: '127.0.0.1',
+        port: '1338',
       },
       {
         protocol: 'https',
