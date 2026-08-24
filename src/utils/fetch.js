@@ -1,4 +1,4 @@
-import { dataSrc, env } from "./env";
+import { apiURL, dataSrc, env, serverApiURL } from "./env";
 
 export default async function fetchAPI(endpoint = '', queryString = '', populateDeep = true, dataOnly = true) {
   let result;
@@ -7,7 +7,8 @@ export default async function fetchAPI(endpoint = '', queryString = '', populate
     result = require(`src/data/${endpoint}.json`);
   } else {
     const populate = populateDeep ? 'deep' : '*';
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/${endpoint}?populate=${populate}${queryString}`);
+    const baseURL = typeof window === 'undefined' ? serverApiURL : apiURL;
+    const response = await fetch(`${baseURL}/api/${endpoint}?populate=${populate}${queryString}`);
     result = await response.json();
 
     // update local json data
